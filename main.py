@@ -1,10 +1,8 @@
 import sys
 import os
 
-# Get the directory where the script is located
 script_dir = os.path.dirname(os.path.abspath(__file__))
 
-# Add the utils directory to sys.path
 utils_dir = os.path.join(script_dir, 'utils')
 sys.path.append(utils_dir)
 
@@ -16,9 +14,7 @@ from models.random_forest_model import RandomForestModel
 from utils.backtester import Backtester
 from sklearn.model_selection import train_test_split
 import matplotlib.pyplot as plt
-from utils.visualize_decision_trees import visualize_decision_tree
-
-
+from utils.visualize_decision_trees import visualize_decision_trees
 
 def main():
     # Set your stock symbol and date range for historical data
@@ -82,12 +78,12 @@ def main():
     profit_loss = backtester.simulate_trading()
     print(f"Simulated Profit/Loss: {profit_loss}")
 
-    # visualize_decision_trees(model.model, features.columns, max_trees=3)
+    visualize_decision_trees(model.model, features.columns, max_trees=3)
 
-    num_trees_to_visualize = 3  # Adjust as needed
-    for i in range(min(num_trees_to_visualize, len(model.model.estimators_))):
-        tree = model.model.estimators_[i]
-        visualize_decision_tree(tree, features.columns, ["Down", "Up"], "Stock Price Movement")
+    # num_trees_to_visualize = 3  # Adjust as needed
+    # for i in range(min(num_trees_to_visualize, len(model.model.estimators_))):
+    #     tree = model.model.estimators_[i]
+    #     visualize_decision_tree(tree, features.columns, ["Down", "Up"], "Stock Price Movement")
 
 if __name__ == "__main__":
     main()

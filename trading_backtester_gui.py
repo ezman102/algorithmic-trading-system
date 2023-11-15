@@ -69,8 +69,6 @@ def run_backtest():
     except Exception as e:
         messagebox.showerror("Error", str(e))
 
-
-
 # Create and place the widgets
 tk.Label(root, text="Stock Symbol").grid(row=0, column=0)
 stock_symbol_entry = tk.Entry(root)

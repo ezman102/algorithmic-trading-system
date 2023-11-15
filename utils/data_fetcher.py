@@ -4,14 +4,6 @@ import pandas as pd
 def fetch_data(stock_symbol, start_date, end_date):
     """
     Fetch historical data for a given stock symbol from Yahoo Finance.
-
-    Parameters:
-    stock_symbol (str): The ticker symbol of the stock (e.g., 'AAPL').
-    start_date (str): The start date for the data in YYYY-MM-DD format.
-    end_date (str): The end date for the data in YYYY-MM-DD format.
-
-    Returns:
-    pandas.DataFrame: A DataFrame containing the historical stock data.
     """
     try:
         # Download stock data from Yahoo Finance

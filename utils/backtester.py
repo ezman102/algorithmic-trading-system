@@ -55,7 +55,6 @@ class Backtester:
         return profit_loss
 
 # Example usage
-
 if __name__ == "__main__":
     # Load the data
     data = pd.read_csv("data/enhanced_stock_data.csv")
