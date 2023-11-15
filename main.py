@@ -15,6 +15,10 @@ from utils.feature_engineering import define_target_variable
 from models.random_forest_model import RandomForestModel
 from utils.backtester import Backtester
 from sklearn.model_selection import train_test_split
+import matplotlib.pyplot as plt
+from utils.visualize_decision_trees import visualize_decision_tree
+
+
 
 def main():
     # Set your stock symbol and date range for historical data
@@ -69,6 +73,7 @@ def main():
     # Step 4: Model Training
     print("Training model...")
     model = RandomForestModel(n_estimators=100, random_state=42)
+    # model = RandomForestModel(n_estimators=100, max_depth=5, random_state=42)
     model.train(X_train, y_train)
 
     # Step 5: Backtesting
@@ -76,6 +81,13 @@ def main():
     backtester = Backtester(pd.concat([X_test, y_test], axis=1), model)
     profit_loss = backtester.simulate_trading()
     print(f"Simulated Profit/Loss: {profit_loss}")
+
+    # visualize_decision_trees(model.model, features.columns, max_trees=3)
+
+    num_trees_to_visualize = 3  # Adjust as needed
+    for i in range(min(num_trees_to_visualize, len(model.model.estimators_))):
+        tree = model.model.estimators_[i]
+        visualize_decision_tree(tree, features.columns, ["Down", "Up"], "Stock Price Movement")
 
 if __name__ == "__main__":
     main()
