@@ -80,7 +80,7 @@ def main():
 
     visualize_decision_trees(model.model, features.columns, max_trees=3)
 
-    # num_trees_to_visualize = 3  # Adjust as needed
+    # num_trees_to_visualize = 3  
     # for i in range(min(num_trees_to_visualize, len(model.model.estimators_))):
     #     tree = model.model.estimators_[i]
     #     visualize_decision_tree(tree, features.columns, ["Down", "Up"], "Stock Price Movement")
