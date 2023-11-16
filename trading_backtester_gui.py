@@ -3,8 +3,6 @@ import os
 
 # Get the directory where the script is located
 script_dir = os.path.dirname(os.path.abspath(__file__))
-
-# Add the utils directory to sys.path
 utils_dir = os.path.join(script_dir, 'utils')
 sys.path.append(utils_dir)
 
@@ -18,32 +16,27 @@ from utils.backtester import Backtester
 from sklearn.model_selection import train_test_split
 from itertools import chain, combinations
 
-
 def all_subsets(lst):
     """Return non-empty subsets of lst."""
     return chain(*map(lambda x: combinations(lst, x), range(1, len(lst)+1)))
 
-root = tk.Tk()
-root.title("Trading System Backtester")
+def create_entry_with_label(root, label_text, row, default_value=""):
+    tk.Label(root, text=label_text).grid(row=row, column=0)
+    var = tk.StringVar(value=default_value)
+    entry = tk.Entry(root, textvariable=var)
+    entry.grid(row=row, column=1)
+    return var, entry
 
-default_stock_symbol = "AAPL"
-default_start_date = "2020-01-01"
-default_end_date = "2023-11-16"
-
-# Define StringVar for entry fields with default values
-stock_symbol_var = tk.StringVar(value=default_stock_symbol)
-start_date_var = tk.StringVar(value=default_start_date)
-end_date_var = tk.StringVar(value=default_end_date)
-
-# Define available indicators
-available_indicators = [
-    'SMA_10', 'SMA_30', 'EMA_10', 'EMA_30', 'RSI_14', 'MACD'
-]
-
-# Dictionary to track checkbox states
-indicator_selections = {indicator: tk.BooleanVar() for indicator in available_indicators}
+def create_checkboxes(root, items, start_row):
+    vars = {}
+    for i, item in enumerate(items, start=start_row):
+        var = tk.BooleanVar()
+        tk.Checkbutton(root, text=item, variable=var).grid(row=i, column=0, sticky='w')
+        vars[item] = var
+    return vars
 
 def run_backtest():
+
     stock_symbol = stock_symbol_entry.get()
     start_date = start_date_entry.get()
     end_date = end_date_entry.get()
@@ -126,32 +119,35 @@ def find_best_combination():
     except Exception as e:
         messagebox.showerror("Error", f"An error occurred: {e}")
 
-# Create and place the widgets for entries
-tk.Label(root, text="Stock Symbol").grid(row=0, column=0)
-stock_symbol_entry = tk.Entry(root, textvariable=stock_symbol_var)
-stock_symbol_entry.grid(row=0, column=1)
 
-tk.Label(root, text="Start Date (YYYY-MM-DD)").grid(row=1, column=0)
-start_date_entry = tk.Entry(root, textvariable=start_date_var)
-start_date_entry.grid(row=1, column=1)
+global stock_symbol_entry, start_date_entry, end_date_entry
 
-tk.Label(root, text="End Date (YYYY-MM-DD)").grid(row=2, column=0)
-end_date_entry = tk.Entry(root, textvariable=end_date_var)
-end_date_entry.grid(row=2, column=1)
+def create_entry_with_label(root, label_text, row, default_value=""):
+    tk.Label(root, text=label_text).grid(row=row, column=0)
+    var = tk.StringVar(value=default_value)
+    entry = tk.Entry(root, textvariable=var)
+    entry.grid(row=row, column=1)
+    return var, entry
 
-# Create checkboxes for each indicator
-row = 3
-for indicator, var in indicator_selections.items():
-    tk.Checkbutton(root, text=indicator, variable=var).grid(row=row, column=0, sticky='w')
-    row += 1
+root = tk.Tk()
+root.title("Trading System Backtester")
+
+default_values = {"Stock Symbol": "AAPL", "Start Date": "2020-01-01", "End Date": "2023-11-16"}
+stock_symbol_var, stock_symbol_entry = create_entry_with_label(root, "Stock Symbol", 0, default_values["Stock Symbol"])
+start_date_var, start_date_entry = create_entry_with_label(root, "Start Date", 1, default_values["Start Date"])
+end_date_var, end_date_entry = create_entry_with_label(root, "End Date", 2, default_values["End Date"])
+
+# Define default values
+default_values = {"Stock Symbol": "AAPL", "Start Date": "2020-01-01", "End Date": "2023-11-16"}
+entry_vars = {label: create_entry_with_label(root, label, i, default_values[label])[0] for i, label in enumerate(default_values)}
+
+available_indicators = ['SMA_10', 'SMA_30', 'EMA_10', 'EMA_30', 'RSI_14', 'MACD']
+indicator_selections = create_checkboxes(root, available_indicators, len(default_values) + 1)
 
 run_button = tk.Button(root, text="Run Backtest", command=run_backtest)
-run_button.grid(row=row, column=0, columnspan=2)
-
-row += 1
+run_button.grid(row=len(default_values) + len(available_indicators) + 1, column=0, columnspan=2)
 
 find_best_button = tk.Button(root, text="Find Best Combination", command=find_best_combination)
-find_best_button.grid(row=row, column=0, columnspan=2, sticky='we')
+find_best_button.grid(row=len(default_values) + len(available_indicators) + 2, column=0, columnspan=2, sticky='we')
 
-# Start the main loop
 root.mainloop()
