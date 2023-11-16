@@ -3,7 +3,7 @@ from sklearn.model_selection import train_test_split
 import pandas as pd
 
 class RandomForestModel:
-    def __init__(self, n_estimators=100, random_state=42):
+    def __init__(self, n_estimators=500, random_state=42):
         """
         Initialize the Random Forest model.
 
