@@ -132,14 +132,13 @@ def create_entry_with_label(root, label_text, row, default_value=""):
 root = tk.Tk()
 root.title("Trading System Backtester")
 
-default_values = {"Stock Symbol": "AAPL", "Start Date": "2020-01-01", "End Date": "2023-11-16"}
+default_values = {"Stock Symbol": "", "Start Date": "2020-01-01", "End Date": "2023-11-16"}
 stock_symbol_var, stock_symbol_entry = create_entry_with_label(root, "Stock Symbol", 0, default_values["Stock Symbol"])
 start_date_var, start_date_entry = create_entry_with_label(root, "Start Date", 1, default_values["Start Date"])
 end_date_var, end_date_entry = create_entry_with_label(root, "End Date", 2, default_values["End Date"])
 
 # Define default values
-default_values = {"Stock Symbol": "AAPL", "Start Date": "2020-01-01", "End Date": "2023-11-16"}
-entry_vars = {label: create_entry_with_label(root, label, i, default_values[label])[0] for i, label in enumerate(default_values)}
+stock_symbol_var, stock_symbol_entry = create_entry_with_label(root, "Stock Symbol", 0, default_values["Stock Symbol"])
 
 available_indicators = ['SMA_10', 'SMA_30', 'EMA_10', 'EMA_30', 'RSI_14', 'MACD']
 indicator_selections = create_checkboxes(root, available_indicators, len(default_values) + 1)
