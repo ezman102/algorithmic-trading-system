@@ -43,7 +43,7 @@ class Backtester:
         # For simplicity, let's assume each correct prediction yields a fixed profit, each wrong prediction yields a fixed loss
         profit_per_trade = 10
         loss_per_trade = -10
-
+ 
         correct_predictions = sum(1 for pred, actual in zip(predictions, target) if pred == actual)
         incorrect_predictions = sum(1 for pred, actual in zip(predictions, target) if pred != actual)
 
