@@ -15,6 +15,7 @@ from utils.backtester import Backtester
 from sklearn.model_selection import train_test_split
 import matplotlib.pyplot as plt
 from utils.visualize_decision_trees import visualize_decision_trees
+from utils.best import evaluate_feature_combinations_parallel
 
 def main():
     # Set your stock symbol and date range for historical data
@@ -36,23 +37,41 @@ def main():
         {'type': 'MACD', 'short_window': 12, 'long_window': 26, 'signal_window': 9} # Added here
     ]
 
+    
     # Step 2: Feature Engineering
     print("Engineering features...")
     data = add_technical_indicators(data, indicators)
-
-    # Ensure 'target' column is defined
     data = define_target_variable(data, 'target', 1)
 
-    # Ask the user for the desired features
-    print("Available features:", list(data.columns))
-    selected_features = input("Enter the features you want to use, separated by commas (e.g., Open,High,Low,Close): ")
-    selected_features = selected_features.split(',')
+    # Ask the user for the desired operation mode
+    mode = input("Enter 'manual' to select features manually or 'auto' for automatic feature combination evaluation: ")
+    
 
-    # Verify selected features
-    for feature in selected_features:
-        if feature not in data.columns:
-            print(f"Feature {feature} is not available. Exiting...")
-            return
+    if mode == 'manual':
+        print("Available features:", list(data.columns))
+        selected_features = input("Enter the features you want to use, separated by commas: ")
+        selected_features = selected_features.split(',')
+
+        # Verify selected features
+        for feature in selected_features:
+            if feature not in data.columns:
+                print(f"Feature {feature} is not available. Exiting...")
+                return
+
+        features = data[selected_features]
+        features.fillna(features.mean(), inplace=True)
+
+    elif mode == 'auto':
+        print("Evaluating feature combinations (parallel processing)...")
+        all_features = [col for col in data.columns if col != 'target']
+        best_combination, max_profit = evaluate_feature_combinations_parallel(data, all_features)
+        print(f"Best feature combination: {best_combination}")
+        print(f"Maximum Profit/Loss: {max_profit}")
+        selected_features = list(best_combination)
+
+    else:
+        print("Invalid mode selected. Exiting...")
+        return
 
     # Step 3: Preparing Data for Training
     print("Preparing data for training...")
