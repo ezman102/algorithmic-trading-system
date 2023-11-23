@@ -15,7 +15,7 @@ from utils.data_fetcher import fetch_data
 from utils.feature_engineering import add_technical_indicators, define_target_variable
 from models.random_forest_model import RandomForestModel
 from utils.backtester import Backtester
-from utils.visualize_decision_trees import visualize_decision_trees
+from utils.visualization import visualize_decision_trees
 
 class TradingSystemBacktester:
     def __init__(self, root):
