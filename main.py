@@ -14,8 +14,10 @@ from models.random_forest_model import RandomForestModel
 from utils.backtester import Backtester
 from sklearn.model_selection import train_test_split
 import matplotlib.pyplot as plt
-from utils.visualize_decision_trees import visualize_decision_trees
-from utils.best import evaluate_feature_combinations_parallel
+from utils.visualization import visualize_decision_trees
+from utils.evaluate_combinations import evaluate_feature_combinations_parallel
+from sklearn.metrics import accuracy_score, classification_report, confusion_matrix
+
 
 def main():
     # Set your stock symbol and date range for historical data
@@ -90,6 +92,10 @@ def main():
     model = RandomForestModel(n_estimators=100, random_state=42)
     # model = RandomForestModel(n_estimators=100, max_depth=5, random_state=42)
     model.train(X_train, y_train)
+    y_pred = model.predict(X_test)
+    accuracy = accuracy_score(y_test, y_pred)
+    print(f"Accuracy: {accuracy}")
+
 
     # Step 5: Backtesting
     print("Backtesting...")
@@ -99,10 +105,7 @@ def main():
 
     visualize_decision_trees(model.model, features.columns, max_trees=3)
 
-    # num_trees_to_visualize = 3  
-    # for i in range(min(num_trees_to_visualize, len(model.model.estimators_))):
-    #     tree = model.model.estimators_[i]
-    #     visualize_decision_tree(tree, features.columns, ["Down", "Up"], "Stock Price Movement")
+    
 
 if __name__ == "__main__":
     main()
