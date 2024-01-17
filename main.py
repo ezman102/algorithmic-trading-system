@@ -103,9 +103,8 @@ def main():
     profit_loss = backtester.simulate_trading()
     print(f"Simulated Profit/Loss: {profit_loss}")
 
-    visualize_decision_trees(model.model, features.columns, max_trees=3)
+    visualize_decision_trees(model.model, features.columns, max_trees=1)
 
     
-
 if __name__ == "__main__":
     main()
