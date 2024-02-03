@@ -3,7 +3,7 @@
 # For explicit module import when using 'from utils import *'
 __all__ = ['data_fetcher', 'feature_engineering', 'backtester']
 
-# You can also import classes/functions from modules to make them
+# import classes/functions from modules to make them
 # directly accessible from the package level
 
 from .data_fetcher import fetch_data

@@ -1,5 +1,4 @@
-import pandas as pd
-import numpy as np
+
 from data_fetcher import fetch_data
 
 def calculate_moving_average(data, column, window, ma_type='SMA'):

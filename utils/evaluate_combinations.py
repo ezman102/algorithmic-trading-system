@@ -1,15 +1,10 @@
 import pandas as pd
 from itertools import combinations
-from sklearn.model_selection import train_test_split
-from utils.data_fetcher import fetch_data
-from utils.feature_engineering import add_technical_indicators, define_target_variable
 from models.random_forest_model import RandomForestModel
 from utils.backtester import Backtester
-
 from joblib import Parallel, delayed
 import pandas as pd
 from itertools import combinations
-from sklearn.model_selection import train_test_split
 
 
 def evaluate_combination(subset, data):

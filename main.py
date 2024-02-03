@@ -12,11 +12,10 @@ from utils.feature_engineering import add_technical_indicators
 from utils.feature_engineering import define_target_variable
 from models.random_forest_model import RandomForestModel
 from utils.backtester import Backtester
-from sklearn.model_selection import train_test_split
 import matplotlib.pyplot as plt
 from utils.visualization import visualize_decision_trees
 from utils.evaluate_combinations import evaluate_feature_combinations_parallel
-from sklearn.metrics import accuracy_score, classification_report, confusion_matrix
+from sklearn.metrics import accuracy_score
 
 
 def main():
@@ -77,9 +76,6 @@ def main():
 
     # Step 3: Preparing Data for Training
     print("Preparing data for training...")
-
-    # Here, you need to ensure that 'features' only contains the columns you want to use as features
-    # and 'target' is the target variable you've defined previously.
 
     features = data[selected_features]
     target = data['target']  # Ensure this line is present after defining 'data' with 'target'
