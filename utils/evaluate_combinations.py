@@ -15,8 +15,12 @@ from sklearn.model_selection import train_test_split
 def evaluate_combination(subset, data):
     features = data[list(subset)]
     features.fillna(features.mean(), inplace=True)
+    target = data['target']
 
-    X_train, X_test, y_train, y_test = train_test_split(features, data['target'], test_size=0.2, random_state=42)
+    # Split the data in a time-ordered manner
+    split_index = int(len(features) * 0.8)  # for example, 80% for training, 20% for testing
+    X_train, X_test = features.iloc[:split_index], features.iloc[split_index:]
+    y_train, y_test = target.iloc[:split_index], target.iloc[split_index:]
 
     model = RandomForestModel(n_estimators=100, random_state=42)
     model.train(X_train, y_train)

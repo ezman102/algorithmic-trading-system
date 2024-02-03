@@ -67,6 +67,12 @@ if __name__ == "__main__":
     # Define features and target variable
     features = data.drop('target', axis=1)
     target = data['target']
+    # Calculate the index for splitting the data
+    split_index = int(len(data) * 0.8)  # 80% for training, 20% for testing
+
+    # Split the data in a time-ordered manner
+    X_train, X_test = features[:split_index], features[split_index:]
+    y_train, y_test = target[:split_index], target[split_index:]
 
     # Splitting the data into training and testing sets
     X_train, X_test, y_train, y_test = train_test_split(features, target, test_size=0.2, random_state=42)

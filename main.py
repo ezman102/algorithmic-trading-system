@@ -77,15 +77,22 @@ def main():
 
     # Step 3: Preparing Data for Training
     print("Preparing data for training...")
+
+    # Here, you need to ensure that 'features' only contains the columns you want to use as features
+    # and 'target' is the target variable you've defined previously.
+
     features = data[selected_features]
-    target = data['target']
+    target = data['target']  # Ensure this line is present after defining 'data' with 'target'
 
     # Handle NaN values in selected features
-    features.fillna(features.mean(), inplace=True)  # Fill NaN with column mean or choose another method
+    features.fillna(features.mean(), inplace=True)
 
-    data.to_csv('data/enhanced_stock_data.csv', index=False)
+    # Calculate the index for splitting the data
+    split_index = int(len(data) * 0.8)  # 80% for training, 20% for testing
 
-    X_train, X_test, y_train, y_test = train_test_split(features, target, test_size=0.2, random_state=42)
+    # Split the data in a time-ordered manner
+    X_train, X_test = features.iloc[:split_index], features.iloc[split_index:]
+    y_train, y_test = target.iloc[:split_index], target.iloc[split_index:]
 
     # Step 4: Model Training
     print("Training model...")
