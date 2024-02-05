@@ -13,7 +13,7 @@ def evaluate_combination(subset, data):
     target = data['target']
 
     # Split the data in a time-ordered manner
-    split_index = int(len(features) * 0.8)  # for example, 80% for training, 20% for testing
+    split_index = int(len(features) * 0.9)  # for example, 80% for training, 20% for testing
     X_train, X_test = features.iloc[:split_index], features.iloc[split_index:]
     y_train, y_test = target.iloc[:split_index], target.iloc[split_index:]
 

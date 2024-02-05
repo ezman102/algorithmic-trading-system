@@ -20,8 +20,8 @@ from sklearn.metrics import accuracy_score
 
 def main():
     # Set your stock symbol and date range for historical data
-    stock_symbol = 'AAPL'  # Example stock symbol
-    start_date = '2020-01-01'
+    stock_symbol = 'VOO'  # Example stock symbol
+    start_date = '2019-01-01'
     end_date = '2023-01-01'
 
     # Step 1: Fetch Data
@@ -84,7 +84,7 @@ def main():
     features.fillna(features.mean(), inplace=True)
 
     # Calculate the index for splitting the data
-    split_index = int(len(data) * 0.8)  # 80% for training, 20% for testing
+    split_index = int(len(data) * 0.9)  # 80% for training, 20% for testing
 
     # Split the data in a time-ordered manner
     X_train, X_test = features.iloc[:split_index], features.iloc[split_index:]
@@ -109,5 +109,20 @@ def main():
     visualize_decision_trees(model.model, features.columns, max_trees=1)
 
     
+    # Run the backtest simulation
+    cumulative_profit_loss = backtester.simulate_trading()
+
+    # Convert the cumulative profit/loss to a pandas Series
+    profit_loss_series = pd.Series(cumulative_profit_loss, index=X_test.index)
+
+    # Plot the strategy returns as a line chart
+    plt.figure(figsize=(12, 6))
+    plt.plot(profit_loss_series, label='Strategy Cumulative Returns')
+    plt.title('Cumulative Returns Over Time')
+    plt.xlabel('Date')
+    plt.ylabel('Cumulative Returns')
+    plt.legend()
+    plt.show()
+
 if __name__ == "__main__":
     main()

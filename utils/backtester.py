@@ -25,25 +25,19 @@ class Backtester:
     def simulate_trading(self):
         """
         Simulate trading based on the model's predictions.
-
         Returns:
         float: The simulated profit/loss of the strategy.
         """
         # Split data into features and target
         features = self.data.drop('target', axis=1)
         target = self.data['target']
-
-        # Make predictions
         predictions = self.model.predict(features)
-
-        # Define your trading strategy here
+        # Trading strategy here
         # For example, buy (1) if prediction is positive, hold (0) otherwise
         # Calculate profit/loss based on the strategy
-
-        # For simplicity, let's assume each correct prediction yields a fixed profit, each wrong prediction yields a fixed loss
+        # For simplicity, Assume each correct prediction yields a fixed profit, each wrong prediction yields a fixed loss
         profit_per_trade = 10
         loss_per_trade = -10
- 
         correct_predictions = sum(1 for pred, actual in zip(predictions, target) if pred == actual)
         incorrect_predictions = sum(1 for pred, actual in zip(predictions, target) if pred != actual)
 
@@ -51,8 +45,20 @@ class Backtester:
         print(f"Incorrect Predictions: {incorrect_predictions}")
         profit_loss = sum(profit_per_trade if pred == actual else loss_per_trade 
                           for pred, actual in zip(predictions, target))
+        # Instead of printing, store the profit/loss in a list
+        cumulative_profit_loss = []
+        current_profit_loss = 0
 
-        return profit_loss
+        for pred, actual in zip(predictions, target):
+            if pred == actual:
+                current_profit_loss += profit_per_trade
+            else:
+                current_profit_loss += loss_per_trade
+            cumulative_profit_loss.append(current_profit_loss)
+
+        # Return the time series of cumulative profit/loss
+        return cumulative_profit_loss
+        # return profit_loss
 
 # Example usage
 if __name__ == "__main__":
