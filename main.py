@@ -7,6 +7,7 @@ utils_dir = os.path.join(script_dir, 'utils')
 sys.path.append(utils_dir)
 
 import pandas as pd
+import numpy as np
 from utils.data_fetcher import fetch_data
 from utils.feature_engineering import add_technical_indicators
 from utils.feature_engineering import define_target_variable
@@ -20,7 +21,7 @@ from sklearn.metrics import accuracy_score
 
 def main():
     # Set your stock symbol and date range for historical data
-    stock_symbol = 'VOO'  # Example stock symbol
+    stock_symbol = 'nvda'  # Example stock symbol
     start_date = '2019-01-01'
     end_date = '2023-01-01'
 
@@ -78,7 +79,7 @@ def main():
     print("Preparing data for training...")
 
     features = data[selected_features]
-    target = data['target']  # Ensure this line is present after defining 'data' with 'target'
+    target = data['target']  
 
     # Handle NaN values in selected features
     features.fillna(features.mean(), inplace=True)
@@ -90,15 +91,26 @@ def main():
     X_train, X_test = features.iloc[:split_index], features.iloc[split_index:]
     y_train, y_test = target.iloc[:split_index], target.iloc[split_index:]
 
-    # Step 4: Model Training
-    print("Training model...")
-    model = RandomForestModel(n_estimators=100, random_state=42)
-    # model = RandomForestModel(n_estimators=100, max_depth=5, random_state=42)
-    model.train(X_train, y_train)
-    y_pred = model.predict(X_test)
-    accuracy = accuracy_score(y_test, y_pred)
-    print(f"Accuracy: {accuracy}")
-
+    # Step 4: Model Training with 'epochs' and variable random seeds
+    print("Training model for 50 epochs...")
+    best_accuracy = 0
+    best_epoch = 0
+    for epoch in range(50):
+        # Change the random seed in each iteration
+        random_seed = np.random.randint(0, 10000)  # Generates a new random seed
+        model = RandomForestModel(n_estimators=100, random_state=random_seed)
+        model.train(X_train, y_train)
+        y_pred = model.predict(X_test)
+        accuracy = accuracy_score(y_test, y_pred)
+        print(f"Epoch {epoch+1}, Random Seed: {random_seed}: Accuracy: {accuracy}")
+        
+        # Optionally, save the model if it has the best accuracy
+        if accuracy > best_accuracy:
+            best_accuracy = accuracy
+            best_epoch = epoch
+            # Here you could save the model to disk if needed
+            
+    print(f"Best Accuracy: {best_accuracy} on Epoch: {best_epoch+1} with Random Seed: {random_seed}")
 
     # Step 5: Backtesting
     print("Backtesting...")

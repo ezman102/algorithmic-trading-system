@@ -40,11 +40,9 @@ class Backtester:
         loss_per_trade = -10
         correct_predictions = sum(1 for pred, actual in zip(predictions, target) if pred == actual)
         incorrect_predictions = sum(1 for pred, actual in zip(predictions, target) if pred != actual)
-
         print(f"Correct Predictions: {correct_predictions}")
         print(f"Incorrect Predictions: {incorrect_predictions}")
-        profit_loss = sum(profit_per_trade if pred == actual else loss_per_trade 
-                          for pred, actual in zip(predictions, target))
+
         # Instead of printing, store the profit/loss in a list
         cumulative_profit_loss = []
         current_profit_loss = 0
@@ -67,7 +65,7 @@ if __name__ == "__main__":
 
     # Print column names for debugging
     print("Column names in the dataset:", data.columns)
-
+    
     # Splitting the data into training and testing sets
     X_train, X_test, y_train, y_test = train_test_split(data.drop('target', axis=1), data['target'], test_size=0.2, random_state=42)
 
