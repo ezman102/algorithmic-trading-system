@@ -61,14 +61,14 @@ def main():
         {'name': 'RSI_14', 'type': 'RSI', 'window': 14},
         {'name': 'MACD', 'type': 'MACD', 'short_window': 12, 'long_window': 26, 'signal_window': 9},
         {'name': 'MACD_Signal', 'type': 'MACD', 'short_window': 12, 'long_window': 26, 'signal_window': 9},
-        {'name': 'MACD_Histogram', 'type': 'MACD', 'short_window': 12, 'long_window': 26, 'signal_window': 9}
-        # {'name': 'Open', 'type': 'OHLCV'},
-        # {'name': 'High', 'type': 'OHLCV'},
-        # {'name': 'Low', 'type': 'OHLCV'},
-        # {'name': 'Adj Close', 'type': 'OHLCV'},
-        # {'name': 'Volume', 'type': 'OHLCV'}
+        {'name': 'MACD_Histogram', 'type': 'MACD', 'short_window': 12, 'long_window': 26, 'signal_window': 9},
+        {'name': 'BB_Upper', 'type': 'BB', 'window': 20},  # Bollinger Bands
+        {'name': 'BB_Lower', 'type': 'BB', 'window': 20},  # Bollinger Bands
+        {'name': 'ATR', 'type': 'ATR', 'window': 14},  # Average True Range
+        {'name': 'Stochastic_Oscillator', 'type': 'Stochastic', 'window': 14},
+        {'name': 'OBV', 'type': 'OBV'}  # On-Balance Volume doesn't need a window
     ]
-    data = add_technical_indicators(data, indicators)
+    data = add_technical_indicators(data, indicators, drop_original=False)
 
     print("Defining target variable...")
     # Modify the definition according to your needs

@@ -14,6 +14,7 @@ from sklearn.impute import SimpleImputer
 import joblib
 from utils.data_fetcher import fetch_data
 from utils.feature_engineering import add_technical_indicators, define_target_variable
+
 import matplotlib.pyplot as plt
 from sklearn.metrics import confusion_matrix
 import seaborn as sns
@@ -37,9 +38,14 @@ def main():
         # {'name': 'EMA_30', 'type': 'EMA', 'window': 30},
         # {'name': 'RSI_14', 'type': 'RSI', 'window': 14},
         # {'name': 'MACD', 'type': 'MACD', 'short_window': 12, 'long_window': 26, 'signal_window': 9},
-        {'name': 'MACD_Signal', 'type': 'MACD', 'short_window': 12, 'long_window': 26, 'signal_window': 9},
-        # {'name': 'MACD_Histogram', 'type': 'MACD', 'short_window': 12, 'long_window': 26, 'signal_window': 9}
-    ])
+        # {'name': 'MACD_Signal', 'type': 'MACD', 'short_window': 12, 'long_window': 26, 'signal_window': 9},
+        {'name': 'MACD_Histogram', 'type': 'MACD', 'short_window': 12, 'long_window': 26, 'signal_window': 9},
+        # {'name': 'BB_Upper', 'type': 'BB', 'window': 20},  # Bollinger Bands
+        # {'name': 'BB_Lower', 'type': 'BB', 'window': 20},  # Bollinger Bands
+        {'name': 'ATR', 'type': 'ATR', 'window': 14},  # Average True Range
+        # {'name': 'Stochastic_Oscillator', 'type': 'Stochastic', 'window': 14},
+        # {'name': 'OBV', 'type': 'OBV'}  # On-Balance Volume doesn't need a window
+    ],drop_original=True)
     original_data = data.copy()
     mode = input("Enter 'classification' or 'regression': ").lower()
 
@@ -85,6 +91,7 @@ def main():
         accuracy = accuracy_score(y_test, predictions)
         print(f"Classification Accuracy: {accuracy}")
         print("Classification Report:\n", classification_report(y_test, predictions))
+        print("Features used for training:", data.columns)
         next_day_prediction = best_model.predict(latest_data)
         print(f"Predicted class for the next day: {next_day_prediction[0]}")
         # Save the model with accuracy in the filename
