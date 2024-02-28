@@ -2,16 +2,26 @@ from sklearn.ensemble import RandomForestClassifier
 from sklearn.model_selection import train_test_split
 import pandas as pd
 
+
 class RandomForestModel:
-    def __init__(self, n_estimators=600, random_state=42):
+    def __init__(self, n_estimators=200, max_depth=None, min_samples_leaf=1, min_samples_split=2, random_state=42):
         """
-        Initialize the Random Forest model.
+        Initialize the Random Forest model with the ability to specify parameters.
 
         Parameters:
         n_estimators (int): The number of trees in the forest.
-        random_state (int): A seed used by the random number generator.
+        max_depth (int): The maximum depth of the tree. If None, then nodes are expanded until all leaves are pure or until all leaves contain less than min_samples_split samples.
+        min_samples_leaf (int): The minimum number of samples required to be at a leaf node.
+        min_samples_split (int): The minimum number of samples required to split an internal node.
+        random_state (int): A seed used by the random number generator for reproducibility.
         """
-        self.model = RandomForestClassifier(n_estimators=n_estimators, random_state=random_state)
+        self.model = RandomForestClassifier(
+            n_estimators=n_estimators,
+            max_depth=max_depth,
+            min_samples_leaf=min_samples_leaf,
+            min_samples_split=min_samples_split,
+            random_state=random_state
+        )
 
     def train(self, X, y):
         """
@@ -51,6 +61,7 @@ class RandomForestModel:
         float: The accuracy of the model.
         """
         return self.model.score(X, y)
+
 
 # Example usage
 

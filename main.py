@@ -8,6 +8,7 @@ sys.path.append(utils_dir)
 
 import pandas as pd
 import numpy as np
+import joblib
 from utils.data_fetcher import fetch_data
 from utils.feature_engineering import add_technical_indicators
 from utils.feature_engineering import define_target_variable
@@ -22,8 +23,11 @@ from sklearn.metrics import accuracy_score
 def main():
     # Set your stock symbol and date range for historical data
     stock_symbol = 'nvda'  # Example stock symbol
-    start_date = '2019-01-01'
+    start_date = '2018-01-01'
     end_date = '2023-01-01'
+    
+    # start_date = '2019-01-01'
+    # end_date = '2024-02-28'
 
     # Step 1: Fetch Data
     print("Fetching data...")
@@ -98,7 +102,7 @@ def main():
     for epoch in range(50):
         # Change the random seed in each iteration
         random_seed = np.random.randint(0, 10000)  # Generates a new random seed
-        model = RandomForestModel(n_estimators=100, random_state=random_seed)
+        model = RandomForestModel(n_estimators=200, max_depth=20, min_samples_leaf=2, min_samples_split=5, random_state=random_seed)
         model.train(X_train, y_train)
         y_pred = model.predict(X_test)
         accuracy = accuracy_score(y_test, y_pred)
@@ -108,7 +112,14 @@ def main():
         if accuracy > best_accuracy:
             best_accuracy = accuracy
             best_epoch = epoch
-            # Here you could save the model to disk if needed
+            best_model = model
+            
+            # Save the model to disk
+            model_filename = f'best_random_forest_model_epoch_{epoch+1}_accuracy_{best_accuracy:.4f}.joblib'
+            joblib.dump(best_model, os.path.join(script_dir, model_filename))
+            print(f"Model saved to {model_filename}")           
+
+            # loaded_model = joblib.load('path_to_your_saved_model.joblib')
             
     print(f"Best Accuracy: {best_accuracy} on Epoch: {best_epoch+1} with Random Seed: {random_seed}")
 
