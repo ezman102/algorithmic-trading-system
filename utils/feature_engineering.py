@@ -1,5 +1,4 @@
-
-from data_fetcher import fetch_data
+#feature_engineering.py
 
 def calculate_moving_average(data, column, window, ma_type='SMA'):
     if ma_type == 'SMA':
@@ -17,40 +16,54 @@ def calculate_rsi(data, column, window):
 def calculate_macd(data, column, short_window, long_window, signal_window):
     short_ema = calculate_moving_average(data, column, short_window, 'EMA')
     long_ema = calculate_moving_average(data, column, long_window, 'EMA')
-    data['MACD'] = short_ema - long_ema
-    data['MACD_Signal'] = calculate_moving_average(data, 'MACD', signal_window, 'EMA')
-    data['MACD_Histogram'] = data['MACD'] - data['MACD_Signal']
-    return data
+    macd = short_ema - long_ema
+    macd_signal = macd.ewm(span=signal_window, adjust=False).mean()
+    macd_histogram = macd - macd_signal
+    return macd, macd_signal, macd_histogram
 
-def add_technical_indicators(data, indicators):
+def add_technical_indicators(data, indicators, drop_original=True):
     for indicator in indicators:
-        if indicator['type'] in ['SMA', 'EMA']:
+        if indicator['type'] == 'SMA' or indicator['type'] == 'EMA':
             data[indicator['name']] = calculate_moving_average(data, 'Close', indicator['window'], indicator['type'])
         elif indicator['type'] == 'RSI':
             data[indicator['name']] = calculate_rsi(data, 'Close', indicator['window'])
         elif indicator['type'] == 'MACD':
-            data = calculate_macd(data, 'Close', indicator['short_window'], indicator['long_window'], indicator['signal_window'])
+            # Ensure this only runs if the indicator type is MACD and we are looking for MACD related calculations
+            macd, macd_signal, macd_histogram = calculate_macd(data, 'Close', indicator['short_window'], indicator['long_window'], indicator['signal_window'])
+            data['MACD'] = macd
+            data['MACD_Signal'] = macd_signal
+            data['MACD_Histogram'] = macd_histogram
+    
+    if drop_original:
+        # Drop the original OHLCV columns
+        data.drop(columns=['Open', 'High', 'Low', 'Adj Close', 'Volume'], inplace=True, errors='ignore')
+    
     return data
 
-def define_target_variable(data, target_column, shift_period):
-    data[target_column] = (data['Close'].shift(-shift_period) > data['Close']).astype(int)
-    return data.dropna()
+def define_target_variable(data, target_column, shift_period, is_regression=False):
+    """
+    Defines the target variable for the dataset.
 
-# Example usage
-if __name__ == "__main__":
-    stock_symbol = 'AAPL'
-    start_date = '2020-01-01'
-    end_date = '2023-01-01'
-    data = fetch_data(stock_symbol, start_date, end_date)
+    Parameters:
+    - data: The DataFrame containing your data.
+    - target_column: The name of the new target column to be created.
+    - shift_period: The period by which to shift the 'Close' column to create the target.
+    - is_regression: A boolean indicating whether the target variable is for regression (True) or classification (False).
 
-    indicators = [
-        {'name': 'SMA_10', 'type': 'SMA', 'window': 10},
-        {'name': 'EMA_10', 'type': 'EMA', 'window': 10},
-        {'name': 'RSI_14', 'type': 'RSI', 'window': 14},
-        {'type': 'MACD', 'short_window': 12, 'long_window': 26, 'signal_window': 9}
-    ]
+    Returns:
+    - The DataFrame with the new target variable added.
+    """
+    if is_regression:
+        # For regression, predict the actual next day's 'Close' price or another continuous value
+        data[target_column] = data['Close'].shift(-shift_period)
+    else:
+        # For classification, predict whether the next day's 'Close' price will be higher (1) or not (0)
+        data[target_column] = (data['Close'].shift(-shift_period) > data['Close']).astype(int)
 
-    enhanced_data = add_technical_indicators(data, indicators)
-    enhanced_data = define_target_variable(enhanced_data, 'target', 1)
-    print(enhanced_data.head())
+    # Drop rows with NaN values that result from shifting
+    data.dropna(subset=[target_column], inplace=True)
+    return data
+
+
+
 

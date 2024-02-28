@@ -12,7 +12,7 @@ import joblib
 from utils.data_fetcher import fetch_data
 from utils.feature_engineering import add_technical_indicators
 from utils.feature_engineering import define_target_variable
-from models.random_forest_model import RandomForestModel
+from models.classification_model import RandomForestModel
 from utils.backtester import Backtester
 import matplotlib.pyplot as plt
 from utils.visualization import visualize_decision_trees

@@ -1,3 +1,4 @@
+# data_fetcher.py
 import yfinance as yf
 import pandas as pd
 
@@ -18,12 +19,3 @@ def fetch_data(stock_symbol, start_date, end_date):
     except Exception as e:
         print(f"An error occurred while fetching data: {e}")
         return pd.DataFrame()
-
-# Example usage
-if __name__ == "__main__":
-    stock_symbol = 'AAPL'  
-    start_date = '2020-01-01'
-    end_date = '2023-01-01'
-
-    data = fetch_data(stock_symbol, start_date, end_date)
-    print(data.head())  # Print the first few rows of the fetched data

@@ -13,7 +13,7 @@ sys.path.append(utils_dir)
 
 from utils.data_fetcher import fetch_data
 from utils.feature_engineering import add_technical_indicators, define_target_variable
-from models.random_forest_model import RandomForestModel
+from models.classification_model import RandomForestModel
 from utils.backtester import Backtester
 from utils.visualization import visualize_decision_trees
 

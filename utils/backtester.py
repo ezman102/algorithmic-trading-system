@@ -7,8 +7,7 @@ parent_dir = os.path.dirname(script_dir)  # Get the parent directory
 sys.path.append(parent_dir)
 
 import pandas as pd
-from models.random_forest_model import RandomForestModel
-from sklearn.model_selection import train_test_split
+from models.classification_model import ClassificationModel
 
 class Backtester:
     def __init__(self, data, model):
@@ -58,24 +57,3 @@ class Backtester:
         return cumulative_profit_loss
         # return profit_loss
 
-# Example usage
-if __name__ == "__main__":
-    # Load the data
-    data = pd.read_csv("data/enhanced_stock_data.csv")
-
-    # Print column names for debugging
-    print("Column names in the dataset:", data.columns)
-    
-    # Splitting the data into training and testing sets
-    X_train, X_test, y_train, y_test = train_test_split(data.drop('target', axis=1), data['target'], test_size=0.2, random_state=42)
-
-    # Initialize and train the model
-    model = RandomForestModel()
-    model.train(X_train, y_train)
-
-    # Initialize Backtester with the test data and trained model
-    backtester = Backtester(X_test.join(y_test), model)
-    
-    # Run the simulation
-    profit_loss = backtester.simulate_trading()
-    print(f"Simulated Profit/Loss: {profit_loss}")
