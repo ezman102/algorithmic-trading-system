@@ -45,7 +45,7 @@ def evaluate_feature_combinations_parallel(data, all_features, max_features=5):
     return best_combination, max_profit
 
 def main():
-    stock_symbol = 'NVDA'
+    stock_symbol = 'KO'
     start_date = '2023-01-01'
     end_date = '2024-02-28'
 

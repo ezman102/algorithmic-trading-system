@@ -47,7 +47,18 @@ def main():
         # {'name': 'OBV', 'type': 'OBV'}  # On-Balance Volume doesn't need a window
     ],drop_original=True)
     original_data = data.copy()
-    mode = input("Enter 'classification' or 'regression': ").lower()
+    print("Select mode:")
+    print("1. Classification")
+    print("2. Regression")
+    choice = input("Enter choice (1/2): ")
+    
+    if choice == '1':
+        mode = 'classification'
+    elif choice == '2':
+        mode = 'regression'
+    else:
+        print("Invalid choice. Exiting...")
+        sys.exit(1)
 
     if mode == 'classification':
         model = RandomForestClassifier(random_state=42)
@@ -61,6 +72,7 @@ def main():
         print("Invalid mode selected. Exiting...")
         return
     
+    # data.drop(columns=['Close'], inplace=True, errors='ignore')
 
     features = data.drop([target_column], axis=1)
     target = data[target_column]

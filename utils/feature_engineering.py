@@ -80,6 +80,7 @@ def add_technical_indicators(data, indicators, drop_original=True):
     if drop_original:
         # Drop the original OHLCV columns
         data.drop(columns=['Open', 'High', 'Low', 'Adj Close', 'Volume','MACD','MACD_Histogram'], inplace=True, errors='ignore')
+        # data.drop(columns=['Open', 'High', 'Low', 'Adj Close', 'Volume','MACD_Histogram'], inplace=True, errors='ignore')
     
     return data
 
