@@ -24,12 +24,12 @@ def visualize_classification_results(y_test, predictions):
     plt.ylabel("Actual")
     plt.show()
 
-def visualize_regression_results(y_test, predictions):
-    plt.figure(figsize=(10, 5))
-    plt.scatter(range(len(y_test)), y_test, color='blue', label='Actual Values')
-    plt.scatter(range(len(predictions)), predictions, color='red', label='Predicted Values')
+def visualize_regression_results(dates, y_test, predictions):
+    plt.figure(figsize=(15, 7))
+    plt.plot(dates, y_test, color='blue', label='Actual Values')
+    plt.plot(dates, predictions, color='red', linestyle='--', label='Predicted Values')
     plt.title('Actual vs Predicted Values for Regression')
-    plt.xlabel('Data Point Index')
-    plt.ylabel('Target Value')
+    plt.xlabel('Date')
+    plt.ylabel('Values')
     plt.legend()
     plt.show()

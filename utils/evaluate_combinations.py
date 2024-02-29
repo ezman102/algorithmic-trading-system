@@ -9,7 +9,7 @@ sys.path.append(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
 from models.classification_model import ClassificationModel
 from utils.backtester import Backtester
 from utils.data_fetcher import fetch_data
-from utils.feature_engineering import add_technical_indicators, define_target_variable
+from utils.feature_engineering import add_technical_indicators
 
 def evaluate_combination(subset, data):
     """
@@ -69,7 +69,7 @@ def main():
         {'name': 'OBV', 'type': 'OBV'}  # On-Balance Volume doesn't need a window
     ]
     data = add_technical_indicators(data, indicators, drop_original=False)
-
+    print(data)
     print("Defining target variable...")
     # Modify the definition according to your needs
     data['target'] = (data['Close'].shift(-1) > data['Close']).astype(int)  # Example for a binary classification target

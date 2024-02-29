@@ -6,9 +6,6 @@ script_dir = os.path.dirname(__file__)  # Get the directory where the script is 
 parent_dir = os.path.dirname(script_dir)  # Get the parent directory
 sys.path.append(parent_dir)
 
-import pandas as pd
-from models.classification_model import ClassificationModel
-
 class Backtester:
     def __init__(self, data, model):
         """

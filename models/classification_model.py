@@ -1,8 +1,5 @@
 #classification_model.py
 from sklearn.ensemble import RandomForestClassifier
-from sklearn.model_selection import train_test_split
-import pandas as pd
-
 
 class ClassificationModel:
     def __init__(self, n_estimators=200, max_depth=None, min_samples_leaf=1, min_samples_split=2, random_state=42):

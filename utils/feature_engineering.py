@@ -57,7 +57,7 @@ def calculate_macd(data, column, short_window, long_window, signal_window):
     macd_histogram = macd - macd_signal
     return macd, macd_signal, macd_histogram
 
-def add_technical_indicators(data, indicators, drop_original=True):
+def add_technical_indicators(data, indicators, drop_original=False):
     for indicator in indicators:
         if indicator['type'] == 'SMA' or indicator['type'] == 'EMA':
             data[indicator['name']] = calculate_moving_average(data, 'Close', indicator['window'], indicator['type'])

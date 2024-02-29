@@ -1,6 +1,5 @@
 import pandas as pd
 import numpy as np
-import matplotlib.pyplot as plt
 import joblib
 from sklearn.model_selection import train_test_split, GridSearchCV
 from sklearn.metrics import accuracy_score, classification_report
@@ -15,10 +14,8 @@ sys.path.append(utils_dir)
 # Assuming these are your custom modules, adjust the import paths as necessary
 from utils.data_fetcher import fetch_data
 from utils.feature_engineering import add_technical_indicators, define_target_variable
-from models.classification_model import RandomForestModel
+from models.classification_model import ClassificationModel
 from utils.backtester import Backtester
-from utils.visualization import visualize_decision_trees
-from utils.evaluate_combinations import evaluate_feature_combinations_parallel
 
 def main():
     # Fetch and preprocess data
@@ -65,7 +62,7 @@ def main():
     best_accuracy, best_epoch, best_model = 0, 0, None
     for epoch in range(50):
         random_seed = np.random.randint(0, 10000)
-        model = RandomForestModel(n_estimators=500, random_state=random_seed)  # Assuming this is a wrapper around sklearn's RF
+        model = ClassificationModel(n_estimators=500, random_state=random_seed)  # Assuming this is a wrapper around sklearn's RF
         model.train(X_train, y_train)
         y_pred = model.predict(X_test)
         accuracy = accuracy_score(y_test, y_pred)

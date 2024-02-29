@@ -5,23 +5,22 @@ script_dir = os.path.dirname(os.path.abspath(__file__))
 utils_dir = os.path.join(script_dir, 'utils')
 sys.path.append(utils_dir)
 
-import pandas as pd
-import numpy as np
+# model_classification = joblib.load('C:/Users/User/Desktop/algorithmic-trading-system/best_random_forest_model_accuracy_0.6207.joblib')
+# model_regression = joblib.load('C:/Users/User/Desktop/algorithmic-trading-system/best_random_forest_regression_model.joblib')
+
 from sklearn.model_selection import train_test_split, GridSearchCV
 from sklearn.ensemble import RandomForestClassifier, RandomForestRegressor
 from sklearn.metrics import accuracy_score, mean_squared_error, classification_report
 from sklearn.impute import SimpleImputer
 import joblib
+import pandas as pd
 from utils.data_fetcher import fetch_data
 from utils.feature_engineering import add_technical_indicators, define_target_variable
-
-import matplotlib.pyplot as plt
-from sklearn.metrics import confusion_matrix
-import seaborn as sns
 from utils.visualization import visualize_decision_trees, visualize_classification_results, visualize_regression_results
+import matplotlib.pyplot as plt
 
 def preprocess_data(features):
-    imputer = SimpleImputer(strategy='mean')  # Or any other strategy you prefer
+    imputer = SimpleImputer(strategy='mean')  # Or any other strategy
     return imputer.fit_transform(features)
 
 def main():
@@ -31,6 +30,13 @@ def main():
 
     print("Fetching data...")
     data = fetch_data(stock_symbol, start_date, end_date)
+
+    if isinstance(data.index, pd.DatetimeIndex):
+        dates = data.index
+    else:
+        # If the index is not a DatetimeIndex, you will need to convert it
+        dates = pd.to_datetime(data.index)
+
     data = add_technical_indicators(data, [
         # {'name': 'SMA_10', 'type': 'SMA', 'window': 10},
         # {'name': 'SMA_30', 'type': 'SMA', 'window': 30},
@@ -40,11 +46,11 @@ def main():
         # {'name': 'MACD', 'type': 'MACD', 'short_window': 12, 'long_window': 26, 'signal_window': 9},
         # {'name': 'MACD_Signal', 'type': 'MACD', 'short_window': 12, 'long_window': 26, 'signal_window': 9},
         {'name': 'MACD_Histogram', 'type': 'MACD', 'short_window': 12, 'long_window': 26, 'signal_window': 9},
-        # {'name': 'BB_Upper', 'type': 'BB', 'window': 20},  # Bollinger Bands
-        # {'name': 'BB_Lower', 'type': 'BB', 'window': 20},  # Bollinger Bands
+        # {'name': 'BB_Upper', 'type': 'BB', 'window': 20}, 
+        # {'name': 'BB_Lower', 'type': 'BB', 'window': 20}, 
         {'name': 'ATR', 'type': 'ATR', 'window': 14},  # Average True Range
         # {'name': 'Stochastic_Oscillator', 'type': 'Stochastic', 'window': 14},
-        # {'name': 'OBV', 'type': 'OBV'}  # On-Balance Volume doesn't need a window
+        # {'name': 'OBV', 'type': 'OBV'}  
     ],drop_original=True)
     original_data = data.copy()
     print("Select mode:")
@@ -77,10 +83,9 @@ def main():
     features = data.drop([target_column], axis=1)
     target = data[target_column]
 
-    # Preprocess the data to fill NaN values
     preprocessed_features = preprocess_data(features)
 
-    X_train, X_test, y_train, y_test = train_test_split(preprocessed_features, target, test_size=0.2, random_state=42)
+    X_train, X_test, y_train, y_test = train_test_split(preprocessed_features, target, test_size=0.1, random_state=42)
     
 
     param_grid = {
@@ -98,6 +103,7 @@ def main():
 
     predictions = best_model.predict(X_test)
     latest_data = original_data.iloc[-1:][features.columns].fillna(method='ffill').fillna(method='bfill').values
+
     if mode == 'classification':
         # Calculate accuracy
         accuracy = accuracy_score(y_test, predictions)
@@ -120,12 +126,20 @@ def main():
         print(f"Regression MSE: {mse}")
         next_day_prediction = best_model.predict(latest_data)
         print(f"Predicted value for the next day: {next_day_prediction[0]}")
+        predictions_with_dates = pd.DataFrame({
+        'Date': dates[-len(predictions):].tolist(),  # Convert to list if required
+        'Actual': y_test.tolist(),  # Convert to list if required
         
+        'Prediction': predictions.tolist()  # Convert to list if required
+    })
+        print(y_test)
+        print(predictions)
+
         # Save the model without accuracy since it's a regression model
         model_filename = 'best_random_forest_regression_model.joblib'
         joblib.dump(best_model, model_filename)
         print(f"Model saved as {model_filename}")
-        visualize_regression_results(y_test, predictions)
+        visualize_regression_results(predictions_with_dates['Date'], predictions_with_dates['Actual'], predictions_with_dates['Prediction'])
         visualize_decision_trees(best_model, features.columns, max_trees=1)
 
 
