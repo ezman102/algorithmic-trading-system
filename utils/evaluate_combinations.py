@@ -3,33 +3,25 @@ import os
 import pandas as pd
 from itertools import combinations
 from joblib import Parallel, delayed
-
 sys.path.append(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
-
 from models.classification_model import ClassificationModel
 from utils.backtester import Backtester
 from utils.data_fetcher import fetch_data
 from utils.feature_engineering import add_technical_indicators
 
 def evaluate_combination(subset, data):
-    """
-    Evaluate a specific combination of features for its performance.
-    """
-    features = data[list(subset)]
-    features.fillna(features.mean(), inplace=True)
-    target = data['target']  # Ensure this is the correct name for your target variable
+
+    features = data[list(subset)].fillna(data.mean())
+    target = data['target']
 
     split_index = int(len(features) * 0.9)
     X_train, X_test = features.iloc[:split_index], features.iloc[split_index:]
     y_train, y_test = target.iloc[:split_index], target.iloc[split_index:]
 
-    model = ClassificationModel(n_estimators=200, max_depth=None, min_samples_leaf=1, min_samples_split=2, random_state=42)
+    model = ClassificationModel(n_estimators=300, max_depth=None, random_state=42)
     model.train(X_train, y_train)
-
     backtester = Backtester(pd.concat([X_test, y_test], axis=1), model)
-    profit_loss = backtester.simulate_trading()
 
-    return subset, profit_loss
 
 def evaluate_feature_combinations_parallel(data, all_features, max_features=5):
     """
@@ -45,9 +37,9 @@ def evaluate_feature_combinations_parallel(data, all_features, max_features=5):
     return best_combination, max_profit
 
 def main():
-    stock_symbol = 'KO'
+    stock_symbol = 'NVDA'
     start_date = '2023-01-01'
-    end_date = '2024-02-28'
+    end_date = '2024-03-11'
 
     print("Fetching data...")
     data = fetch_data(stock_symbol, start_date, end_date)

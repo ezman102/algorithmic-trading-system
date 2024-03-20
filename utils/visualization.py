@@ -4,14 +4,14 @@ import matplotlib.pyplot as plt
 from sklearn.tree import plot_tree
 from sklearn.metrics import confusion_matrix
 import seaborn as sns
+import pandas as pd 
 
 def visualize_decision_trees(random_forest_model, feature_names, max_trees=3):
-
     num_trees = min(max_trees, len(random_forest_model.estimators_))
 
     for i in range(num_trees):
         tree = random_forest_model.estimators_[i]
-        plt.figure(figsize=(100, 50))
+        plt.figure(figsize=(20, 8))  # Adjust the figure size here
         plot_tree(tree, filled=True, feature_names=feature_names, rounded=True)
         plt.title(f"Decision Tree {i}")
         plt.show()
@@ -25,11 +25,25 @@ def visualize_classification_results(y_test, predictions):
     plt.show()
 
 def visualize_regression_results(dates, y_test, predictions):
+    dates = pd.to_datetime(dates)
+    
+    if isinstance(dates, pd.DatetimeIndex):
+        data_to_plot = pd.DataFrame({'Actual': y_test, 'Prediction': predictions}).reset_index()
+        data_to_plot.rename(columns={'index': 'Date'}, inplace=True)
+    else:
+        data_to_plot = pd.DataFrame({'Date': dates, 'Actual': y_test, 'Prediction': predictions})
+    
+    data_to_plot.sort_values(by='Date', inplace=True)
+    
     plt.figure(figsize=(15, 7))
-    plt.plot(dates, y_test, color='blue', label='Actual Values')
-    plt.plot(dates, predictions, color='red', linestyle='--', label='Predicted Values')
+    plt.plot(data_to_plot['Date'], data_to_plot['Actual'], color='blue', label='Actual Values')
+    plt.plot(data_to_plot['Date'], data_to_plot['Prediction'], color='red', linestyle='--', label='Predicted Values')
     plt.title('Actual vs Predicted Values for Regression')
     plt.xlabel('Date')
     plt.ylabel('Values')
     plt.legend()
+    plt.xticks(rotation=45)  
+    plt.tight_layout() 
     plt.show()
+
+

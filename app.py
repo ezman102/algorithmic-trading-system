@@ -18,7 +18,7 @@ mode = st.sidebar.radio("Select Mode:", ('Classification', 'Regression'))
 
 stock_symbol = st.sidebar.text_input('Stock Symbol', value='NVDA')
 start_date = st.sidebar.date_input('Start Date', date(2023, 1, 1))
-end_date = st.sidebar.date_input('End Date', date(2024, 2, 28))
+end_date = st.sidebar.date_input('End Date', date(2024, 3, 13))
 
 if st.sidebar.button('Predict'):
     data = fetch_data(stock_symbol, start_date.strftime('%Y-%m-%d'), end_date.strftime('%Y-%m-%d'))
@@ -32,22 +32,29 @@ if st.sidebar.button('Predict'):
         # {'name': 'RSI_14', 'type': 'RSI', 'window': 14},
         # {'name': 'MACD', 'type': 'MACD', 'short_window': 12, 'long_window': 26, 'signal_window': 9},
         # {'name': 'MACD_Signal', 'type': 'MACD', 'short_window': 12, 'long_window': 26, 'signal_window': 9},
-        {'name': 'MACD_Histogram', 'type': 'MACD', 'short_window': 12, 'long_window': 26, 'signal_window': 9},
+        #{'name': 'MACD_Histogram', 'type': 'MACD', 'short_window': 12, 'long_window': 26, 'signal_window': 9},
         # {'name': 'BB_Upper', 'type': 'BB', 'window': 20}, 
         # {'name': 'BB_Lower', 'type': 'BB', 'window': 20}, 
         {'name': 'ATR', 'type': 'ATR', 'window': 14},  # Average True Range
-        # {'name': 'Stochastic_Oscillator', 'type': 'Stochastic', 'window': 14},
+        {'name': 'Stochastic_Oscillator', 'type': 'Stochastic', 'window': 14},
         # {'name': 'OBV', 'type': 'OBV'}  
     ],drop_original=True)
         data_processed = preprocess_data(data_processed)
         
         if mode == 'Classification':
-            print(data_processed.shape)
             prediction = model_classification.predict(data_processed)
-            st.write('Classification Prediction:', prediction)
+            # Assuming you have a date index or a date column in your original data
+            prediction_series = pd.Series(prediction, index=data.index)
+            st.write('Classification Prediction:', prediction_series)
+
+            # If you want to display a count plot or bar plot of predictions
+            st.bar_chart(prediction_series.value_counts())
+            
         elif mode == 'Regression':
             prediction = model_regression.predict(data_processed)
-            st.write('Regression Prediction:', prediction)
-            st.line_chart(prediction) 
+
+            prediction_series = pd.Series(prediction, index=data.index)
+            st.write('Regression Prediction:', prediction_series)
+            st.line_chart(prediction_series)  # This will plot the predictions with dates on the x-axis
     else:
         st.write("No data available for the given inputs.")
