@@ -2,13 +2,13 @@
 import yfinance as yf
 import pandas as pd
 
-def fetch_data(stock_symbol, start_date, end_date):
+def fetch_data(stock_symbol, start_date, end_date, interval='1d'):
     """
     Fetch historical data for a given stock symbol from Yahoo Finance.
     """
     try:
         # Download stock data from Yahoo Finance
-        stock_data = yf.download(stock_symbol, start=start_date, end=end_date)
+        stock_data = yf.download(stock_symbol, start=start_date, end=end_date, interval=interval)
         # Check if data was successfully fetched
         if stock_data.empty:
             raise ValueError("No data fetched for the given symbol and date range.")
@@ -23,8 +23,8 @@ def fetch_data(stock_symbol, start_date, end_date):
 if __name__ == "__main__":
 
     default_stock_symbol = "AAPL"
-    default_start_date = "2023-01-01"
-    default_end_date = "2023-12-31"
+    default_start_date = "2024-3-16"
+    default_end_date = "2024-3-21"
 
     stock_symbol = input(f"Enter stock symbol (default is {default_stock_symbol}): ") or default_stock_symbol
     start_date = input(f"Enter start date (YYYY-MM-DD, default is {default_start_date}): ") or default_start_date

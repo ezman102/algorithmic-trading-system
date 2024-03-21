@@ -20,8 +20,8 @@ from utils.data_fetcher import fetch_data
 from utils.feature_engineering import add_technical_indicators, define_target_variable
 from utils.visualization import visualize_decision_trees, visualize_classification_results, visualize_regression_results
 from utils.dynamic_cv_strategy import dynamic_cv_strategy
-from sklearn.metrics import mean_squared_error, mean_absolute_error
 import matplotlib.pyplot as plt
+from sklearn.metrics import mean_squared_error, mean_absolute_error
 from itertools import chain, combinations
 
 def preprocess_data(features):
@@ -33,12 +33,11 @@ def all_subsets(ss):
 
 def main():
     stock_symbol = 'MSFT'
-    start_date = '2024-02-16'
+    start_date = '2023-03-20'
     end_date = '2024-03-20'
-    interval='1d'
 
     print("Fetching data...")
-    data = fetch_data(stock_symbol, start_date, end_date, interval='1d')
+    data = fetch_data(stock_symbol, start_date, end_date)
 
     if isinstance(data.index, pd.DatetimeIndex):
         dates = data.index
@@ -59,6 +58,7 @@ def main():
         '11': ('ATR', {'name': 'ATR', 'type': 'ATR', 'window': 14}),
         '12': ('Stochastic_Oscillator', {'name': 'Stochastic_Oscillator', 'type': 'Stochastic', 'window': 14}),
         '13': ('OBV', {'name': 'OBV', 'type': 'OBV'}),
+        # Add more indicators as needed
     }
 
     print("Available indicators:")
@@ -154,38 +154,37 @@ def main():
 
 
     if mode == 'classification':
-                # Create all possible combinations of features
-                all_features = list(features.columns)
-                all_combinations = list(all_subsets(all_features))
+            # Create all possible combinations of features
+            all_features = list(features.columns)
+            all_combinations = list(all_subsets(all_features))
 
-                best_accuracy = 0
-                best_combination = None
-                best_model = None
+            best_accuracy = 0
+            best_combination = None
+            best_model = None
 
-                for combination in all_combinations:
-                    # Select only the current combination of features
-                    X_train_subset = X_train[:, features.columns.isin(combination)]
-                    X_test_subset = X_test[:, features.columns.isin(combination)]
+            for combination in all_combinations:
+                # Select only the current combination of features
+                X_train_subset = X_train[:, features.columns.isin(combination)]
+                X_test_subset = X_test[:, features.columns.isin(combination)]
 
-                    model = RandomForestClassifier(random_state=42)
-                    model.fit(X_train_subset, y_train)
+                model = RandomForestClassifier(random_state=42)
+                model.fit(X_train_subset, y_train)
 
-                    # Evaluate the model
-                    accuracy = model.score(X_test_subset, y_test)
-                    if accuracy > best_accuracy:
-                        best_accuracy = accuracy
-                        best_combination = combination
-                        best_model = model
+                # Evaluate the model
+                accuracy = model.score(X_test_subset, y_test)
+                if accuracy > best_accuracy:
+                    best_accuracy = accuracy
+                    best_combination = combination
+                    best_model = model
 
-                # Save the best model
-                model_filename = os.path.join(models_dir, f'best_random_forest_model_accuracy_{best_accuracy:.4f}.joblib')
-                joblib.dump(best_model, model_filename)
-                print(f"Best combination of features: {best_combination}")
-                print(f"Best accuracy: {best_accuracy}")
-                print(f"Model saved as {model_filename}")
-                visualize_classification_results(y_test, predictions)
-                visualize_decision_trees(best_model, features.columns, max_trees=1)
-
+            # Save the best model
+            model_filename = os.path.join(models_dir, f'best_random_forest_model_accuracy_{best_accuracy:.4f}.joblib')
+            joblib.dump(best_model, model_filename)
+            print(f"Best combination of features: {best_combination}")
+            print(f"Best accuracy: {best_accuracy}")
+            print(f"Model saved as {model_filename}")
+            visualize_classification_results(y_test, predictions)
+            visualize_decision_trees(best_model, features.columns, max_trees=1)
 
 
     elif mode == 'regression':

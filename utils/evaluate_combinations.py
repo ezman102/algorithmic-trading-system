@@ -1,3 +1,5 @@
+#evaluate_combinations.py
+
 import sys
 import os
 import pandas as pd
@@ -9,37 +11,43 @@ from utils.backtester import Backtester
 from utils.data_fetcher import fetch_data
 from utils.feature_engineering import add_technical_indicators
 
-def evaluate_combination(subset, data):
-
-    features = data[list(subset)].fillna(data.mean())
+def evaluate_combination(index, subset, data):
+    print(f"Evaluating combination {index + 1}: {subset}")
+    features_subset = data[list(subset)].fillna(data.mean())
     target = data['target']
 
-    split_index = int(len(features) * 0.9)
-    X_train, X_test = features.iloc[:split_index], features.iloc[split_index:]
+    split_index = int(len(features_subset) * 0.9)
+    X_train, X_test = features_subset.iloc[:split_index], features_subset.iloc[split_index:]
     y_train, y_test = target.iloc[:split_index], target.iloc[split_index:]
 
     model = ClassificationModel(n_estimators=300, max_depth=None, random_state=42)
-    model.train(X_train, y_train)
-    backtester = Backtester(pd.concat([X_test, y_test], axis=1), model)
+    trained_model = model.train(X_train, y_train)
+
+    test_data = pd.concat([X_test, y_test], axis=1)
+    backtester = Backtester(test_data, trained_model)
+    net_profit = backtester.simulate_trading()
+    
+    print(f"Combination {index + 1} Net Profit: {net_profit}")
+    
+    return (subset, net_profit)
 
 
 def evaluate_feature_combinations_parallel(data, all_features, max_features=5):
-    """
-    Evaluate all possible combinations of features in parallel and find the best one.
-    """
+    all_combinations = [comb for r in range(1, max_features + 1) for comb in combinations(all_features, r)]
+    
     results = Parallel(n_jobs=-1)(
-        delayed(evaluate_combination)(subset, data) 
-        for r in range(1, max_features + 1)
-        for subset in combinations(all_features, r)
+        delayed(evaluate_combination)(i, subset, data) for i, subset in enumerate(all_combinations)
     )
 
     best_combination, max_profit = max(results, key=lambda x: x[1])
     return best_combination, max_profit
 
+
+
 def main():
-    stock_symbol = 'NVDA'
-    start_date = '2023-01-01'
-    end_date = '2024-03-11'
+    stock_symbol = 'MSFT'
+    start_date = '2023-03-20'
+    end_date = '2024-03-20'
 
     print("Fetching data...")
     data = fetch_data(stock_symbol, start_date, end_date)
@@ -67,9 +75,8 @@ def main():
     data['target'] = (data['Close'].shift(-1) > data['Close']).astype(int)  # Example for a binary classification target
 
     all_features = [indicator['name'] for indicator in indicators]
-    best_combination, max_profit = evaluate_feature_combinations_parallel(data, all_features)
+    best_combination = evaluate_feature_combinations_parallel(data, all_features)
     print(f"Best feature combination: {best_combination}")
-    print(f"Maximum Profit/Loss: {max_profit}")
 
 if __name__ == "__main__":
     main()
