@@ -47,3 +47,26 @@ def visualize_regression_results(dates, y_test, predictions):
     plt.show()
 
 
+import matplotlib.pyplot as plt
+import pandas as pd
+
+import matplotlib.pyplot as plt
+import pandas as pd
+
+def visualize_feature_importances(features, feature_importances):
+    # Create a pandas series with feature importances, indexed by feature names
+    importances = pd.Series(feature_importances, index=features.columns)
+    
+    # Sort the feature importances in descending order
+    importances_sorted = importances.sort_values(ascending=True)
+    
+    plt.figure(figsize=(10, 6))
+    importances_sorted.plot(kind='barh', color='lightblue')
+    plt.title('Feature Importance')
+    
+    # Annotate the bars with the feature importance values
+    for index, value in enumerate(importances_sorted):
+        plt.text(value, index, f'{value:.4f}')  # Format the value
+
+    plt.show()
+

@@ -18,7 +18,7 @@ import joblib
 import pandas as pd
 from utils.data_fetcher import fetch_data
 from utils.feature_engineering import add_technical_indicators, define_target_variable
-from utils.visualization import visualize_decision_trees, visualize_classification_results, visualize_regression_results
+from utils.visualization import visualize_decision_trees, visualize_classification_results, visualize_regression_results, visualize_feature_importances
 from utils.dynamic_cv_strategy import dynamic_cv_strategy
 from sklearn.metrics import mean_squared_error, mean_absolute_error
 import matplotlib.pyplot as plt
@@ -32,8 +32,8 @@ def all_subsets(ss):
     return chain(*map(lambda x: combinations(ss, x), range(1, len(ss)+1)))
 
 def main():
-    stock_symbol = 'MSFT'
-    start_date = '2024-02-16'
+    stock_symbol = 'TSLA'
+    start_date = '2023-03-20'
     end_date = '2024-03-20'
     interval='1d'
 
@@ -124,6 +124,10 @@ def main():
         'max_depth': [None, 2, 4, 5, 10, 20],
         'min_samples_split': [2, 5, 10],
         'min_samples_leaf': [1, 2, 4]
+        # 'n_estimators': [100, 200],
+        # 'max_depth': [2],
+        # 'min_samples_split': [2, 5, 10],
+        # 'min_samples_leaf': [1, 2, 4]
     }
     classification = True if mode == 'classification' else False
 
@@ -137,20 +141,15 @@ def main():
     print("Best Parameters:", grid_search.best_params_)
     best_model = grid_search.best_estimator_
 
-    # Extract feature importance
+    # Assuming best_model is your trained model
+    # And assuming 'features' is your DataFrame of feature data
     feature_importances = best_model.feature_importances_
 
-    # Create a pandas series to view the feature importances more clearly
-    importances = pd.Series(feature_importances, index=features.columns).sort_values(ascending=False)
-
-    # Visualize feature importances
-    plt.figure(figsize=(10, 6))
-    importances.plot(kind='bar')
-    plt.title('Feature Importance')
-    plt.show()
+    # Call the visualization function with the DataFrame and the importances
+    visualize_feature_importances(features, feature_importances)
 
     predictions = best_model.predict(X_test)
-    latest_data = original_data.iloc[-1:][features.columns].fillna(method='ffill').fillna(method='bfill').values
+    latest_data = original_data.iloc[-1:][features.columns].ffill().bfill().values
 
 
     if mode == 'classification':
@@ -176,12 +175,24 @@ def main():
                         best_accuracy = accuracy
                         best_combination = combination
                         best_model = model
-
+                
                 # Save the best model
-                model_filename = os.path.join(models_dir, f'best_random_forest_model_accuracy_{best_accuracy:.4f}.joblib')
+                model_filename = os.path.join(
+                models_dir,
+                f"{stock_symbol}_from_{start_date}_to_{end_date}_accuracy_{best_accuracy:.4f}.joblib"
+                )
+
                 joblib.dump(best_model, model_filename)
                 print(f"Best combination of features: {best_combination}")
                 print(f"Best accuracy: {best_accuracy}")
+
+                latest_features = original_data.iloc[-1:][list(best_combination)].ffill().bfill().values
+
+                next_day_prediction = best_model.predict(latest_features)
+
+                # Output the prediction for the next day
+                print(f"Predicted value for the next day: {next_day_prediction[0]}")
+
                 print(f"Model saved as {model_filename}")
                 visualize_classification_results(y_test, predictions)
                 visualize_decision_trees(best_model, features.columns, max_trees=1)
@@ -189,29 +200,44 @@ def main():
 
 
     elif mode == 'regression':
-        # Calculate mean squared error
+        # Calculate mean squared error, mean absolute error, and root mean squared error
         predictions = best_model.predict(X_test)
         mse = mean_squared_error(y_test, predictions)
         mae = mean_absolute_error(y_test, predictions)
         rmse = np.sqrt(mse)
+
+        # Print out the performance metrics
         print(f"Regression MSE: {mse}")
         print(f"Regression MAE: {mae}")
         print(f"Regression RMSE: {rmse}")
+
+        # Predict the value for the next day using the latest data
         next_day_prediction = best_model.predict(latest_data)
         print(f"Predicted value for the next day: {next_day_prediction[0]}")
-        
+
+        # Compile the prediction with dates into a DataFrame
         predictions_with_dates = pd.DataFrame({
-        'Date': dates[-len(predictions):].tolist(),  # Convert to list 
-        'Actual': y_test.tolist(),  # Convert 
-        'Prediction': predictions.tolist()  # Convert to list 
-    })
+            'Date': dates[-len(predictions):].tolist(),
+            'Actual': y_test.tolist(),
+            'Prediction': predictions.tolist()
+        })
+
+        # Print actual values vs predictions
         print(y_test)
         print(predictions)
 
-        model_filename = os.path.join(models_dir, 'best_random_forest_regression_model.joblib')
+        # Define the model filename with stock symbol, date range, and RMSE
+        model_filename = os.path.join(
+            models_dir,
+            f"{stock_symbol}_regression_{start_date}_to_{end_date}_RMSE_{rmse:.4f}.joblib"
+        )
+
+        # Save the regression model to the specified path
         joblib.dump(best_model, model_filename)
         print(f"Model saved as {model_filename}")
-        visualize_regression_results(y_test.index, y_test, predictions)  # Assuming y_test has a DatetimeIndex
+
+        # Visualize the regression results and decision trees
+        visualize_regression_results(y_test.index, y_test, predictions)
         visualize_decision_trees(best_model, features.columns, max_trees=1)
 
 if __name__ == "__main__":

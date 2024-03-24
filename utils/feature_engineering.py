@@ -3,6 +3,14 @@
 import numpy as np
 import pandas as pd
 
+def add_rsi_threshold_features(data, rsi_column, thresholds):
+    for threshold in thresholds:
+        feature_name = f'RSI_above_{threshold}'
+        data[feature_name] = (data[rsi_column] > threshold).astype(int)
+    return data
+
+
+
 def calculate_bollinger_bands(data, column, window=20, bands=['upper', 'lower']):
     rolling_mean = data[column].rolling(window=window).mean()
     rolling_std = data[column].rolling(window=window).std()

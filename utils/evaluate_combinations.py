@@ -45,8 +45,8 @@ def evaluate_feature_combinations_parallel(data, all_features, max_features=5):
 
 
 def main():
-    stock_symbol = 'MSFT'
-    start_date = '2023-03-20'
+    stock_symbol = 'TSLA'
+    start_date = '2023-03-30'
     end_date = '2024-03-20'
 
     print("Fetching data...")
