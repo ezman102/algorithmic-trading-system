@@ -1,0 +1,1024 @@
+Combination,Accuracy,Next_Day_Prediction
+ATR,0.4230769230769231,0
+OBV,0.5384615384615384,0
+RSI_14,0.6153846153846154,0
+SMA_10,0.46153846153846156,0
+SMA_30,0.5384615384615384,0
+Bullish_Momentum,0.34615384615384615,1
+Bearish_Momentum,0.34615384615384615,1
+Bearish_Crossover,0.34615384615384615,1
+High_Volatility,0.6538461538461539,0
+Volume_Pressure,0.34615384615384615,1
+ATR OBV,0.46153846153846156,0
+ATR RSI_14,0.4230769230769231,0
+ATR SMA_10,0.34615384615384615,0
+ATR SMA_30,0.5384615384615384,0
+ATR Bullish_Momentum,0.6153846153846154,0
+ATR Bearish_Momentum,0.46153846153846156,0
+ATR Bearish_Crossover,0.4230769230769231,0
+ATR High_Volatility,0.5769230769230769,0
+ATR Volume_Pressure,0.4230769230769231,0
+OBV RSI_14,0.5384615384615384,0
+OBV SMA_10,0.6538461538461539,0
+OBV SMA_30,0.7692307692307693,0
+OBV Bullish_Momentum,0.5769230769230769,0
+OBV Bearish_Momentum,0.5384615384615384,0
+OBV Bearish_Crossover,0.5384615384615384,0
+OBV High_Volatility,0.6923076923076923,0
+OBV Volume_Pressure,0.6538461538461539,0
+RSI_14 SMA_10,0.5769230769230769,0
+RSI_14 SMA_30,0.6153846153846154,0
+RSI_14 Bullish_Momentum,0.6153846153846154,0
+RSI_14 Bearish_Momentum,0.6153846153846154,0
+RSI_14 Bearish_Crossover,0.6153846153846154,0
+RSI_14 High_Volatility,0.6538461538461539,0
+RSI_14 Volume_Pressure,0.6153846153846154,0
+SMA_10 SMA_30,0.6538461538461539,0
+SMA_10 Bullish_Momentum,0.38461538461538464,0
+SMA_10 Bearish_Momentum,0.5384615384615384,0
+SMA_10 Bearish_Crossover,0.46153846153846156,0
+SMA_10 High_Volatility,0.4230769230769231,0
+SMA_10 Volume_Pressure,0.5384615384615384,0
+SMA_30 Bullish_Momentum,0.6153846153846154,0
+SMA_30 Bearish_Momentum,0.5,0
+SMA_30 Bearish_Crossover,0.5384615384615384,0
+SMA_30 High_Volatility,0.5384615384615384,0
+SMA_30 Volume_Pressure,0.5,0
+Bullish_Momentum Bearish_Momentum,0.5,0
+Bullish_Momentum Bearish_Crossover,0.34615384615384615,1
+Bullish_Momentum High_Volatility,0.5769230769230769,0
+Bullish_Momentum Volume_Pressure,0.4230769230769231,1
+Bearish_Momentum Bearish_Crossover,0.34615384615384615,1
+Bearish_Momentum High_Volatility,0.5769230769230769,0
+Bearish_Momentum Volume_Pressure,0.34615384615384615,1
+Bearish_Crossover High_Volatility,0.34615384615384615,1
+Bearish_Crossover Volume_Pressure,0.34615384615384615,1
+High_Volatility Volume_Pressure,0.6538461538461539,0
+ATR OBV RSI_14,0.5384615384615384,0
+ATR OBV SMA_10,0.5769230769230769,0
+ATR OBV SMA_30,0.6538461538461539,0
+ATR OBV Bullish_Momentum,0.6153846153846154,0
+ATR OBV Bearish_Momentum,0.4230769230769231,0
+ATR OBV Bearish_Crossover,0.46153846153846156,0
+ATR OBV High_Volatility,0.5769230769230769,0
+ATR OBV Volume_Pressure,0.5769230769230769,0
+ATR RSI_14 SMA_10,0.5384615384615384,0
+ATR RSI_14 SMA_30,0.5384615384615384,0
+ATR RSI_14 Bullish_Momentum,0.5,0
+ATR RSI_14 Bearish_Momentum,0.46153846153846156,0
+ATR RSI_14 Bearish_Crossover,0.46153846153846156,0
+ATR RSI_14 High_Volatility,0.5,0
+ATR RSI_14 Volume_Pressure,0.38461538461538464,0
+ATR SMA_10 SMA_30,0.6538461538461539,0
+ATR SMA_10 Bullish_Momentum,0.5384615384615384,0
+ATR SMA_10 Bearish_Momentum,0.38461538461538464,0
+ATR SMA_10 Bearish_Crossover,0.4230769230769231,0
+ATR SMA_10 High_Volatility,0.6153846153846154,0
+ATR SMA_10 Volume_Pressure,0.46153846153846156,0
+ATR SMA_30 Bullish_Momentum,0.6153846153846154,0
+ATR SMA_30 Bearish_Momentum,0.5769230769230769,0
+ATR SMA_30 Bearish_Crossover,0.5384615384615384,0
+ATR SMA_30 High_Volatility,0.5769230769230769,0
+ATR SMA_30 Volume_Pressure,0.5769230769230769,0
+ATR Bullish_Momentum Bearish_Momentum,0.5769230769230769,0
+ATR Bullish_Momentum Bearish_Crossover,0.6153846153846154,0
+ATR Bullish_Momentum High_Volatility,0.6538461538461539,0
+ATR Bullish_Momentum Volume_Pressure,0.5,0
+ATR Bearish_Momentum Bearish_Crossover,0.46153846153846156,0
+ATR Bearish_Momentum High_Volatility,0.5384615384615384,0
+ATR Bearish_Momentum Volume_Pressure,0.46153846153846156,0
+ATR Bearish_Crossover High_Volatility,0.5769230769230769,0
+ATR Bearish_Crossover Volume_Pressure,0.46153846153846156,0
+ATR High_Volatility Volume_Pressure,0.46153846153846156,0
+OBV RSI_14 SMA_10,0.7307692307692307,0
+OBV RSI_14 SMA_30,0.7307692307692307,0
+OBV RSI_14 Bullish_Momentum,0.5769230769230769,0
+OBV RSI_14 Bearish_Momentum,0.5,0
+OBV RSI_14 Bearish_Crossover,0.5384615384615384,0
+OBV RSI_14 High_Volatility,0.5,0
+OBV RSI_14 Volume_Pressure,0.5384615384615384,0
+OBV SMA_10 SMA_30,0.8461538461538461,0
+OBV SMA_10 Bullish_Momentum,0.6538461538461539,0
+OBV SMA_10 Bearish_Momentum,0.5769230769230769,0
+OBV SMA_10 Bearish_Crossover,0.6923076923076923,0
+OBV SMA_10 High_Volatility,0.5769230769230769,0
+OBV SMA_10 Volume_Pressure,0.6538461538461539,0
+OBV SMA_30 Bullish_Momentum,0.7307692307692307,0
+OBV SMA_30 Bearish_Momentum,0.6153846153846154,0
+OBV SMA_30 Bearish_Crossover,0.7307692307692307,0
+OBV SMA_30 High_Volatility,0.6923076923076923,0
+OBV SMA_30 Volume_Pressure,0.6153846153846154,0
+OBV Bullish_Momentum Bearish_Momentum,0.6153846153846154,0
+OBV Bullish_Momentum Bearish_Crossover,0.5769230769230769,0
+OBV Bullish_Momentum High_Volatility,0.6538461538461539,0
+OBV Bullish_Momentum Volume_Pressure,0.6153846153846154,0
+OBV Bearish_Momentum Bearish_Crossover,0.5769230769230769,0
+OBV Bearish_Momentum High_Volatility,0.6923076923076923,0
+OBV Bearish_Momentum Volume_Pressure,0.5769230769230769,0
+OBV Bearish_Crossover High_Volatility,0.6923076923076923,0
+OBV Bearish_Crossover Volume_Pressure,0.6538461538461539,0
+OBV High_Volatility Volume_Pressure,0.6538461538461539,0
+RSI_14 SMA_10 SMA_30,0.6923076923076923,0
+RSI_14 SMA_10 Bullish_Momentum,0.6153846153846154,0
+RSI_14 SMA_10 Bearish_Momentum,0.5769230769230769,0
+RSI_14 SMA_10 Bearish_Crossover,0.5384615384615384,0
+RSI_14 SMA_10 High_Volatility,0.5,0
+RSI_14 SMA_10 Volume_Pressure,0.5,0
+RSI_14 SMA_30 Bullish_Momentum,0.6153846153846154,0
+RSI_14 SMA_30 Bearish_Momentum,0.5769230769230769,0
+RSI_14 SMA_30 Bearish_Crossover,0.5384615384615384,0
+RSI_14 SMA_30 High_Volatility,0.5,0
+RSI_14 SMA_30 Volume_Pressure,0.6153846153846154,0
+RSI_14 Bullish_Momentum Bearish_Momentum,0.6153846153846154,0
+RSI_14 Bullish_Momentum Bearish_Crossover,0.6153846153846154,0
+RSI_14 Bullish_Momentum High_Volatility,0.6538461538461539,0
+RSI_14 Bullish_Momentum Volume_Pressure,0.6153846153846154,0
+RSI_14 Bearish_Momentum Bearish_Crossover,0.6153846153846154,0
+RSI_14 Bearish_Momentum High_Volatility,0.6538461538461539,0
+RSI_14 Bearish_Momentum Volume_Pressure,0.6153846153846154,0
+RSI_14 Bearish_Crossover High_Volatility,0.6538461538461539,0
+RSI_14 Bearish_Crossover Volume_Pressure,0.6153846153846154,0
+RSI_14 High_Volatility Volume_Pressure,0.6153846153846154,0
+SMA_10 SMA_30 Bullish_Momentum,0.6538461538461539,0
+SMA_10 SMA_30 Bearish_Momentum,0.5769230769230769,0
+SMA_10 SMA_30 Bearish_Crossover,0.6153846153846154,0
+SMA_10 SMA_30 High_Volatility,0.6153846153846154,0
+SMA_10 SMA_30 Volume_Pressure,0.6538461538461539,0
+SMA_10 Bullish_Momentum Bearish_Momentum,0.46153846153846156,0
+SMA_10 Bullish_Momentum Bearish_Crossover,0.38461538461538464,0
+SMA_10 Bullish_Momentum High_Volatility,0.38461538461538464,0
+SMA_10 Bullish_Momentum Volume_Pressure,0.5769230769230769,0
+SMA_10 Bearish_Momentum Bearish_Crossover,0.5384615384615384,0
+SMA_10 Bearish_Momentum High_Volatility,0.5384615384615384,0
+SMA_10 Bearish_Momentum Volume_Pressure,0.5,0
+SMA_10 Bearish_Crossover High_Volatility,0.4230769230769231,0
+SMA_10 Bearish_Crossover Volume_Pressure,0.5384615384615384,0
+SMA_10 High_Volatility Volume_Pressure,0.6153846153846154,0
+SMA_30 Bullish_Momentum Bearish_Momentum,0.5769230769230769,0
+SMA_30 Bullish_Momentum Bearish_Crossover,0.6153846153846154,0
+SMA_30 Bullish_Momentum High_Volatility,0.6153846153846154,0
+SMA_30 Bullish_Momentum Volume_Pressure,0.5384615384615384,0
+SMA_30 Bearish_Momentum Bearish_Crossover,0.5,0
+SMA_30 Bearish_Momentum High_Volatility,0.5,0
+SMA_30 Bearish_Momentum Volume_Pressure,0.5,0
+SMA_30 Bearish_Crossover High_Volatility,0.5384615384615384,0
+SMA_30 Bearish_Crossover Volume_Pressure,0.5,0
+SMA_30 High_Volatility Volume_Pressure,0.5,0
+Bullish_Momentum Bearish_Momentum Bearish_Crossover,0.34615384615384615,1
+Bullish_Momentum Bearish_Momentum High_Volatility,0.5,0
+Bullish_Momentum Bearish_Momentum Volume_Pressure,0.38461538461538464,0
+Bullish_Momentum Bearish_Crossover High_Volatility,0.4230769230769231,1
+Bullish_Momentum Bearish_Crossover Volume_Pressure,0.34615384615384615,1
+Bullish_Momentum High_Volatility Volume_Pressure,0.34615384615384615,0
+Bearish_Momentum Bearish_Crossover High_Volatility,0.34615384615384615,1
+Bearish_Momentum Bearish_Crossover Volume_Pressure,0.34615384615384615,1
+Bearish_Momentum High_Volatility Volume_Pressure,0.5384615384615384,0
+Bearish_Crossover High_Volatility Volume_Pressure,0.34615384615384615,1
+ATR OBV RSI_14 SMA_10,0.6538461538461539,0
+ATR OBV RSI_14 SMA_30,0.7307692307692307,0
+ATR OBV RSI_14 Bullish_Momentum,0.5384615384615384,0
+ATR OBV RSI_14 Bearish_Momentum,0.5384615384615384,0
+ATR OBV RSI_14 Bearish_Crossover,0.5384615384615384,0
+ATR OBV RSI_14 High_Volatility,0.5384615384615384,0
+ATR OBV RSI_14 Volume_Pressure,0.5,0
+ATR OBV SMA_10 SMA_30,0.7692307692307693,0
+ATR OBV SMA_10 Bullish_Momentum,0.6923076923076923,0
+ATR OBV SMA_10 Bearish_Momentum,0.5384615384615384,0
+ATR OBV SMA_10 Bearish_Crossover,0.5,0
+ATR OBV SMA_10 High_Volatility,0.6923076923076923,0
+ATR OBV SMA_10 Volume_Pressure,0.6153846153846154,0
+ATR OBV SMA_30 Bullish_Momentum,0.7307692307692307,0
+ATR OBV SMA_30 Bearish_Momentum,0.6538461538461539,0
+ATR OBV SMA_30 Bearish_Crossover,0.7307692307692307,0
+ATR OBV SMA_30 High_Volatility,0.6923076923076923,0
+ATR OBV SMA_30 Volume_Pressure,0.6153846153846154,0
+ATR OBV Bullish_Momentum Bearish_Momentum,0.5384615384615384,0
+ATR OBV Bullish_Momentum Bearish_Crossover,0.5,0
+ATR OBV Bullish_Momentum High_Volatility,0.5769230769230769,0
+ATR OBV Bullish_Momentum Volume_Pressure,0.6153846153846154,0
+ATR OBV Bearish_Momentum Bearish_Crossover,0.4230769230769231,0
+ATR OBV Bearish_Momentum High_Volatility,0.6153846153846154,0
+ATR OBV Bearish_Momentum Volume_Pressure,0.46153846153846156,0
+ATR OBV Bearish_Crossover High_Volatility,0.5384615384615384,0
+ATR OBV Bearish_Crossover Volume_Pressure,0.5384615384615384,0
+ATR OBV High_Volatility Volume_Pressure,0.5384615384615384,0
+ATR RSI_14 SMA_10 SMA_30,0.6153846153846154,0
+ATR RSI_14 SMA_10 Bullish_Momentum,0.6153846153846154,0
+ATR RSI_14 SMA_10 Bearish_Momentum,0.5769230769230769,0
+ATR RSI_14 SMA_10 Bearish_Crossover,0.5384615384615384,0
+ATR RSI_14 SMA_10 High_Volatility,0.6538461538461539,0
+ATR RSI_14 SMA_10 Volume_Pressure,0.5769230769230769,0
+ATR RSI_14 SMA_30 Bullish_Momentum,0.5384615384615384,0
+ATR RSI_14 SMA_30 Bearish_Momentum,0.5769230769230769,0
+ATR RSI_14 SMA_30 Bearish_Crossover,0.6538461538461539,0
+ATR RSI_14 SMA_30 High_Volatility,0.6538461538461539,0
+ATR RSI_14 SMA_30 Volume_Pressure,0.6153846153846154,0
+ATR RSI_14 Bullish_Momentum Bearish_Momentum,0.38461538461538464,0
+ATR RSI_14 Bullish_Momentum Bearish_Crossover,0.4230769230769231,0
+ATR RSI_14 Bullish_Momentum High_Volatility,0.5,0
+ATR RSI_14 Bullish_Momentum Volume_Pressure,0.46153846153846156,0
+ATR RSI_14 Bearish_Momentum Bearish_Crossover,0.46153846153846156,0
+ATR RSI_14 Bearish_Momentum High_Volatility,0.5384615384615384,0
+ATR RSI_14 Bearish_Momentum Volume_Pressure,0.5384615384615384,0
+ATR RSI_14 Bearish_Crossover High_Volatility,0.5,0
+ATR RSI_14 Bearish_Crossover Volume_Pressure,0.4230769230769231,0
+ATR RSI_14 High_Volatility Volume_Pressure,0.5,0
+ATR SMA_10 SMA_30 Bullish_Momentum,0.5769230769230769,0
+ATR SMA_10 SMA_30 Bearish_Momentum,0.5769230769230769,0
+ATR SMA_10 SMA_30 Bearish_Crossover,0.5384615384615384,0
+ATR SMA_10 SMA_30 High_Volatility,0.5769230769230769,0
+ATR SMA_10 SMA_30 Volume_Pressure,0.5769230769230769,0
+ATR SMA_10 Bullish_Momentum Bearish_Momentum,0.5769230769230769,0
+ATR SMA_10 Bullish_Momentum Bearish_Crossover,0.5769230769230769,0
+ATR SMA_10 Bullish_Momentum High_Volatility,0.5,0
+ATR SMA_10 Bullish_Momentum Volume_Pressure,0.5769230769230769,0
+ATR SMA_10 Bearish_Momentum Bearish_Crossover,0.46153846153846156,0
+ATR SMA_10 Bearish_Momentum High_Volatility,0.6153846153846154,0
+ATR SMA_10 Bearish_Momentum Volume_Pressure,0.4230769230769231,0
+ATR SMA_10 Bearish_Crossover High_Volatility,0.5,0
+ATR SMA_10 Bearish_Crossover Volume_Pressure,0.4230769230769231,0
+ATR SMA_10 High_Volatility Volume_Pressure,0.5769230769230769,0
+ATR SMA_30 Bullish_Momentum Bearish_Momentum,0.46153846153846156,0
+ATR SMA_30 Bullish_Momentum Bearish_Crossover,0.6153846153846154,0
+ATR SMA_30 Bullish_Momentum High_Volatility,0.5,0
+ATR SMA_30 Bullish_Momentum Volume_Pressure,0.6153846153846154,0
+ATR SMA_30 Bearish_Momentum Bearish_Crossover,0.5384615384615384,0
+ATR SMA_30 Bearish_Momentum High_Volatility,0.5,0
+ATR SMA_30 Bearish_Momentum Volume_Pressure,0.5769230769230769,0
+ATR SMA_30 Bearish_Crossover High_Volatility,0.5384615384615384,0
+ATR SMA_30 Bearish_Crossover Volume_Pressure,0.5769230769230769,0
+ATR SMA_30 High_Volatility Volume_Pressure,0.6153846153846154,0
+ATR Bullish_Momentum Bearish_Momentum Bearish_Crossover,0.5769230769230769,0
+ATR Bullish_Momentum Bearish_Momentum High_Volatility,0.5769230769230769,0
+ATR Bullish_Momentum Bearish_Momentum Volume_Pressure,0.46153846153846156,0
+ATR Bullish_Momentum Bearish_Crossover High_Volatility,0.6153846153846154,0
+ATR Bullish_Momentum Bearish_Crossover Volume_Pressure,0.5,0
+ATR Bullish_Momentum High_Volatility Volume_Pressure,0.46153846153846156,0
+ATR Bearish_Momentum Bearish_Crossover High_Volatility,0.5384615384615384,0
+ATR Bearish_Momentum Bearish_Crossover Volume_Pressure,0.5,0
+ATR Bearish_Momentum High_Volatility Volume_Pressure,0.5769230769230769,0
+ATR Bearish_Crossover High_Volatility Volume_Pressure,0.5384615384615384,0
+OBV RSI_14 SMA_10 SMA_30,0.7692307692307693,0
+OBV RSI_14 SMA_10 Bullish_Momentum,0.7307692307692307,0
+OBV RSI_14 SMA_10 Bearish_Momentum,0.6923076923076923,0
+OBV RSI_14 SMA_10 Bearish_Crossover,0.7692307692307693,0
+OBV RSI_14 SMA_10 High_Volatility,0.6923076923076923,0
+OBV RSI_14 SMA_10 Volume_Pressure,0.6923076923076923,0
+OBV RSI_14 SMA_30 Bullish_Momentum,0.8076923076923077,0
+OBV RSI_14 SMA_30 Bearish_Momentum,0.7692307692307693,0
+OBV RSI_14 SMA_30 Bearish_Crossover,0.7692307692307693,0
+OBV RSI_14 SMA_30 High_Volatility,0.7307692307692307,0
+OBV RSI_14 SMA_30 Volume_Pressure,0.7307692307692307,0
+OBV RSI_14 Bullish_Momentum Bearish_Momentum,0.5769230769230769,0
+OBV RSI_14 Bullish_Momentum Bearish_Crossover,0.6153846153846154,0
+OBV RSI_14 Bullish_Momentum High_Volatility,0.4230769230769231,0
+OBV RSI_14 Bullish_Momentum Volume_Pressure,0.46153846153846156,0
+OBV RSI_14 Bearish_Momentum Bearish_Crossover,0.5,0
+OBV RSI_14 Bearish_Momentum High_Volatility,0.4230769230769231,0
+OBV RSI_14 Bearish_Momentum Volume_Pressure,0.46153846153846156,0
+OBV RSI_14 Bearish_Crossover High_Volatility,0.5,0
+OBV RSI_14 Bearish_Crossover Volume_Pressure,0.4230769230769231,0
+OBV RSI_14 High_Volatility Volume_Pressure,0.5,0
+OBV SMA_10 SMA_30 Bullish_Momentum,0.8461538461538461,0
+OBV SMA_10 SMA_30 Bearish_Momentum,0.7692307692307693,0
+OBV SMA_10 SMA_30 Bearish_Crossover,0.8076923076923077,0
+OBV SMA_10 SMA_30 High_Volatility,0.8076923076923077,0
+OBV SMA_10 SMA_30 Volume_Pressure,0.6923076923076923,0
+OBV SMA_10 Bullish_Momentum Bearish_Momentum,0.5769230769230769,0
+OBV SMA_10 Bullish_Momentum Bearish_Crossover,0.6538461538461539,0
+OBV SMA_10 Bullish_Momentum High_Volatility,0.6538461538461539,0
+OBV SMA_10 Bullish_Momentum Volume_Pressure,0.5769230769230769,0
+OBV SMA_10 Bearish_Momentum Bearish_Crossover,0.6153846153846154,0
+OBV SMA_10 Bearish_Momentum High_Volatility,0.5769230769230769,0
+OBV SMA_10 Bearish_Momentum Volume_Pressure,0.46153846153846156,0
+OBV SMA_10 Bearish_Crossover High_Volatility,0.5769230769230769,0
+OBV SMA_10 Bearish_Crossover Volume_Pressure,0.5384615384615384,0
+OBV SMA_10 High_Volatility Volume_Pressure,0.5384615384615384,0
+OBV SMA_30 Bullish_Momentum Bearish_Momentum,0.6538461538461539,0
+OBV SMA_30 Bullish_Momentum Bearish_Crossover,0.7692307692307693,0
+OBV SMA_30 Bullish_Momentum High_Volatility,0.6923076923076923,0
+OBV SMA_30 Bullish_Momentum Volume_Pressure,0.6538461538461539,0
+OBV SMA_30 Bearish_Momentum Bearish_Crossover,0.5769230769230769,0
+OBV SMA_30 Bearish_Momentum High_Volatility,0.6153846153846154,0
+OBV SMA_30 Bearish_Momentum Volume_Pressure,0.5384615384615384,0
+OBV SMA_30 Bearish_Crossover High_Volatility,0.7307692307692307,0
+OBV SMA_30 Bearish_Crossover Volume_Pressure,0.6538461538461539,0
+OBV SMA_30 High_Volatility Volume_Pressure,0.6153846153846154,0
+OBV Bullish_Momentum Bearish_Momentum Bearish_Crossover,0.6538461538461539,0
+OBV Bullish_Momentum Bearish_Momentum High_Volatility,0.6538461538461539,0
+OBV Bullish_Momentum Bearish_Momentum Volume_Pressure,0.5769230769230769,0
+OBV Bullish_Momentum Bearish_Crossover High_Volatility,0.6538461538461539,0
+OBV Bullish_Momentum Bearish_Crossover Volume_Pressure,0.6153846153846154,0
+OBV Bullish_Momentum High_Volatility Volume_Pressure,0.6153846153846154,0
+OBV Bearish_Momentum Bearish_Crossover High_Volatility,0.6923076923076923,0
+OBV Bearish_Momentum Bearish_Crossover Volume_Pressure,0.6153846153846154,0
+OBV Bearish_Momentum High_Volatility Volume_Pressure,0.6538461538461539,0
+OBV Bearish_Crossover High_Volatility Volume_Pressure,0.6538461538461539,0
+RSI_14 SMA_10 SMA_30 Bullish_Momentum,0.6538461538461539,0
+RSI_14 SMA_10 SMA_30 Bearish_Momentum,0.6538461538461539,0
+RSI_14 SMA_10 SMA_30 Bearish_Crossover,0.6538461538461539,0
+RSI_14 SMA_10 SMA_30 High_Volatility,0.6923076923076923,0
+RSI_14 SMA_10 SMA_30 Volume_Pressure,0.6538461538461539,0
+RSI_14 SMA_10 Bullish_Momentum Bearish_Momentum,0.5384615384615384,0
+RSI_14 SMA_10 Bullish_Momentum Bearish_Crossover,0.5769230769230769,0
+RSI_14 SMA_10 Bullish_Momentum High_Volatility,0.5769230769230769,0
+RSI_14 SMA_10 Bullish_Momentum Volume_Pressure,0.5,0
+RSI_14 SMA_10 Bearish_Momentum Bearish_Crossover,0.5769230769230769,0
+RSI_14 SMA_10 Bearish_Momentum High_Volatility,0.6153846153846154,0
+RSI_14 SMA_10 Bearish_Momentum Volume_Pressure,0.5769230769230769,0
+RSI_14 SMA_10 Bearish_Crossover High_Volatility,0.5384615384615384,0
+RSI_14 SMA_10 Bearish_Crossover Volume_Pressure,0.5384615384615384,0
+RSI_14 SMA_10 High_Volatility Volume_Pressure,0.5384615384615384,0
+RSI_14 SMA_30 Bullish_Momentum Bearish_Momentum,0.6153846153846154,0
+RSI_14 SMA_30 Bullish_Momentum Bearish_Crossover,0.6153846153846154,0
+RSI_14 SMA_30 Bullish_Momentum High_Volatility,0.5769230769230769,0
+RSI_14 SMA_30 Bullish_Momentum Volume_Pressure,0.6538461538461539,0
+RSI_14 SMA_30 Bearish_Momentum Bearish_Crossover,0.5769230769230769,0
+RSI_14 SMA_30 Bearish_Momentum High_Volatility,0.5769230769230769,0
+RSI_14 SMA_30 Bearish_Momentum Volume_Pressure,0.6538461538461539,0
+RSI_14 SMA_30 Bearish_Crossover High_Volatility,0.5,0
+RSI_14 SMA_30 Bearish_Crossover Volume_Pressure,0.6538461538461539,0
+RSI_14 SMA_30 High_Volatility Volume_Pressure,0.5769230769230769,0
+RSI_14 Bullish_Momentum Bearish_Momentum Bearish_Crossover,0.6153846153846154,0
+RSI_14 Bullish_Momentum Bearish_Momentum High_Volatility,0.6538461538461539,0
+RSI_14 Bullish_Momentum Bearish_Momentum Volume_Pressure,0.6153846153846154,0
+RSI_14 Bullish_Momentum Bearish_Crossover High_Volatility,0.6538461538461539,0
+RSI_14 Bullish_Momentum Bearish_Crossover Volume_Pressure,0.6153846153846154,0
+RSI_14 Bullish_Momentum High_Volatility Volume_Pressure,0.6153846153846154,0
+RSI_14 Bearish_Momentum Bearish_Crossover High_Volatility,0.6538461538461539,0
+RSI_14 Bearish_Momentum Bearish_Crossover Volume_Pressure,0.6153846153846154,0
+RSI_14 Bearish_Momentum High_Volatility Volume_Pressure,0.6153846153846154,0
+RSI_14 Bearish_Crossover High_Volatility Volume_Pressure,0.6153846153846154,0
+SMA_10 SMA_30 Bullish_Momentum Bearish_Momentum,0.6153846153846154,0
+SMA_10 SMA_30 Bullish_Momentum Bearish_Crossover,0.6538461538461539,0
+SMA_10 SMA_30 Bullish_Momentum High_Volatility,0.6153846153846154,0
+SMA_10 SMA_30 Bullish_Momentum Volume_Pressure,0.6538461538461539,0
+SMA_10 SMA_30 Bearish_Momentum Bearish_Crossover,0.5769230769230769,0
+SMA_10 SMA_30 Bearish_Momentum High_Volatility,0.5384615384615384,0
+SMA_10 SMA_30 Bearish_Momentum Volume_Pressure,0.6153846153846154,0
+SMA_10 SMA_30 Bearish_Crossover High_Volatility,0.6153846153846154,0
+SMA_10 SMA_30 Bearish_Crossover Volume_Pressure,0.6538461538461539,0
+SMA_10 SMA_30 High_Volatility Volume_Pressure,0.6923076923076923,0
+SMA_10 Bullish_Momentum Bearish_Momentum Bearish_Crossover,0.46153846153846156,0
+SMA_10 Bullish_Momentum Bearish_Momentum High_Volatility,0.46153846153846156,0
+SMA_10 Bullish_Momentum Bearish_Momentum Volume_Pressure,0.6153846153846154,0
+SMA_10 Bullish_Momentum Bearish_Crossover High_Volatility,0.38461538461538464,0
+SMA_10 Bullish_Momentum Bearish_Crossover Volume_Pressure,0.5769230769230769,0
+SMA_10 Bullish_Momentum High_Volatility Volume_Pressure,0.5769230769230769,0
+SMA_10 Bearish_Momentum Bearish_Crossover High_Volatility,0.5384615384615384,0
+SMA_10 Bearish_Momentum Bearish_Crossover Volume_Pressure,0.5,0
+SMA_10 Bearish_Momentum High_Volatility Volume_Pressure,0.6153846153846154,0
+SMA_10 Bearish_Crossover High_Volatility Volume_Pressure,0.6153846153846154,0
+SMA_30 Bullish_Momentum Bearish_Momentum Bearish_Crossover,0.5769230769230769,0
+SMA_30 Bullish_Momentum Bearish_Momentum High_Volatility,0.5769230769230769,0
+SMA_30 Bullish_Momentum Bearish_Momentum Volume_Pressure,0.5384615384615384,0
+SMA_30 Bullish_Momentum Bearish_Crossover High_Volatility,0.6153846153846154,0
+SMA_30 Bullish_Momentum Bearish_Crossover Volume_Pressure,0.5384615384615384,0
+SMA_30 Bullish_Momentum High_Volatility Volume_Pressure,0.5384615384615384,0
+SMA_30 Bearish_Momentum Bearish_Crossover High_Volatility,0.5,0
+SMA_30 Bearish_Momentum Bearish_Crossover Volume_Pressure,0.46153846153846156,0
+SMA_30 Bearish_Momentum High_Volatility Volume_Pressure,0.5,0
+SMA_30 Bearish_Crossover High_Volatility Volume_Pressure,0.5,0
+Bullish_Momentum Bearish_Momentum Bearish_Crossover High_Volatility,0.4230769230769231,1
+Bullish_Momentum Bearish_Momentum Bearish_Crossover Volume_Pressure,0.4230769230769231,1
+Bullish_Momentum Bearish_Momentum High_Volatility Volume_Pressure,0.5,0
+Bullish_Momentum Bearish_Crossover High_Volatility Volume_Pressure,0.4230769230769231,1
+Bearish_Momentum Bearish_Crossover High_Volatility Volume_Pressure,0.34615384615384615,0
+ATR OBV RSI_14 SMA_10 SMA_30,0.6923076923076923,0
+ATR OBV RSI_14 SMA_10 Bullish_Momentum,0.6923076923076923,0
+ATR OBV RSI_14 SMA_10 Bearish_Momentum,0.6153846153846154,0
+ATR OBV RSI_14 SMA_10 Bearish_Crossover,0.6538461538461539,0
+ATR OBV RSI_14 SMA_10 High_Volatility,0.6923076923076923,0
+ATR OBV RSI_14 SMA_10 Volume_Pressure,0.5769230769230769,0
+ATR OBV RSI_14 SMA_30 Bullish_Momentum,0.7307692307692307,0
+ATR OBV RSI_14 SMA_30 Bearish_Momentum,0.5769230769230769,0
+ATR OBV RSI_14 SMA_30 Bearish_Crossover,0.7692307692307693,0
+ATR OBV RSI_14 SMA_30 High_Volatility,0.6923076923076923,0
+ATR OBV RSI_14 SMA_30 Volume_Pressure,0.6153846153846154,0
+ATR OBV RSI_14 Bullish_Momentum Bearish_Momentum,0.5384615384615384,0
+ATR OBV RSI_14 Bullish_Momentum Bearish_Crossover,0.5384615384615384,0
+ATR OBV RSI_14 Bullish_Momentum High_Volatility,0.5769230769230769,0
+ATR OBV RSI_14 Bullish_Momentum Volume_Pressure,0.5,0
+ATR OBV RSI_14 Bearish_Momentum Bearish_Crossover,0.5769230769230769,0
+ATR OBV RSI_14 Bearish_Momentum High_Volatility,0.5,0
+ATR OBV RSI_14 Bearish_Momentum Volume_Pressure,0.5,0
+ATR OBV RSI_14 Bearish_Crossover High_Volatility,0.5769230769230769,0
+ATR OBV RSI_14 Bearish_Crossover Volume_Pressure,0.5384615384615384,0
+ATR OBV RSI_14 High_Volatility Volume_Pressure,0.5769230769230769,0
+ATR OBV SMA_10 SMA_30 Bullish_Momentum,0.7307692307692307,0
+ATR OBV SMA_10 SMA_30 Bearish_Momentum,0.6538461538461539,0
+ATR OBV SMA_10 SMA_30 Bearish_Crossover,0.6923076923076923,0
+ATR OBV SMA_10 SMA_30 High_Volatility,0.7307692307692307,0
+ATR OBV SMA_10 SMA_30 Volume_Pressure,0.6923076923076923,0
+ATR OBV SMA_10 Bullish_Momentum Bearish_Momentum,0.6923076923076923,0
+ATR OBV SMA_10 Bullish_Momentum Bearish_Crossover,0.7307692307692307,0
+ATR OBV SMA_10 Bullish_Momentum High_Volatility,0.7307692307692307,0
+ATR OBV SMA_10 Bullish_Momentum Volume_Pressure,0.6923076923076923,0
+ATR OBV SMA_10 Bearish_Momentum Bearish_Crossover,0.5769230769230769,0
+ATR OBV SMA_10 Bearish_Momentum High_Volatility,0.6538461538461539,0
+ATR OBV SMA_10 Bearish_Momentum Volume_Pressure,0.5,0
+ATR OBV SMA_10 Bearish_Crossover High_Volatility,0.6538461538461539,0
+ATR OBV SMA_10 Bearish_Crossover Volume_Pressure,0.5,0
+ATR OBV SMA_10 High_Volatility Volume_Pressure,0.6538461538461539,0
+ATR OBV SMA_30 Bullish_Momentum Bearish_Momentum,0.6153846153846154,0
+ATR OBV SMA_30 Bullish_Momentum Bearish_Crossover,0.6923076923076923,0
+ATR OBV SMA_30 Bullish_Momentum High_Volatility,0.7692307692307693,0
+ATR OBV SMA_30 Bullish_Momentum Volume_Pressure,0.5769230769230769,0
+ATR OBV SMA_30 Bearish_Momentum Bearish_Crossover,0.6153846153846154,0
+ATR OBV SMA_30 Bearish_Momentum High_Volatility,0.6923076923076923,0
+ATR OBV SMA_30 Bearish_Momentum Volume_Pressure,0.6153846153846154,0
+ATR OBV SMA_30 Bearish_Crossover High_Volatility,0.7307692307692307,0
+ATR OBV SMA_30 Bearish_Crossover Volume_Pressure,0.6538461538461539,0
+ATR OBV SMA_30 High_Volatility Volume_Pressure,0.6538461538461539,0
+ATR OBV Bullish_Momentum Bearish_Momentum Bearish_Crossover,0.5384615384615384,0
+ATR OBV Bullish_Momentum Bearish_Momentum High_Volatility,0.5384615384615384,0
+ATR OBV Bullish_Momentum Bearish_Momentum Volume_Pressure,0.5769230769230769,0
+ATR OBV Bullish_Momentum Bearish_Crossover High_Volatility,0.5769230769230769,0
+ATR OBV Bullish_Momentum Bearish_Crossover Volume_Pressure,0.5,0
+ATR OBV Bullish_Momentum High_Volatility Volume_Pressure,0.5384615384615384,0
+ATR OBV Bearish_Momentum Bearish_Crossover High_Volatility,0.5769230769230769,0
+ATR OBV Bearish_Momentum Bearish_Crossover Volume_Pressure,0.5,0
+ATR OBV Bearish_Momentum High_Volatility Volume_Pressure,0.5384615384615384,0
+ATR OBV Bearish_Crossover High_Volatility Volume_Pressure,0.5769230769230769,0
+ATR RSI_14 SMA_10 SMA_30 Bullish_Momentum,0.5769230769230769,0
+ATR RSI_14 SMA_10 SMA_30 Bearish_Momentum,0.6153846153846154,0
+ATR RSI_14 SMA_10 SMA_30 Bearish_Crossover,0.5769230769230769,0
+ATR RSI_14 SMA_10 SMA_30 High_Volatility,0.5769230769230769,0
+ATR RSI_14 SMA_10 SMA_30 Volume_Pressure,0.6153846153846154,0
+ATR RSI_14 SMA_10 Bullish_Momentum Bearish_Momentum,0.6153846153846154,0
+ATR RSI_14 SMA_10 Bullish_Momentum Bearish_Crossover,0.6153846153846154,0
+ATR RSI_14 SMA_10 Bullish_Momentum High_Volatility,0.5769230769230769,0
+ATR RSI_14 SMA_10 Bullish_Momentum Volume_Pressure,0.5769230769230769,0
+ATR RSI_14 SMA_10 Bearish_Momentum Bearish_Crossover,0.5,0
+ATR RSI_14 SMA_10 Bearish_Momentum High_Volatility,0.5384615384615384,0
+ATR RSI_14 SMA_10 Bearish_Momentum Volume_Pressure,0.5769230769230769,0
+ATR RSI_14 SMA_10 Bearish_Crossover High_Volatility,0.5769230769230769,0
+ATR RSI_14 SMA_10 Bearish_Crossover Volume_Pressure,0.5384615384615384,0
+ATR RSI_14 SMA_10 High_Volatility Volume_Pressure,0.5769230769230769,0
+ATR RSI_14 SMA_30 Bullish_Momentum Bearish_Momentum,0.5384615384615384,0
+ATR RSI_14 SMA_30 Bullish_Momentum Bearish_Crossover,0.5769230769230769,0
+ATR RSI_14 SMA_30 Bullish_Momentum High_Volatility,0.6153846153846154,0
+ATR RSI_14 SMA_30 Bullish_Momentum Volume_Pressure,0.5769230769230769,0
+ATR RSI_14 SMA_30 Bearish_Momentum Bearish_Crossover,0.5384615384615384,0
+ATR RSI_14 SMA_30 Bearish_Momentum High_Volatility,0.6153846153846154,0
+ATR RSI_14 SMA_30 Bearish_Momentum Volume_Pressure,0.5769230769230769,0
+ATR RSI_14 SMA_30 Bearish_Crossover High_Volatility,0.5,0
+ATR RSI_14 SMA_30 Bearish_Crossover Volume_Pressure,0.6153846153846154,0
+ATR RSI_14 SMA_30 High_Volatility Volume_Pressure,0.6538461538461539,0
+ATR RSI_14 Bullish_Momentum Bearish_Momentum Bearish_Crossover,0.46153846153846156,0
+ATR RSI_14 Bullish_Momentum Bearish_Momentum High_Volatility,0.5,0
+ATR RSI_14 Bullish_Momentum Bearish_Momentum Volume_Pressure,0.46153846153846156,0
+ATR RSI_14 Bullish_Momentum Bearish_Crossover High_Volatility,0.5,0
+ATR RSI_14 Bullish_Momentum Bearish_Crossover Volume_Pressure,0.5,0
+ATR RSI_14 Bullish_Momentum High_Volatility Volume_Pressure,0.5769230769230769,0
+ATR RSI_14 Bearish_Momentum Bearish_Crossover High_Volatility,0.4230769230769231,0
+ATR RSI_14 Bearish_Momentum Bearish_Crossover Volume_Pressure,0.4230769230769231,0
+ATR RSI_14 Bearish_Momentum High_Volatility Volume_Pressure,0.6153846153846154,0
+ATR RSI_14 Bearish_Crossover High_Volatility Volume_Pressure,0.5769230769230769,0
+ATR SMA_10 SMA_30 Bullish_Momentum Bearish_Momentum,0.5769230769230769,0
+ATR SMA_10 SMA_30 Bullish_Momentum Bearish_Crossover,0.5384615384615384,0
+ATR SMA_10 SMA_30 Bullish_Momentum High_Volatility,0.5769230769230769,0
+ATR SMA_10 SMA_30 Bullish_Momentum Volume_Pressure,0.6153846153846154,0
+ATR SMA_10 SMA_30 Bearish_Momentum Bearish_Crossover,0.5769230769230769,0
+ATR SMA_10 SMA_30 Bearish_Momentum High_Volatility,0.6153846153846154,0
+ATR SMA_10 SMA_30 Bearish_Momentum Volume_Pressure,0.5769230769230769,0
+ATR SMA_10 SMA_30 Bearish_Crossover High_Volatility,0.6153846153846154,0
+ATR SMA_10 SMA_30 Bearish_Crossover Volume_Pressure,0.6923076923076923,0
+ATR SMA_10 SMA_30 High_Volatility Volume_Pressure,0.6153846153846154,0
+ATR SMA_10 Bullish_Momentum Bearish_Momentum Bearish_Crossover,0.5384615384615384,0
+ATR SMA_10 Bullish_Momentum Bearish_Momentum High_Volatility,0.5769230769230769,0
+ATR SMA_10 Bullish_Momentum Bearish_Momentum Volume_Pressure,0.5384615384615384,0
+ATR SMA_10 Bullish_Momentum Bearish_Crossover High_Volatility,0.5,0
+ATR SMA_10 Bullish_Momentum Bearish_Crossover Volume_Pressure,0.5384615384615384,0
+ATR SMA_10 Bullish_Momentum High_Volatility Volume_Pressure,0.6153846153846154,0
+ATR SMA_10 Bearish_Momentum Bearish_Crossover High_Volatility,0.6153846153846154,0
+ATR SMA_10 Bearish_Momentum Bearish_Crossover Volume_Pressure,0.4230769230769231,0
+ATR SMA_10 Bearish_Momentum High_Volatility Volume_Pressure,0.5769230769230769,0
+ATR SMA_10 Bearish_Crossover High_Volatility Volume_Pressure,0.5,0
+ATR SMA_30 Bullish_Momentum Bearish_Momentum Bearish_Crossover,0.5,0
+ATR SMA_30 Bullish_Momentum Bearish_Momentum High_Volatility,0.5384615384615384,0
+ATR SMA_30 Bullish_Momentum Bearish_Momentum Volume_Pressure,0.6153846153846154,0
+ATR SMA_30 Bullish_Momentum Bearish_Crossover High_Volatility,0.5384615384615384,0
+ATR SMA_30 Bullish_Momentum Bearish_Crossover Volume_Pressure,0.6538461538461539,0
+ATR SMA_30 Bullish_Momentum High_Volatility Volume_Pressure,0.6538461538461539,0
+ATR SMA_30 Bearish_Momentum Bearish_Crossover High_Volatility,0.5384615384615384,0
+ATR SMA_30 Bearish_Momentum Bearish_Crossover Volume_Pressure,0.5769230769230769,0
+ATR SMA_30 Bearish_Momentum High_Volatility Volume_Pressure,0.6153846153846154,0
+ATR SMA_30 Bearish_Crossover High_Volatility Volume_Pressure,0.6153846153846154,0
+ATR Bullish_Momentum Bearish_Momentum Bearish_Crossover High_Volatility,0.6153846153846154,0
+ATR Bullish_Momentum Bearish_Momentum Bearish_Crossover Volume_Pressure,0.5384615384615384,0
+ATR Bullish_Momentum Bearish_Momentum High_Volatility Volume_Pressure,0.5384615384615384,0
+ATR Bullish_Momentum Bearish_Crossover High_Volatility Volume_Pressure,0.5769230769230769,0
+ATR Bearish_Momentum Bearish_Crossover High_Volatility Volume_Pressure,0.5769230769230769,0
+OBV RSI_14 SMA_10 SMA_30 Bullish_Momentum,0.7307692307692307,0
+OBV RSI_14 SMA_10 SMA_30 Bearish_Momentum,0.7692307692307693,0
+OBV RSI_14 SMA_10 SMA_30 Bearish_Crossover,0.8076923076923077,0
+OBV RSI_14 SMA_10 SMA_30 High_Volatility,0.7692307692307693,0
+OBV RSI_14 SMA_10 SMA_30 Volume_Pressure,0.7307692307692307,0
+OBV RSI_14 SMA_10 Bullish_Momentum Bearish_Momentum,0.6923076923076923,0
+OBV RSI_14 SMA_10 Bullish_Momentum Bearish_Crossover,0.6923076923076923,0
+OBV RSI_14 SMA_10 Bullish_Momentum High_Volatility,0.6538461538461539,0
+OBV RSI_14 SMA_10 Bullish_Momentum Volume_Pressure,0.6538461538461539,0
+OBV RSI_14 SMA_10 Bearish_Momentum Bearish_Crossover,0.6538461538461539,0
+OBV RSI_14 SMA_10 Bearish_Momentum High_Volatility,0.6153846153846154,0
+OBV RSI_14 SMA_10 Bearish_Momentum Volume_Pressure,0.6153846153846154,0
+OBV RSI_14 SMA_10 Bearish_Crossover High_Volatility,0.6923076923076923,0
+OBV RSI_14 SMA_10 Bearish_Crossover Volume_Pressure,0.5769230769230769,0
+OBV RSI_14 SMA_10 High_Volatility Volume_Pressure,0.6153846153846154,0
+OBV RSI_14 SMA_30 Bullish_Momentum Bearish_Momentum,0.7692307692307693,0
+OBV RSI_14 SMA_30 Bullish_Momentum Bearish_Crossover,0.7692307692307693,0
+OBV RSI_14 SMA_30 Bullish_Momentum High_Volatility,0.7307692307692307,0
+OBV RSI_14 SMA_30 Bullish_Momentum Volume_Pressure,0.6538461538461539,0
+OBV RSI_14 SMA_30 Bearish_Momentum Bearish_Crossover,0.7307692307692307,0
+OBV RSI_14 SMA_30 Bearish_Momentum High_Volatility,0.7307692307692307,0
+OBV RSI_14 SMA_30 Bearish_Momentum Volume_Pressure,0.6153846153846154,0
+OBV RSI_14 SMA_30 Bearish_Crossover High_Volatility,0.7307692307692307,0
+OBV RSI_14 SMA_30 Bearish_Crossover Volume_Pressure,0.6153846153846154,0
+OBV RSI_14 SMA_30 High_Volatility Volume_Pressure,0.6153846153846154,0
+OBV RSI_14 Bullish_Momentum Bearish_Momentum Bearish_Crossover,0.5,0
+OBV RSI_14 Bullish_Momentum Bearish_Momentum High_Volatility,0.5,0
+OBV RSI_14 Bullish_Momentum Bearish_Momentum Volume_Pressure,0.5384615384615384,0
+OBV RSI_14 Bullish_Momentum Bearish_Crossover High_Volatility,0.5,0
+OBV RSI_14 Bullish_Momentum Bearish_Crossover Volume_Pressure,0.5,0
+OBV RSI_14 Bullish_Momentum High_Volatility Volume_Pressure,0.46153846153846156,0
+OBV RSI_14 Bearish_Momentum Bearish_Crossover High_Volatility,0.46153846153846156,0
+OBV RSI_14 Bearish_Momentum Bearish_Crossover Volume_Pressure,0.46153846153846156,0
+OBV RSI_14 Bearish_Momentum High_Volatility Volume_Pressure,0.5,0
+OBV RSI_14 Bearish_Crossover High_Volatility Volume_Pressure,0.46153846153846156,0
+OBV SMA_10 SMA_30 Bullish_Momentum Bearish_Momentum,0.7692307692307693,0
+OBV SMA_10 SMA_30 Bullish_Momentum Bearish_Crossover,0.8461538461538461,0
+OBV SMA_10 SMA_30 Bullish_Momentum High_Volatility,0.7692307692307693,0
+OBV SMA_10 SMA_30 Bullish_Momentum Volume_Pressure,0.6538461538461539,0
+OBV SMA_10 SMA_30 Bearish_Momentum Bearish_Crossover,0.7307692307692307,0
+OBV SMA_10 SMA_30 Bearish_Momentum High_Volatility,0.7307692307692307,0
+OBV SMA_10 SMA_30 Bearish_Momentum Volume_Pressure,0.5769230769230769,0
+OBV SMA_10 SMA_30 Bearish_Crossover High_Volatility,0.6923076923076923,0
+OBV SMA_10 SMA_30 Bearish_Crossover Volume_Pressure,0.6923076923076923,0
+OBV SMA_10 SMA_30 High_Volatility Volume_Pressure,0.6153846153846154,0
+OBV SMA_10 Bullish_Momentum Bearish_Momentum Bearish_Crossover,0.6923076923076923,0
+OBV SMA_10 Bullish_Momentum Bearish_Momentum High_Volatility,0.6538461538461539,0
+OBV SMA_10 Bullish_Momentum Bearish_Momentum Volume_Pressure,0.5,0
+OBV SMA_10 Bullish_Momentum Bearish_Crossover High_Volatility,0.5384615384615384,0
+OBV SMA_10 Bullish_Momentum Bearish_Crossover Volume_Pressure,0.5,0
+OBV SMA_10 Bullish_Momentum High_Volatility Volume_Pressure,0.5,0
+OBV SMA_10 Bearish_Momentum Bearish_Crossover High_Volatility,0.6153846153846154,0
+OBV SMA_10 Bearish_Momentum Bearish_Crossover Volume_Pressure,0.6153846153846154,0
+OBV SMA_10 Bearish_Momentum High_Volatility Volume_Pressure,0.5384615384615384,0
+OBV SMA_10 Bearish_Crossover High_Volatility Volume_Pressure,0.5769230769230769,0
+OBV SMA_30 Bullish_Momentum Bearish_Momentum Bearish_Crossover,0.6153846153846154,0
+OBV SMA_30 Bullish_Momentum Bearish_Momentum High_Volatility,0.6538461538461539,0
+OBV SMA_30 Bullish_Momentum Bearish_Momentum Volume_Pressure,0.5769230769230769,0
+OBV SMA_30 Bullish_Momentum Bearish_Crossover High_Volatility,0.6923076923076923,0
+OBV SMA_30 Bullish_Momentum Bearish_Crossover Volume_Pressure,0.6538461538461539,0
+OBV SMA_30 Bullish_Momentum High_Volatility Volume_Pressure,0.5769230769230769,0
+OBV SMA_30 Bearish_Momentum Bearish_Crossover High_Volatility,0.6538461538461539,0
+OBV SMA_30 Bearish_Momentum Bearish_Crossover Volume_Pressure,0.5384615384615384,0
+OBV SMA_30 Bearish_Momentum High_Volatility Volume_Pressure,0.5769230769230769,0
+OBV SMA_30 Bearish_Crossover High_Volatility Volume_Pressure,0.5769230769230769,0
+OBV Bullish_Momentum Bearish_Momentum Bearish_Crossover High_Volatility,0.6538461538461539,0
+OBV Bullish_Momentum Bearish_Momentum Bearish_Crossover Volume_Pressure,0.5769230769230769,0
+OBV Bullish_Momentum Bearish_Momentum High_Volatility Volume_Pressure,0.6153846153846154,0
+OBV Bullish_Momentum Bearish_Crossover High_Volatility Volume_Pressure,0.6153846153846154,0
+OBV Bearish_Momentum Bearish_Crossover High_Volatility Volume_Pressure,0.6538461538461539,0
+RSI_14 SMA_10 SMA_30 Bullish_Momentum Bearish_Momentum,0.6923076923076923,0
+RSI_14 SMA_10 SMA_30 Bullish_Momentum Bearish_Crossover,0.6538461538461539,0
+RSI_14 SMA_10 SMA_30 Bullish_Momentum High_Volatility,0.6538461538461539,0
+RSI_14 SMA_10 SMA_30 Bullish_Momentum Volume_Pressure,0.7307692307692307,0
+RSI_14 SMA_10 SMA_30 Bearish_Momentum Bearish_Crossover,0.6538461538461539,0
+RSI_14 SMA_10 SMA_30 Bearish_Momentum High_Volatility,0.6538461538461539,0
+RSI_14 SMA_10 SMA_30 Bearish_Momentum Volume_Pressure,0.6923076923076923,0
+RSI_14 SMA_10 SMA_30 Bearish_Crossover High_Volatility,0.6923076923076923,0
+RSI_14 SMA_10 SMA_30 Bearish_Crossover Volume_Pressure,0.6923076923076923,0
+RSI_14 SMA_10 SMA_30 High_Volatility Volume_Pressure,0.6923076923076923,0
+RSI_14 SMA_10 Bullish_Momentum Bearish_Momentum Bearish_Crossover,0.5384615384615384,0
+RSI_14 SMA_10 Bullish_Momentum Bearish_Momentum High_Volatility,0.5384615384615384,0
+RSI_14 SMA_10 Bullish_Momentum Bearish_Momentum Volume_Pressure,0.5769230769230769,0
+RSI_14 SMA_10 Bullish_Momentum Bearish_Crossover High_Volatility,0.6153846153846154,0
+RSI_14 SMA_10 Bullish_Momentum Bearish_Crossover Volume_Pressure,0.5,0
+RSI_14 SMA_10 Bullish_Momentum High_Volatility Volume_Pressure,0.5384615384615384,0
+RSI_14 SMA_10 Bearish_Momentum Bearish_Crossover High_Volatility,0.6153846153846154,0
+RSI_14 SMA_10 Bearish_Momentum Bearish_Crossover Volume_Pressure,0.5769230769230769,0
+RSI_14 SMA_10 Bearish_Momentum High_Volatility Volume_Pressure,0.5769230769230769,0
+RSI_14 SMA_10 Bearish_Crossover High_Volatility Volume_Pressure,0.5769230769230769,0
+RSI_14 SMA_30 Bullish_Momentum Bearish_Momentum Bearish_Crossover,0.6538461538461539,0
+RSI_14 SMA_30 Bullish_Momentum Bearish_Momentum High_Volatility,0.6153846153846154,0
+RSI_14 SMA_30 Bullish_Momentum Bearish_Momentum Volume_Pressure,0.6153846153846154,0
+RSI_14 SMA_30 Bullish_Momentum Bearish_Crossover High_Volatility,0.5769230769230769,0
+RSI_14 SMA_30 Bullish_Momentum Bearish_Crossover Volume_Pressure,0.6538461538461539,0
+RSI_14 SMA_30 Bullish_Momentum High_Volatility Volume_Pressure,0.6153846153846154,0
+RSI_14 SMA_30 Bearish_Momentum Bearish_Crossover High_Volatility,0.5384615384615384,0
+RSI_14 SMA_30 Bearish_Momentum Bearish_Crossover Volume_Pressure,0.6153846153846154,0
+RSI_14 SMA_30 Bearish_Momentum High_Volatility Volume_Pressure,0.6153846153846154,0
+RSI_14 SMA_30 Bearish_Crossover High_Volatility Volume_Pressure,0.5769230769230769,0
+RSI_14 Bullish_Momentum Bearish_Momentum Bearish_Crossover High_Volatility,0.6538461538461539,0
+RSI_14 Bullish_Momentum Bearish_Momentum Bearish_Crossover Volume_Pressure,0.6153846153846154,0
+RSI_14 Bullish_Momentum Bearish_Momentum High_Volatility Volume_Pressure,0.6538461538461539,0
+RSI_14 Bullish_Momentum Bearish_Crossover High_Volatility Volume_Pressure,0.6153846153846154,0
+RSI_14 Bearish_Momentum Bearish_Crossover High_Volatility Volume_Pressure,0.6153846153846154,0
+SMA_10 SMA_30 Bullish_Momentum Bearish_Momentum Bearish_Crossover,0.6153846153846154,0
+SMA_10 SMA_30 Bullish_Momentum Bearish_Momentum High_Volatility,0.6153846153846154,0
+SMA_10 SMA_30 Bullish_Momentum Bearish_Momentum Volume_Pressure,0.6538461538461539,0
+SMA_10 SMA_30 Bullish_Momentum Bearish_Crossover High_Volatility,0.6538461538461539,0
+SMA_10 SMA_30 Bullish_Momentum Bearish_Crossover Volume_Pressure,0.6538461538461539,0
+SMA_10 SMA_30 Bullish_Momentum High_Volatility Volume_Pressure,0.6538461538461539,0
+SMA_10 SMA_30 Bearish_Momentum Bearish_Crossover High_Volatility,0.5769230769230769,0
+SMA_10 SMA_30 Bearish_Momentum Bearish_Crossover Volume_Pressure,0.6153846153846154,0
+SMA_10 SMA_30 Bearish_Momentum High_Volatility Volume_Pressure,0.6538461538461539,0
+SMA_10 SMA_30 Bearish_Crossover High_Volatility Volume_Pressure,0.6153846153846154,0
+SMA_10 Bullish_Momentum Bearish_Momentum Bearish_Crossover High_Volatility,0.46153846153846156,0
+SMA_10 Bullish_Momentum Bearish_Momentum Bearish_Crossover Volume_Pressure,0.6153846153846154,0
+SMA_10 Bullish_Momentum Bearish_Momentum High_Volatility Volume_Pressure,0.6153846153846154,0
+SMA_10 Bullish_Momentum Bearish_Crossover High_Volatility Volume_Pressure,0.5769230769230769,0
+SMA_10 Bearish_Momentum Bearish_Crossover High_Volatility Volume_Pressure,0.6153846153846154,0
+SMA_30 Bullish_Momentum Bearish_Momentum Bearish_Crossover High_Volatility,0.5769230769230769,0
+SMA_30 Bullish_Momentum Bearish_Momentum Bearish_Crossover Volume_Pressure,0.5,0
+SMA_30 Bullish_Momentum Bearish_Momentum High_Volatility Volume_Pressure,0.5384615384615384,0
+SMA_30 Bullish_Momentum Bearish_Crossover High_Volatility Volume_Pressure,0.5384615384615384,0
+SMA_30 Bearish_Momentum Bearish_Crossover High_Volatility Volume_Pressure,0.5,0
+Bullish_Momentum Bearish_Momentum Bearish_Crossover High_Volatility Volume_Pressure,0.4230769230769231,1
+ATR OBV RSI_14 SMA_10 SMA_30 Bullish_Momentum,0.6923076923076923,0
+ATR OBV RSI_14 SMA_10 SMA_30 Bearish_Momentum,0.6923076923076923,0
+ATR OBV RSI_14 SMA_10 SMA_30 Bearish_Crossover,0.7307692307692307,0
+ATR OBV RSI_14 SMA_10 SMA_30 High_Volatility,0.7307692307692307,0
+ATR OBV RSI_14 SMA_10 SMA_30 Volume_Pressure,0.6923076923076923,0
+ATR OBV RSI_14 SMA_10 Bullish_Momentum Bearish_Momentum,0.6153846153846154,0
+ATR OBV RSI_14 SMA_10 Bullish_Momentum Bearish_Crossover,0.6538461538461539,0
+ATR OBV RSI_14 SMA_10 Bullish_Momentum High_Volatility,0.6923076923076923,0
+ATR OBV RSI_14 SMA_10 Bullish_Momentum Volume_Pressure,0.5769230769230769,0
+ATR OBV RSI_14 SMA_10 Bearish_Momentum Bearish_Crossover,0.6153846153846154,0
+ATR OBV RSI_14 SMA_10 Bearish_Momentum High_Volatility,0.6923076923076923,0
+ATR OBV RSI_14 SMA_10 Bearish_Momentum Volume_Pressure,0.6153846153846154,0
+ATR OBV RSI_14 SMA_10 Bearish_Crossover High_Volatility,0.6923076923076923,0
+ATR OBV RSI_14 SMA_10 Bearish_Crossover Volume_Pressure,0.6153846153846154,0
+ATR OBV RSI_14 SMA_10 High_Volatility Volume_Pressure,0.5769230769230769,0
+ATR OBV RSI_14 SMA_30 Bullish_Momentum Bearish_Momentum,0.6538461538461539,0
+ATR OBV RSI_14 SMA_30 Bullish_Momentum Bearish_Crossover,0.6538461538461539,0
+ATR OBV RSI_14 SMA_30 Bullish_Momentum High_Volatility,0.6538461538461539,0
+ATR OBV RSI_14 SMA_30 Bullish_Momentum Volume_Pressure,0.6153846153846154,0
+ATR OBV RSI_14 SMA_30 Bearish_Momentum Bearish_Crossover,0.6153846153846154,0
+ATR OBV RSI_14 SMA_30 Bearish_Momentum High_Volatility,0.5769230769230769,0
+ATR OBV RSI_14 SMA_30 Bearish_Momentum Volume_Pressure,0.6153846153846154,0
+ATR OBV RSI_14 SMA_30 Bearish_Crossover High_Volatility,0.6923076923076923,0
+ATR OBV RSI_14 SMA_30 Bearish_Crossover Volume_Pressure,0.6153846153846154,0
+ATR OBV RSI_14 SMA_30 High_Volatility Volume_Pressure,0.6538461538461539,0
+ATR OBV RSI_14 Bullish_Momentum Bearish_Momentum Bearish_Crossover,0.5,0
+ATR OBV RSI_14 Bullish_Momentum Bearish_Momentum High_Volatility,0.5,0
+ATR OBV RSI_14 Bullish_Momentum Bearish_Momentum Volume_Pressure,0.5,0
+ATR OBV RSI_14 Bullish_Momentum Bearish_Crossover High_Volatility,0.6153846153846154,0
+ATR OBV RSI_14 Bullish_Momentum Bearish_Crossover Volume_Pressure,0.5384615384615384,0
+ATR OBV RSI_14 Bullish_Momentum High_Volatility Volume_Pressure,0.6153846153846154,0
+ATR OBV RSI_14 Bearish_Momentum Bearish_Crossover High_Volatility,0.5769230769230769,0
+ATR OBV RSI_14 Bearish_Momentum Bearish_Crossover Volume_Pressure,0.5,0
+ATR OBV RSI_14 Bearish_Momentum High_Volatility Volume_Pressure,0.5384615384615384,0
+ATR OBV RSI_14 Bearish_Crossover High_Volatility Volume_Pressure,0.5384615384615384,0
+ATR OBV SMA_10 SMA_30 Bullish_Momentum Bearish_Momentum,0.6923076923076923,0
+ATR OBV SMA_10 SMA_30 Bullish_Momentum Bearish_Crossover,0.7692307692307693,0
+ATR OBV SMA_10 SMA_30 Bullish_Momentum High_Volatility,0.7692307692307693,0
+ATR OBV SMA_10 SMA_30 Bullish_Momentum Volume_Pressure,0.6538461538461539,0
+ATR OBV SMA_10 SMA_30 Bearish_Momentum Bearish_Crossover,0.6538461538461539,0
+ATR OBV SMA_10 SMA_30 Bearish_Momentum High_Volatility,0.7307692307692307,0
+ATR OBV SMA_10 SMA_30 Bearish_Momentum Volume_Pressure,0.6153846153846154,0
+ATR OBV SMA_10 SMA_30 Bearish_Crossover High_Volatility,0.7307692307692307,0
+ATR OBV SMA_10 SMA_30 Bearish_Crossover Volume_Pressure,0.6538461538461539,0
+ATR OBV SMA_10 SMA_30 High_Volatility Volume_Pressure,0.6538461538461539,0
+ATR OBV SMA_10 Bullish_Momentum Bearish_Momentum Bearish_Crossover,0.5384615384615384,0
+ATR OBV SMA_10 Bullish_Momentum Bearish_Momentum High_Volatility,0.6538461538461539,0
+ATR OBV SMA_10 Bullish_Momentum Bearish_Momentum Volume_Pressure,0.6153846153846154,0
+ATR OBV SMA_10 Bullish_Momentum Bearish_Crossover High_Volatility,0.6923076923076923,0
+ATR OBV SMA_10 Bullish_Momentum Bearish_Crossover Volume_Pressure,0.5769230769230769,0
+ATR OBV SMA_10 Bullish_Momentum High_Volatility Volume_Pressure,0.6538461538461539,0
+ATR OBV SMA_10 Bearish_Momentum Bearish_Crossover High_Volatility,0.6538461538461539,0
+ATR OBV SMA_10 Bearish_Momentum Bearish_Crossover Volume_Pressure,0.5384615384615384,0
+ATR OBV SMA_10 Bearish_Momentum High_Volatility Volume_Pressure,0.5384615384615384,0
+ATR OBV SMA_10 Bearish_Crossover High_Volatility Volume_Pressure,0.6538461538461539,0
+ATR OBV SMA_30 Bullish_Momentum Bearish_Momentum Bearish_Crossover,0.6923076923076923,0
+ATR OBV SMA_30 Bullish_Momentum Bearish_Momentum High_Volatility,0.6923076923076923,0
+ATR OBV SMA_30 Bullish_Momentum Bearish_Momentum Volume_Pressure,0.5769230769230769,0
+ATR OBV SMA_30 Bullish_Momentum Bearish_Crossover High_Volatility,0.7307692307692307,0
+ATR OBV SMA_30 Bullish_Momentum Bearish_Crossover Volume_Pressure,0.5769230769230769,0
+ATR OBV SMA_30 Bullish_Momentum High_Volatility Volume_Pressure,0.5769230769230769,0
+ATR OBV SMA_30 Bearish_Momentum Bearish_Crossover High_Volatility,0.6153846153846154,0
+ATR OBV SMA_30 Bearish_Momentum Bearish_Crossover Volume_Pressure,0.5769230769230769,0
+ATR OBV SMA_30 Bearish_Momentum High_Volatility Volume_Pressure,0.5769230769230769,0
+ATR OBV SMA_30 Bearish_Crossover High_Volatility Volume_Pressure,0.6538461538461539,0
+ATR OBV Bullish_Momentum Bearish_Momentum Bearish_Crossover High_Volatility,0.5769230769230769,0
+ATR OBV Bullish_Momentum Bearish_Momentum Bearish_Crossover Volume_Pressure,0.5769230769230769,0
+ATR OBV Bullish_Momentum Bearish_Momentum High_Volatility Volume_Pressure,0.5769230769230769,0
+ATR OBV Bullish_Momentum Bearish_Crossover High_Volatility Volume_Pressure,0.5769230769230769,0
+ATR OBV Bearish_Momentum Bearish_Crossover High_Volatility Volume_Pressure,0.5384615384615384,0
+ATR RSI_14 SMA_10 SMA_30 Bullish_Momentum Bearish_Momentum,0.6153846153846154,0
+ATR RSI_14 SMA_10 SMA_30 Bullish_Momentum Bearish_Crossover,0.6153846153846154,0
+ATR RSI_14 SMA_10 SMA_30 Bullish_Momentum High_Volatility,0.6538461538461539,0
+ATR RSI_14 SMA_10 SMA_30 Bullish_Momentum Volume_Pressure,0.6538461538461539,0
+ATR RSI_14 SMA_10 SMA_30 Bearish_Momentum Bearish_Crossover,0.6153846153846154,0
+ATR RSI_14 SMA_10 SMA_30 Bearish_Momentum High_Volatility,0.6153846153846154,0
+ATR RSI_14 SMA_10 SMA_30 Bearish_Momentum Volume_Pressure,0.6153846153846154,0
+ATR RSI_14 SMA_10 SMA_30 Bearish_Crossover High_Volatility,0.6153846153846154,0
+ATR RSI_14 SMA_10 SMA_30 Bearish_Crossover Volume_Pressure,0.6538461538461539,0
+ATR RSI_14 SMA_10 SMA_30 High_Volatility Volume_Pressure,0.6538461538461539,0
+ATR RSI_14 SMA_10 Bullish_Momentum Bearish_Momentum Bearish_Crossover,0.5384615384615384,0
+ATR RSI_14 SMA_10 Bullish_Momentum Bearish_Momentum High_Volatility,0.5769230769230769,0
+ATR RSI_14 SMA_10 Bullish_Momentum Bearish_Momentum Volume_Pressure,0.5384615384615384,0
+ATR RSI_14 SMA_10 Bullish_Momentum Bearish_Crossover High_Volatility,0.6153846153846154,0
+ATR RSI_14 SMA_10 Bullish_Momentum Bearish_Crossover Volume_Pressure,0.5384615384615384,0
+ATR RSI_14 SMA_10 Bullish_Momentum High_Volatility Volume_Pressure,0.5384615384615384,0
+ATR RSI_14 SMA_10 Bearish_Momentum Bearish_Crossover High_Volatility,0.5769230769230769,0
+ATR RSI_14 SMA_10 Bearish_Momentum Bearish_Crossover Volume_Pressure,0.5384615384615384,0
+ATR RSI_14 SMA_10 Bearish_Momentum High_Volatility Volume_Pressure,0.5384615384615384,0
+ATR RSI_14 SMA_10 Bearish_Crossover High_Volatility Volume_Pressure,0.5,0
+ATR RSI_14 SMA_30 Bullish_Momentum Bearish_Momentum Bearish_Crossover,0.5769230769230769,0
+ATR RSI_14 SMA_30 Bullish_Momentum Bearish_Momentum High_Volatility,0.6153846153846154,0
+ATR RSI_14 SMA_30 Bullish_Momentum Bearish_Momentum Volume_Pressure,0.6153846153846154,0
+ATR RSI_14 SMA_30 Bullish_Momentum Bearish_Crossover High_Volatility,0.5384615384615384,0
+ATR RSI_14 SMA_30 Bullish_Momentum Bearish_Crossover Volume_Pressure,0.6538461538461539,0
+ATR RSI_14 SMA_30 Bullish_Momentum High_Volatility Volume_Pressure,0.6153846153846154,0
+ATR RSI_14 SMA_30 Bearish_Momentum Bearish_Crossover High_Volatility,0.5384615384615384,0
+ATR RSI_14 SMA_30 Bearish_Momentum Bearish_Crossover Volume_Pressure,0.5384615384615384,0
+ATR RSI_14 SMA_30 Bearish_Momentum High_Volatility Volume_Pressure,0.6153846153846154,0
+ATR RSI_14 SMA_30 Bearish_Crossover High_Volatility Volume_Pressure,0.6538461538461539,0
+ATR RSI_14 Bullish_Momentum Bearish_Momentum Bearish_Crossover High_Volatility,0.5769230769230769,0
+ATR RSI_14 Bullish_Momentum Bearish_Momentum Bearish_Crossover Volume_Pressure,0.34615384615384615,0
+ATR RSI_14 Bullish_Momentum Bearish_Momentum High_Volatility Volume_Pressure,0.5384615384615384,0
+ATR RSI_14 Bullish_Momentum Bearish_Crossover High_Volatility Volume_Pressure,0.5,0
+ATR RSI_14 Bearish_Momentum Bearish_Crossover High_Volatility Volume_Pressure,0.5384615384615384,0
+ATR SMA_10 SMA_30 Bullish_Momentum Bearish_Momentum Bearish_Crossover,0.5769230769230769,0
+ATR SMA_10 SMA_30 Bullish_Momentum Bearish_Momentum High_Volatility,0.6538461538461539,0
+ATR SMA_10 SMA_30 Bullish_Momentum Bearish_Momentum Volume_Pressure,0.6153846153846154,0
+ATR SMA_10 SMA_30 Bullish_Momentum Bearish_Crossover High_Volatility,0.5384615384615384,0
+ATR SMA_10 SMA_30 Bullish_Momentum Bearish_Crossover Volume_Pressure,0.6153846153846154,0
+ATR SMA_10 SMA_30 Bullish_Momentum High_Volatility Volume_Pressure,0.6153846153846154,0
+ATR SMA_10 SMA_30 Bearish_Momentum Bearish_Crossover High_Volatility,0.5769230769230769,0
+ATR SMA_10 SMA_30 Bearish_Momentum Bearish_Crossover Volume_Pressure,0.5769230769230769,0
+ATR SMA_10 SMA_30 Bearish_Momentum High_Volatility Volume_Pressure,0.6153846153846154,0
+ATR SMA_10 SMA_30 Bearish_Crossover High_Volatility Volume_Pressure,0.6153846153846154,0
+ATR SMA_10 Bullish_Momentum Bearish_Momentum Bearish_Crossover High_Volatility,0.5384615384615384,0
+ATR SMA_10 Bullish_Momentum Bearish_Momentum Bearish_Crossover Volume_Pressure,0.5384615384615384,0
+ATR SMA_10 Bullish_Momentum Bearish_Momentum High_Volatility Volume_Pressure,0.5769230769230769,0
+ATR SMA_10 Bullish_Momentum Bearish_Crossover High_Volatility Volume_Pressure,0.4230769230769231,0
+ATR SMA_10 Bearish_Momentum Bearish_Crossover High_Volatility Volume_Pressure,0.5,0
+ATR SMA_30 Bullish_Momentum Bearish_Momentum Bearish_Crossover High_Volatility,0.5384615384615384,0
+ATR SMA_30 Bullish_Momentum Bearish_Momentum Bearish_Crossover Volume_Pressure,0.6153846153846154,0
+ATR SMA_30 Bullish_Momentum Bearish_Momentum High_Volatility Volume_Pressure,0.5769230769230769,0
+ATR SMA_30 Bullish_Momentum Bearish_Crossover High_Volatility Volume_Pressure,0.6153846153846154,0
+ATR SMA_30 Bearish_Momentum Bearish_Crossover High_Volatility Volume_Pressure,0.5769230769230769,0
+ATR Bullish_Momentum Bearish_Momentum Bearish_Crossover High_Volatility Volume_Pressure,0.6153846153846154,0
+OBV RSI_14 SMA_10 SMA_30 Bullish_Momentum Bearish_Momentum,0.7307692307692307,0
+OBV RSI_14 SMA_10 SMA_30 Bullish_Momentum Bearish_Crossover,0.8076923076923077,0
+OBV RSI_14 SMA_10 SMA_30 Bullish_Momentum High_Volatility,0.7307692307692307,0
+OBV RSI_14 SMA_10 SMA_30 Bullish_Momentum Volume_Pressure,0.5769230769230769,0
+OBV RSI_14 SMA_10 SMA_30 Bearish_Momentum Bearish_Crossover,0.7692307692307693,0
+OBV RSI_14 SMA_10 SMA_30 Bearish_Momentum High_Volatility,0.6923076923076923,0
+OBV RSI_14 SMA_10 SMA_30 Bearish_Momentum Volume_Pressure,0.6923076923076923,0
+OBV RSI_14 SMA_10 SMA_30 Bearish_Crossover High_Volatility,0.8076923076923077,0
+OBV RSI_14 SMA_10 SMA_30 Bearish_Crossover Volume_Pressure,0.6538461538461539,0
+OBV RSI_14 SMA_10 SMA_30 High_Volatility Volume_Pressure,0.6923076923076923,0
+OBV RSI_14 SMA_10 Bullish_Momentum Bearish_Momentum Bearish_Crossover,0.6538461538461539,0
+OBV RSI_14 SMA_10 Bullish_Momentum Bearish_Momentum High_Volatility,0.6538461538461539,0
+OBV RSI_14 SMA_10 Bullish_Momentum Bearish_Momentum Volume_Pressure,0.6153846153846154,0
+OBV RSI_14 SMA_10 Bullish_Momentum Bearish_Crossover High_Volatility,0.7307692307692307,0
+OBV RSI_14 SMA_10 Bullish_Momentum Bearish_Crossover Volume_Pressure,0.5769230769230769,0
+OBV RSI_14 SMA_10 Bullish_Momentum High_Volatility Volume_Pressure,0.5769230769230769,0
+OBV RSI_14 SMA_10 Bearish_Momentum Bearish_Crossover High_Volatility,0.6153846153846154,0
+OBV RSI_14 SMA_10 Bearish_Momentum Bearish_Crossover Volume_Pressure,0.6538461538461539,0
+OBV RSI_14 SMA_10 Bearish_Momentum High_Volatility Volume_Pressure,0.5769230769230769,0
+OBV RSI_14 SMA_10 Bearish_Crossover High_Volatility Volume_Pressure,0.6538461538461539,0
+OBV RSI_14 SMA_30 Bullish_Momentum Bearish_Momentum Bearish_Crossover,0.6923076923076923,0
+OBV RSI_14 SMA_30 Bullish_Momentum Bearish_Momentum High_Volatility,0.6153846153846154,0
+OBV RSI_14 SMA_30 Bullish_Momentum Bearish_Momentum Volume_Pressure,0.6538461538461539,0
+OBV RSI_14 SMA_30 Bullish_Momentum Bearish_Crossover High_Volatility,0.6923076923076923,0
+OBV RSI_14 SMA_30 Bullish_Momentum Bearish_Crossover Volume_Pressure,0.6538461538461539,0
+OBV RSI_14 SMA_30 Bullish_Momentum High_Volatility Volume_Pressure,0.6538461538461539,0
+OBV RSI_14 SMA_30 Bearish_Momentum Bearish_Crossover High_Volatility,0.6538461538461539,0
+OBV RSI_14 SMA_30 Bearish_Momentum Bearish_Crossover Volume_Pressure,0.6538461538461539,0
+OBV RSI_14 SMA_30 Bearish_Momentum High_Volatility Volume_Pressure,0.6538461538461539,0
+OBV RSI_14 SMA_30 Bearish_Crossover High_Volatility Volume_Pressure,0.6923076923076923,0
+OBV RSI_14 Bullish_Momentum Bearish_Momentum Bearish_Crossover High_Volatility,0.5384615384615384,0
+OBV RSI_14 Bullish_Momentum Bearish_Momentum Bearish_Crossover Volume_Pressure,0.5384615384615384,0
+OBV RSI_14 Bullish_Momentum Bearish_Momentum High_Volatility Volume_Pressure,0.46153846153846156,0
+OBV RSI_14 Bullish_Momentum Bearish_Crossover High_Volatility Volume_Pressure,0.46153846153846156,0
+OBV RSI_14 Bearish_Momentum Bearish_Crossover High_Volatility Volume_Pressure,0.38461538461538464,0
+OBV SMA_10 SMA_30 Bullish_Momentum Bearish_Momentum Bearish_Crossover,0.7307692307692307,0
+OBV SMA_10 SMA_30 Bullish_Momentum Bearish_Momentum High_Volatility,0.6923076923076923,0
+OBV SMA_10 SMA_30 Bullish_Momentum Bearish_Momentum Volume_Pressure,0.6153846153846154,0
+OBV SMA_10 SMA_30 Bullish_Momentum Bearish_Crossover High_Volatility,0.7692307692307693,0
+OBV SMA_10 SMA_30 Bullish_Momentum Bearish_Crossover Volume_Pressure,0.6153846153846154,0
+OBV SMA_10 SMA_30 Bullish_Momentum High_Volatility Volume_Pressure,0.6538461538461539,0
+OBV SMA_10 SMA_30 Bearish_Momentum Bearish_Crossover High_Volatility,0.7307692307692307,0
+OBV SMA_10 SMA_30 Bearish_Momentum Bearish_Crossover Volume_Pressure,0.6153846153846154,0
+OBV SMA_10 SMA_30 Bearish_Momentum High_Volatility Volume_Pressure,0.6153846153846154,0
+OBV SMA_10 SMA_30 Bearish_Crossover High_Volatility Volume_Pressure,0.6153846153846154,0
+OBV SMA_10 Bullish_Momentum Bearish_Momentum Bearish_Crossover High_Volatility,0.6923076923076923,0
+OBV SMA_10 Bullish_Momentum Bearish_Momentum Bearish_Crossover Volume_Pressure,0.5,0
+OBV SMA_10 Bullish_Momentum Bearish_Momentum High_Volatility Volume_Pressure,0.5384615384615384,0
+OBV SMA_10 Bullish_Momentum Bearish_Crossover High_Volatility Volume_Pressure,0.5384615384615384,0
+OBV SMA_10 Bearish_Momentum Bearish_Crossover High_Volatility Volume_Pressure,0.5,0
+OBV SMA_30 Bullish_Momentum Bearish_Momentum Bearish_Crossover High_Volatility,0.5384615384615384,0
+OBV SMA_30 Bullish_Momentum Bearish_Momentum Bearish_Crossover Volume_Pressure,0.5384615384615384,0
+OBV SMA_30 Bullish_Momentum Bearish_Momentum High_Volatility Volume_Pressure,0.5769230769230769,0
+OBV SMA_30 Bullish_Momentum Bearish_Crossover High_Volatility Volume_Pressure,0.6153846153846154,0
+OBV SMA_30 Bearish_Momentum Bearish_Crossover High_Volatility Volume_Pressure,0.5769230769230769,0
+OBV Bullish_Momentum Bearish_Momentum Bearish_Crossover High_Volatility Volume_Pressure,0.6153846153846154,0
+RSI_14 SMA_10 SMA_30 Bullish_Momentum Bearish_Momentum Bearish_Crossover,0.6538461538461539,0
+RSI_14 SMA_10 SMA_30 Bullish_Momentum Bearish_Momentum High_Volatility,0.6538461538461539,0
+RSI_14 SMA_10 SMA_30 Bullish_Momentum Bearish_Momentum Volume_Pressure,0.6538461538461539,0
+RSI_14 SMA_10 SMA_30 Bullish_Momentum Bearish_Crossover High_Volatility,0.6923076923076923,0
+RSI_14 SMA_10 SMA_30 Bullish_Momentum Bearish_Crossover Volume_Pressure,0.6538461538461539,0
+RSI_14 SMA_10 SMA_30 Bullish_Momentum High_Volatility Volume_Pressure,0.6923076923076923,0
+RSI_14 SMA_10 SMA_30 Bearish_Momentum Bearish_Crossover High_Volatility,0.6538461538461539,0
+RSI_14 SMA_10 SMA_30 Bearish_Momentum Bearish_Crossover Volume_Pressure,0.7307692307692307,0
+RSI_14 SMA_10 SMA_30 Bearish_Momentum High_Volatility Volume_Pressure,0.6538461538461539,0
+RSI_14 SMA_10 SMA_30 Bearish_Crossover High_Volatility Volume_Pressure,0.6923076923076923,0
+RSI_14 SMA_10 Bullish_Momentum Bearish_Momentum Bearish_Crossover High_Volatility,0.5384615384615384,0
+RSI_14 SMA_10 Bullish_Momentum Bearish_Momentum Bearish_Crossover Volume_Pressure,0.5769230769230769,0
+RSI_14 SMA_10 Bullish_Momentum Bearish_Momentum High_Volatility Volume_Pressure,0.46153846153846156,0
+RSI_14 SMA_10 Bullish_Momentum Bearish_Crossover High_Volatility Volume_Pressure,0.5384615384615384,0
+RSI_14 SMA_10 Bearish_Momentum Bearish_Crossover High_Volatility Volume_Pressure,0.5,0
+RSI_14 SMA_30 Bullish_Momentum Bearish_Momentum Bearish_Crossover High_Volatility,0.6153846153846154,0
+RSI_14 SMA_30 Bullish_Momentum Bearish_Momentum Bearish_Crossover Volume_Pressure,0.6538461538461539,0
+RSI_14 SMA_30 Bullish_Momentum Bearish_Momentum High_Volatility Volume_Pressure,0.6538461538461539,0
+RSI_14 SMA_30 Bullish_Momentum Bearish_Crossover High_Volatility Volume_Pressure,0.6153846153846154,0
+RSI_14 SMA_30 Bearish_Momentum Bearish_Crossover High_Volatility Volume_Pressure,0.5769230769230769,0
+RSI_14 Bullish_Momentum Bearish_Momentum Bearish_Crossover High_Volatility Volume_Pressure,0.6153846153846154,0
+SMA_10 SMA_30 Bullish_Momentum Bearish_Momentum Bearish_Crossover High_Volatility,0.5769230769230769,0
+SMA_10 SMA_30 Bullish_Momentum Bearish_Momentum Bearish_Crossover Volume_Pressure,0.6538461538461539,0
+SMA_10 SMA_30 Bullish_Momentum Bearish_Momentum High_Volatility Volume_Pressure,0.6538461538461539,0
+SMA_10 SMA_30 Bullish_Momentum Bearish_Crossover High_Volatility Volume_Pressure,0.6538461538461539,0
+SMA_10 SMA_30 Bearish_Momentum Bearish_Crossover High_Volatility Volume_Pressure,0.6153846153846154,0
+SMA_10 Bullish_Momentum Bearish_Momentum Bearish_Crossover High_Volatility Volume_Pressure,0.6153846153846154,0
+SMA_30 Bullish_Momentum Bearish_Momentum Bearish_Crossover High_Volatility Volume_Pressure,0.5384615384615384,0
+ATR OBV RSI_14 SMA_10 SMA_30 Bullish_Momentum Bearish_Momentum,0.6923076923076923,0
+ATR OBV RSI_14 SMA_10 SMA_30 Bullish_Momentum Bearish_Crossover,0.6538461538461539,0
+ATR OBV RSI_14 SMA_10 SMA_30 Bullish_Momentum High_Volatility,0.6923076923076923,0
+ATR OBV RSI_14 SMA_10 SMA_30 Bullish_Momentum Volume_Pressure,0.5769230769230769,0
+ATR OBV RSI_14 SMA_10 SMA_30 Bearish_Momentum Bearish_Crossover,0.7307692307692307,0
+ATR OBV RSI_14 SMA_10 SMA_30 Bearish_Momentum High_Volatility,0.6538461538461539,0
+ATR OBV RSI_14 SMA_10 SMA_30 Bearish_Momentum Volume_Pressure,0.6153846153846154,0
+ATR OBV RSI_14 SMA_10 SMA_30 Bearish_Crossover High_Volatility,0.6923076923076923,0
+ATR OBV RSI_14 SMA_10 SMA_30 Bearish_Crossover Volume_Pressure,0.5769230769230769,0
+ATR OBV RSI_14 SMA_10 SMA_30 High_Volatility Volume_Pressure,0.7692307692307693,0
+ATR OBV RSI_14 SMA_10 Bullish_Momentum Bearish_Momentum Bearish_Crossover,0.6538461538461539,0
+ATR OBV RSI_14 SMA_10 Bullish_Momentum Bearish_Momentum High_Volatility,0.6538461538461539,0
+ATR OBV RSI_14 SMA_10 Bullish_Momentum Bearish_Momentum Volume_Pressure,0.5769230769230769,0
+ATR OBV RSI_14 SMA_10 Bullish_Momentum Bearish_Crossover High_Volatility,0.6923076923076923,0
+ATR OBV RSI_14 SMA_10 Bullish_Momentum Bearish_Crossover Volume_Pressure,0.5769230769230769,0
+ATR OBV RSI_14 SMA_10 Bullish_Momentum High_Volatility Volume_Pressure,0.6153846153846154,0
+ATR OBV RSI_14 SMA_10 Bearish_Momentum Bearish_Crossover High_Volatility,0.6153846153846154,0
+ATR OBV RSI_14 SMA_10 Bearish_Momentum Bearish_Crossover Volume_Pressure,0.5769230769230769,0
+ATR OBV RSI_14 SMA_10 Bearish_Momentum High_Volatility Volume_Pressure,0.5769230769230769,0
+ATR OBV RSI_14 SMA_10 Bearish_Crossover High_Volatility Volume_Pressure,0.5769230769230769,0
+ATR OBV RSI_14 SMA_30 Bullish_Momentum Bearish_Momentum Bearish_Crossover,0.5769230769230769,0
+ATR OBV RSI_14 SMA_30 Bullish_Momentum Bearish_Momentum High_Volatility,0.5384615384615384,0
+ATR OBV RSI_14 SMA_30 Bullish_Momentum Bearish_Momentum Volume_Pressure,0.5384615384615384,0
+ATR OBV RSI_14 SMA_30 Bullish_Momentum Bearish_Crossover High_Volatility,0.6923076923076923,0
+ATR OBV RSI_14 SMA_30 Bullish_Momentum Bearish_Crossover Volume_Pressure,0.6153846153846154,0
+ATR OBV RSI_14 SMA_30 Bullish_Momentum High_Volatility Volume_Pressure,0.6153846153846154,0
+ATR OBV RSI_14 SMA_30 Bearish_Momentum Bearish_Crossover High_Volatility,0.6538461538461539,0
+ATR OBV RSI_14 SMA_30 Bearish_Momentum Bearish_Crossover Volume_Pressure,0.5769230769230769,0
+ATR OBV RSI_14 SMA_30 Bearish_Momentum High_Volatility Volume_Pressure,0.5384615384615384,0
+ATR OBV RSI_14 SMA_30 Bearish_Crossover High_Volatility Volume_Pressure,0.6538461538461539,0
+ATR OBV RSI_14 Bullish_Momentum Bearish_Momentum Bearish_Crossover High_Volatility,0.5384615384615384,0
+ATR OBV RSI_14 Bullish_Momentum Bearish_Momentum Bearish_Crossover Volume_Pressure,0.46153846153846156,0
+ATR OBV RSI_14 Bullish_Momentum Bearish_Momentum High_Volatility Volume_Pressure,0.5384615384615384,0
+ATR OBV RSI_14 Bullish_Momentum Bearish_Crossover High_Volatility Volume_Pressure,0.5384615384615384,0
+ATR OBV RSI_14 Bearish_Momentum Bearish_Crossover High_Volatility Volume_Pressure,0.46153846153846156,0
+ATR OBV SMA_10 SMA_30 Bullish_Momentum Bearish_Momentum Bearish_Crossover,0.6923076923076923,0
+ATR OBV SMA_10 SMA_30 Bullish_Momentum Bearish_Momentum High_Volatility,0.6923076923076923,0
+ATR OBV SMA_10 SMA_30 Bullish_Momentum Bearish_Momentum Volume_Pressure,0.6153846153846154,0
+ATR OBV SMA_10 SMA_30 Bullish_Momentum Bearish_Crossover High_Volatility,0.7307692307692307,0
+ATR OBV SMA_10 SMA_30 Bullish_Momentum Bearish_Crossover Volume_Pressure,0.6538461538461539,0
+ATR OBV SMA_10 SMA_30 Bullish_Momentum High_Volatility Volume_Pressure,0.6923076923076923,0
+ATR OBV SMA_10 SMA_30 Bearish_Momentum Bearish_Crossover High_Volatility,0.7307692307692307,0
+ATR OBV SMA_10 SMA_30 Bearish_Momentum Bearish_Crossover Volume_Pressure,0.5769230769230769,0
+ATR OBV SMA_10 SMA_30 Bearish_Momentum High_Volatility Volume_Pressure,0.6153846153846154,0
+ATR OBV SMA_10 SMA_30 Bearish_Crossover High_Volatility Volume_Pressure,0.5769230769230769,0
+ATR OBV SMA_10 Bullish_Momentum Bearish_Momentum Bearish_Crossover High_Volatility,0.6538461538461539,0
+ATR OBV SMA_10 Bullish_Momentum Bearish_Momentum Bearish_Crossover Volume_Pressure,0.5769230769230769,0
+ATR OBV SMA_10 Bullish_Momentum Bearish_Momentum High_Volatility Volume_Pressure,0.5769230769230769,0
+ATR OBV SMA_10 Bullish_Momentum Bearish_Crossover High_Volatility Volume_Pressure,0.7692307692307693,0
+ATR OBV SMA_10 Bearish_Momentum Bearish_Crossover High_Volatility Volume_Pressure,0.6538461538461539,0
+ATR OBV SMA_30 Bullish_Momentum Bearish_Momentum Bearish_Crossover High_Volatility,0.6153846153846154,0
+ATR OBV SMA_30 Bullish_Momentum Bearish_Momentum Bearish_Crossover Volume_Pressure,0.5384615384615384,0
+ATR OBV SMA_30 Bullish_Momentum Bearish_Momentum High_Volatility Volume_Pressure,0.5384615384615384,0
+ATR OBV SMA_30 Bullish_Momentum Bearish_Crossover High_Volatility Volume_Pressure,0.6923076923076923,0
+ATR OBV SMA_30 Bearish_Momentum Bearish_Crossover High_Volatility Volume_Pressure,0.5,0
+ATR OBV Bullish_Momentum Bearish_Momentum Bearish_Crossover High_Volatility Volume_Pressure,0.5769230769230769,0
+ATR RSI_14 SMA_10 SMA_30 Bullish_Momentum Bearish_Momentum Bearish_Crossover,0.5,0
+ATR RSI_14 SMA_10 SMA_30 Bullish_Momentum Bearish_Momentum High_Volatility,0.6153846153846154,0
+ATR RSI_14 SMA_10 SMA_30 Bullish_Momentum Bearish_Momentum Volume_Pressure,0.6538461538461539,0
+ATR RSI_14 SMA_10 SMA_30 Bullish_Momentum Bearish_Crossover High_Volatility,0.5769230769230769,0
+ATR RSI_14 SMA_10 SMA_30 Bullish_Momentum Bearish_Crossover Volume_Pressure,0.6538461538461539,0
+ATR RSI_14 SMA_10 SMA_30 Bullish_Momentum High_Volatility Volume_Pressure,0.6538461538461539,0
+ATR RSI_14 SMA_10 SMA_30 Bearish_Momentum Bearish_Crossover High_Volatility,0.6153846153846154,0
+ATR RSI_14 SMA_10 SMA_30 Bearish_Momentum Bearish_Crossover Volume_Pressure,0.6538461538461539,0
+ATR RSI_14 SMA_10 SMA_30 Bearish_Momentum High_Volatility Volume_Pressure,0.6538461538461539,0
+ATR RSI_14 SMA_10 SMA_30 Bearish_Crossover High_Volatility Volume_Pressure,0.6538461538461539,0
+ATR RSI_14 SMA_10 Bullish_Momentum Bearish_Momentum Bearish_Crossover High_Volatility,0.5384615384615384,0
+ATR RSI_14 SMA_10 Bullish_Momentum Bearish_Momentum Bearish_Crossover Volume_Pressure,0.5769230769230769,0
+ATR RSI_14 SMA_10 Bullish_Momentum Bearish_Momentum High_Volatility Volume_Pressure,0.5,0
+ATR RSI_14 SMA_10 Bullish_Momentum Bearish_Crossover High_Volatility Volume_Pressure,0.5384615384615384,0
+ATR RSI_14 SMA_10 Bearish_Momentum Bearish_Crossover High_Volatility Volume_Pressure,0.5384615384615384,0
+ATR RSI_14 SMA_30 Bullish_Momentum Bearish_Momentum Bearish_Crossover High_Volatility,0.5769230769230769,0
+ATR RSI_14 SMA_30 Bullish_Momentum Bearish_Momentum Bearish_Crossover Volume_Pressure,0.6538461538461539,0
+ATR RSI_14 SMA_30 Bullish_Momentum Bearish_Momentum High_Volatility Volume_Pressure,0.5769230769230769,0
+ATR RSI_14 SMA_30 Bullish_Momentum Bearish_Crossover High_Volatility Volume_Pressure,0.5769230769230769,0
+ATR RSI_14 SMA_30 Bearish_Momentum Bearish_Crossover High_Volatility Volume_Pressure,0.6538461538461539,0
+ATR RSI_14 Bullish_Momentum Bearish_Momentum Bearish_Crossover High_Volatility Volume_Pressure,0.5,0
+ATR SMA_10 SMA_30 Bullish_Momentum Bearish_Momentum Bearish_Crossover High_Volatility,0.5769230769230769,0
+ATR SMA_10 SMA_30 Bullish_Momentum Bearish_Momentum Bearish_Crossover Volume_Pressure,0.6153846153846154,0
+ATR SMA_10 SMA_30 Bullish_Momentum Bearish_Momentum High_Volatility Volume_Pressure,0.6153846153846154,0
+ATR SMA_10 SMA_30 Bullish_Momentum Bearish_Crossover High_Volatility Volume_Pressure,0.5769230769230769,0
+ATR SMA_10 SMA_30 Bearish_Momentum Bearish_Crossover High_Volatility Volume_Pressure,0.6153846153846154,0
+ATR SMA_10 Bullish_Momentum Bearish_Momentum Bearish_Crossover High_Volatility Volume_Pressure,0.6153846153846154,0
+ATR SMA_30 Bullish_Momentum Bearish_Momentum Bearish_Crossover High_Volatility Volume_Pressure,0.5384615384615384,0
+OBV RSI_14 SMA_10 SMA_30 Bullish_Momentum Bearish_Momentum Bearish_Crossover,0.6923076923076923,0
+OBV RSI_14 SMA_10 SMA_30 Bullish_Momentum Bearish_Momentum High_Volatility,0.6923076923076923,0
+OBV RSI_14 SMA_10 SMA_30 Bullish_Momentum Bearish_Momentum Volume_Pressure,0.6538461538461539,0
+OBV RSI_14 SMA_10 SMA_30 Bullish_Momentum Bearish_Crossover High_Volatility,0.7692307692307693,0
+OBV RSI_14 SMA_10 SMA_30 Bullish_Momentum Bearish_Crossover Volume_Pressure,0.6923076923076923,0
+OBV RSI_14 SMA_10 SMA_30 Bullish_Momentum High_Volatility Volume_Pressure,0.6923076923076923,0
+OBV RSI_14 SMA_10 SMA_30 Bearish_Momentum Bearish_Crossover High_Volatility,0.6923076923076923,0
+OBV RSI_14 SMA_10 SMA_30 Bearish_Momentum Bearish_Crossover Volume_Pressure,0.6923076923076923,0
+OBV RSI_14 SMA_10 SMA_30 Bearish_Momentum High_Volatility Volume_Pressure,0.6538461538461539,0
+OBV RSI_14 SMA_10 SMA_30 Bearish_Crossover High_Volatility Volume_Pressure,0.5769230769230769,0
+OBV RSI_14 SMA_10 Bullish_Momentum Bearish_Momentum Bearish_Crossover High_Volatility,0.6153846153846154,0
+OBV RSI_14 SMA_10 Bullish_Momentum Bearish_Momentum Bearish_Crossover Volume_Pressure,0.5769230769230769,0
+OBV RSI_14 SMA_10 Bullish_Momentum Bearish_Momentum High_Volatility Volume_Pressure,0.5384615384615384,0
+OBV RSI_14 SMA_10 Bullish_Momentum Bearish_Crossover High_Volatility Volume_Pressure,0.6153846153846154,0
+OBV RSI_14 SMA_10 Bearish_Momentum Bearish_Crossover High_Volatility Volume_Pressure,0.6153846153846154,0
+OBV RSI_14 SMA_30 Bullish_Momentum Bearish_Momentum Bearish_Crossover High_Volatility,0.6538461538461539,0
+OBV RSI_14 SMA_30 Bullish_Momentum Bearish_Momentum Bearish_Crossover Volume_Pressure,0.6538461538461539,0
+OBV RSI_14 SMA_30 Bullish_Momentum Bearish_Momentum High_Volatility Volume_Pressure,0.6153846153846154,0
+OBV RSI_14 SMA_30 Bullish_Momentum Bearish_Crossover High_Volatility Volume_Pressure,0.6538461538461539,0
+OBV RSI_14 SMA_30 Bearish_Momentum Bearish_Crossover High_Volatility Volume_Pressure,0.6538461538461539,0
+OBV RSI_14 Bullish_Momentum Bearish_Momentum Bearish_Crossover High_Volatility Volume_Pressure,0.46153846153846156,0
+OBV SMA_10 SMA_30 Bullish_Momentum Bearish_Momentum Bearish_Crossover High_Volatility,0.6923076923076923,0
+OBV SMA_10 SMA_30 Bullish_Momentum Bearish_Momentum Bearish_Crossover Volume_Pressure,0.6153846153846154,0
+OBV SMA_10 SMA_30 Bullish_Momentum Bearish_Momentum High_Volatility Volume_Pressure,0.5384615384615384,0
+OBV SMA_10 SMA_30 Bullish_Momentum Bearish_Crossover High_Volatility Volume_Pressure,0.5769230769230769,0
+OBV SMA_10 SMA_30 Bearish_Momentum Bearish_Crossover High_Volatility Volume_Pressure,0.5769230769230769,0
+OBV SMA_10 Bullish_Momentum Bearish_Momentum Bearish_Crossover High_Volatility Volume_Pressure,0.5769230769230769,0
+OBV SMA_30 Bullish_Momentum Bearish_Momentum Bearish_Crossover High_Volatility Volume_Pressure,0.5,0
+RSI_14 SMA_10 SMA_30 Bullish_Momentum Bearish_Momentum Bearish_Crossover High_Volatility,0.6538461538461539,0
+RSI_14 SMA_10 SMA_30 Bullish_Momentum Bearish_Momentum Bearish_Crossover Volume_Pressure,0.6923076923076923,0
+RSI_14 SMA_10 SMA_30 Bullish_Momentum Bearish_Momentum High_Volatility Volume_Pressure,0.7307692307692307,0
+RSI_14 SMA_10 SMA_30 Bullish_Momentum Bearish_Crossover High_Volatility Volume_Pressure,0.6538461538461539,0
+RSI_14 SMA_10 SMA_30 Bearish_Momentum Bearish_Crossover High_Volatility Volume_Pressure,0.6923076923076923,0
+RSI_14 SMA_10 Bullish_Momentum Bearish_Momentum Bearish_Crossover High_Volatility Volume_Pressure,0.5769230769230769,0
+RSI_14 SMA_30 Bullish_Momentum Bearish_Momentum Bearish_Crossover High_Volatility Volume_Pressure,0.6153846153846154,0
+SMA_10 SMA_30 Bullish_Momentum Bearish_Momentum Bearish_Crossover High_Volatility Volume_Pressure,0.6923076923076923,0
+ATR OBV RSI_14 SMA_10 SMA_30 Bullish_Momentum Bearish_Momentum Bearish_Crossover,0.6153846153846154,0
+ATR OBV RSI_14 SMA_10 SMA_30 Bullish_Momentum Bearish_Momentum High_Volatility,0.6923076923076923,0
+ATR OBV RSI_14 SMA_10 SMA_30 Bullish_Momentum Bearish_Momentum Volume_Pressure,0.6153846153846154,0
+ATR OBV RSI_14 SMA_10 SMA_30 Bullish_Momentum Bearish_Crossover High_Volatility,0.7307692307692307,0
+ATR OBV RSI_14 SMA_10 SMA_30 Bullish_Momentum Bearish_Crossover Volume_Pressure,0.6923076923076923,0
+ATR OBV RSI_14 SMA_10 SMA_30 Bullish_Momentum High_Volatility Volume_Pressure,0.6538461538461539,0
+ATR OBV RSI_14 SMA_10 SMA_30 Bearish_Momentum Bearish_Crossover High_Volatility,0.6538461538461539,0
+ATR OBV RSI_14 SMA_10 SMA_30 Bearish_Momentum Bearish_Crossover Volume_Pressure,0.6923076923076923,0
+ATR OBV RSI_14 SMA_10 SMA_30 Bearish_Momentum High_Volatility Volume_Pressure,0.6538461538461539,0
+ATR OBV RSI_14 SMA_10 SMA_30 Bearish_Crossover High_Volatility Volume_Pressure,0.7307692307692307,0
+ATR OBV RSI_14 SMA_10 Bullish_Momentum Bearish_Momentum Bearish_Crossover High_Volatility,0.6153846153846154,0
+ATR OBV RSI_14 SMA_10 Bullish_Momentum Bearish_Momentum Bearish_Crossover Volume_Pressure,0.5384615384615384,0
+ATR OBV RSI_14 SMA_10 Bullish_Momentum Bearish_Momentum High_Volatility Volume_Pressure,0.5769230769230769,0
+ATR OBV RSI_14 SMA_10 Bullish_Momentum Bearish_Crossover High_Volatility Volume_Pressure,0.6153846153846154,0
+ATR OBV RSI_14 SMA_10 Bearish_Momentum Bearish_Crossover High_Volatility Volume_Pressure,0.5384615384615384,0
+ATR OBV RSI_14 SMA_30 Bullish_Momentum Bearish_Momentum Bearish_Crossover High_Volatility,0.5769230769230769,0
+ATR OBV RSI_14 SMA_30 Bullish_Momentum Bearish_Momentum Bearish_Crossover Volume_Pressure,0.5769230769230769,0
+ATR OBV RSI_14 SMA_30 Bullish_Momentum Bearish_Momentum High_Volatility Volume_Pressure,0.5384615384615384,0
+ATR OBV RSI_14 SMA_30 Bullish_Momentum Bearish_Crossover High_Volatility Volume_Pressure,0.6538461538461539,0
+ATR OBV RSI_14 SMA_30 Bearish_Momentum Bearish_Crossover High_Volatility Volume_Pressure,0.5769230769230769,0
+ATR OBV RSI_14 Bullish_Momentum Bearish_Momentum Bearish_Crossover High_Volatility Volume_Pressure,0.5,0
+ATR OBV SMA_10 SMA_30 Bullish_Momentum Bearish_Momentum Bearish_Crossover High_Volatility,0.6153846153846154,0
+ATR OBV SMA_10 SMA_30 Bullish_Momentum Bearish_Momentum Bearish_Crossover Volume_Pressure,0.6153846153846154,0
+ATR OBV SMA_10 SMA_30 Bullish_Momentum Bearish_Momentum High_Volatility Volume_Pressure,0.6153846153846154,0
+ATR OBV SMA_10 SMA_30 Bullish_Momentum Bearish_Crossover High_Volatility Volume_Pressure,0.6538461538461539,0
+ATR OBV SMA_10 SMA_30 Bearish_Momentum Bearish_Crossover High_Volatility Volume_Pressure,0.6538461538461539,0
+ATR OBV SMA_10 Bullish_Momentum Bearish_Momentum Bearish_Crossover High_Volatility Volume_Pressure,0.6153846153846154,0
+ATR OBV SMA_30 Bullish_Momentum Bearish_Momentum Bearish_Crossover High_Volatility Volume_Pressure,0.5769230769230769,0
+ATR RSI_14 SMA_10 SMA_30 Bullish_Momentum Bearish_Momentum Bearish_Crossover High_Volatility,0.6153846153846154,0
+ATR RSI_14 SMA_10 SMA_30 Bullish_Momentum Bearish_Momentum Bearish_Crossover Volume_Pressure,0.6538461538461539,0
+ATR RSI_14 SMA_10 SMA_30 Bullish_Momentum Bearish_Momentum High_Volatility Volume_Pressure,0.6538461538461539,0
+ATR RSI_14 SMA_10 SMA_30 Bullish_Momentum Bearish_Crossover High_Volatility Volume_Pressure,0.6538461538461539,0
+ATR RSI_14 SMA_10 SMA_30 Bearish_Momentum Bearish_Crossover High_Volatility Volume_Pressure,0.6538461538461539,0
+ATR RSI_14 SMA_10 Bullish_Momentum Bearish_Momentum Bearish_Crossover High_Volatility Volume_Pressure,0.5384615384615384,0
+ATR RSI_14 SMA_30 Bullish_Momentum Bearish_Momentum Bearish_Crossover High_Volatility Volume_Pressure,0.6538461538461539,0
+ATR SMA_10 SMA_30 Bullish_Momentum Bearish_Momentum Bearish_Crossover High_Volatility Volume_Pressure,0.5769230769230769,0
+OBV RSI_14 SMA_10 SMA_30 Bullish_Momentum Bearish_Momentum Bearish_Crossover High_Volatility,0.6923076923076923,0
+OBV RSI_14 SMA_10 SMA_30 Bullish_Momentum Bearish_Momentum Bearish_Crossover Volume_Pressure,0.6923076923076923,0
+OBV RSI_14 SMA_10 SMA_30 Bullish_Momentum Bearish_Momentum High_Volatility Volume_Pressure,0.6153846153846154,0
+OBV RSI_14 SMA_10 SMA_30 Bullish_Momentum Bearish_Crossover High_Volatility Volume_Pressure,0.6153846153846154,0
+OBV RSI_14 SMA_10 SMA_30 Bearish_Momentum Bearish_Crossover High_Volatility Volume_Pressure,0.6538461538461539,0
+OBV RSI_14 SMA_10 Bullish_Momentum Bearish_Momentum Bearish_Crossover High_Volatility Volume_Pressure,0.5769230769230769,0
+OBV RSI_14 SMA_30 Bullish_Momentum Bearish_Momentum Bearish_Crossover High_Volatility Volume_Pressure,0.6153846153846154,0
+OBV SMA_10 SMA_30 Bullish_Momentum Bearish_Momentum Bearish_Crossover High_Volatility Volume_Pressure,0.5769230769230769,0
+RSI_14 SMA_10 SMA_30 Bullish_Momentum Bearish_Momentum Bearish_Crossover High_Volatility Volume_Pressure,0.6923076923076923,0
+ATR OBV RSI_14 SMA_10 SMA_30 Bullish_Momentum Bearish_Momentum Bearish_Crossover High_Volatility,0.6153846153846154,0
+ATR OBV RSI_14 SMA_10 SMA_30 Bullish_Momentum Bearish_Momentum Bearish_Crossover Volume_Pressure,0.6153846153846154,0
+ATR OBV RSI_14 SMA_10 SMA_30 Bullish_Momentum Bearish_Momentum High_Volatility Volume_Pressure,0.6153846153846154,0
+ATR OBV RSI_14 SMA_10 SMA_30 Bullish_Momentum Bearish_Crossover High_Volatility Volume_Pressure,0.6923076923076923,0
+ATR OBV RSI_14 SMA_10 SMA_30 Bearish_Momentum Bearish_Crossover High_Volatility Volume_Pressure,0.6538461538461539,0
+ATR OBV RSI_14 SMA_10 Bullish_Momentum Bearish_Momentum Bearish_Crossover High_Volatility Volume_Pressure,0.5769230769230769,0
+ATR OBV RSI_14 SMA_30 Bullish_Momentum Bearish_Momentum Bearish_Crossover High_Volatility Volume_Pressure,0.5384615384615384,0
+ATR OBV SMA_10 SMA_30 Bullish_Momentum Bearish_Momentum Bearish_Crossover High_Volatility Volume_Pressure,0.6923076923076923,0
+ATR RSI_14 SMA_10 SMA_30 Bullish_Momentum Bearish_Momentum Bearish_Crossover High_Volatility Volume_Pressure,0.6538461538461539,0
+OBV RSI_14 SMA_10 SMA_30 Bullish_Momentum Bearish_Momentum Bearish_Crossover High_Volatility Volume_Pressure,0.6538461538461539,0
+ATR OBV RSI_14 SMA_10 SMA_30 Bullish_Momentum Bearish_Momentum Bearish_Crossover High_Volatility Volume_Pressure,0.6153846153846154,0

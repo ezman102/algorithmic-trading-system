@@ -4,7 +4,6 @@ import os
 script_dir = os.path.dirname(os.path.abspath(__file__))
 utils_dir = os.path.join(script_dir, 'utils')
 sys.path.append(utils_dir)
-
 models_dir = os.path.join(script_dir, 'best_models')
 if not os.path.exists(models_dir):
     os.makedirs(models_dir)
@@ -18,7 +17,7 @@ import joblib
 import pandas as pd
 from utils.data_fetcher import fetch_data
 from utils.feature_engineering import add_technical_indicators, define_target_variable
-from utils.visualization import visualize_decision_trees, visualize_classification_results, visualize_regression_results, visualize_feature_importances
+from utils.visualization import visualize_decision_trees, visualize_classification_results, visualize_regression_results, visualize_feature_importances,plot_target_distribution
 from utils.dynamic_cv_strategy import dynamic_cv_strategy
 from sklearn.metrics import mean_squared_error, mean_absolute_error
 import matplotlib.pyplot as plt
@@ -34,8 +33,7 @@ def all_subsets(ss):
 def main():
     stock_symbol = 'TSLA'
     start_date = '2023-03-20'
-    end_date = '2024-03-20'
-    interval='1d'
+    end_date = '2024-03-27'
 
     print("Fetching data...")
     data = fetch_data(stock_symbol, start_date, end_date, interval='1d')
@@ -59,6 +57,7 @@ def main():
         '11': ('ATR', {'name': 'ATR', 'type': 'ATR', 'window': 14}),
         '12': ('Stochastic_Oscillator', {'name': 'Stochastic_Oscillator', 'type': 'Stochastic', 'window': 14}),
         '13': ('OBV', {'name': 'OBV', 'type': 'OBV'}),
+        '14': ('Custom_Rule', {'type': 'Custom_Rule', 'rule': 'RSI_SMA_Crossover'}),
     }
 
     print("Available indicators:")
@@ -120,14 +119,14 @@ def main():
     
 
     param_grid = {
-        'n_estimators': [100, 200, 500, 1000],
-        'max_depth': [None, 2, 4, 5, 10, 20],
-        'min_samples_split': [2, 5, 10],
-        'min_samples_leaf': [1, 2, 4]
-        # 'n_estimators': [100, 200],
-        # 'max_depth': [2],
+        # 'n_estimators': [100, 200, 500, 1000],
+        # 'max_depth': [None, 2, 4, 5, 10, 20],
         # 'min_samples_split': [2, 5, 10],
         # 'min_samples_leaf': [1, 2, 4]
+        'n_estimators': [1000],
+        'max_depth': [2],
+        'min_samples_split': [2, 5, 10],
+        'min_samples_leaf': [1, 2, 4]
     }
     classification = True if mode == 'classification' else False
 
@@ -194,6 +193,7 @@ def main():
                 print(f"Predicted value for the next day: {next_day_prediction[0]}")
 
                 print(f"Model saved as {model_filename}")
+                plot_target_distribution(data['target_class'])
                 visualize_classification_results(y_test, predictions)
                 visualize_decision_trees(best_model, features.columns, max_trees=1)
 

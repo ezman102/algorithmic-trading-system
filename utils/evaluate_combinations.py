@@ -45,7 +45,7 @@ def evaluate_feature_combinations_parallel(data, all_features, max_features=5):
 
 
 def main():
-    stock_symbol = 'TSLA'
+    stock_symbol = 'VOO'
     start_date = '2023-03-30'
     end_date = '2024-03-20'
 
@@ -66,7 +66,14 @@ def main():
         {'name': 'BB_Lower', 'type': 'BB', 'window': 20},  # Bollinger Bands
         {'name': 'ATR', 'type': 'ATR', 'window': 14},  # Average True Range
         {'name': 'Stochastic_Oscillator', 'type': 'Stochastic', 'window': 14},
-        {'name': 'OBV', 'type': 'OBV'}  # On-Balance Volume doesn't need a window
+        {'name': 'OBV', 'type': 'OBV'},  # On-Balance Volume doesn't need a window
+        {'name': 'Bullish_Momentum', 'type': 'Custom_Rule', 'rule': 'Bullish_Momentum'},
+        {'name': 'Bearish_Momentum', 'type': 'Custom_Rule', 'rule': 'Bearish_Momentum'},
+        {'name': 'Bearish_Crossover', 'type': 'Custom_Rule', 'rule': 'Bearish_Crossover'},
+        {'name': 'High_Volatility', 'type': 'Custom_Rule', 'rule': 'High_Volatility'},
+        {'name': 'Volume_Pressure', 'type': 'Custom_Rule', 'rule': 'Volume_Pressure'},
+
+    # Other custom rules as needed...
     ]
     data = add_technical_indicators(data, indicators, drop_original=False)
     print(data)

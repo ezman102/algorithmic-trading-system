@@ -9,8 +9,6 @@ def add_rsi_threshold_features(data, rsi_column, thresholds):
         data[feature_name] = (data[rsi_column] > threshold).astype(int)
     return data
 
-
-
 def calculate_bollinger_bands(data, column, window=20, bands=['upper', 'lower']):
     rolling_mean = data[column].rolling(window=window).mean()
     rolling_std = data[column].rolling(window=window).std()
@@ -21,7 +19,6 @@ def calculate_bollinger_bands(data, column, window=20, bands=['upper', 'lower'])
         lower_band = rolling_mean - (rolling_std * 2)
         data['BB_Lower'] = lower_band
 
-
 def calculate_atr(data, window=14):
     high_low = data['High'] - data['Low']
     high_close = np.abs(data['High'] - data['Close'].shift())
@@ -30,6 +27,7 @@ def calculate_atr(data, window=14):
     true_range = np.max(ranges, axis=1)
     atr = true_range.rolling(window=window).mean()
     data['ATR'] = atr
+    return data  
 
 def calculate_stochastic_oscillator(data, window=14):
     low_min = data['Low'].rolling(window=window).min()
@@ -46,6 +44,8 @@ def calculate_obv(data):
         else:
             obv.append(obv[-1])
     data['OBV'] = obv
+    return data
+
 
 def calculate_moving_average(data, column, window, ma_type='SMA'):
     if ma_type == 'SMA':
@@ -69,13 +69,18 @@ def calculate_macd(data, column, short_window, long_window, signal_window):
     return macd, macd_signal, macd_histogram
 
 def add_technical_indicators(data, indicators, drop_original=False):
+    indicators = ensure_prerequisites(data, indicators)
     macd_added = False  
-
+    rsi_added = False  # Add a flag for RSI as well
+    
     for indicator in indicators:
         if indicator['type'] == 'SMA' or indicator['type'] == 'EMA':
             data[indicator['name']] = calculate_moving_average(data, 'Close', indicator['window'], indicator['type'])
-        elif indicator['type'] == 'RSI':
-            data[indicator['name']] = calculate_rsi(data, 'Close', indicator['window'])
+        if indicator['type'] == 'RSI':
+            # Add RSI if it hasn't been added yet
+            if not rsi_added:
+                data[indicator['name']] = calculate_rsi(data, 'Close', indicator['window'])
+                rsi_added = True
         elif indicator['type'] == 'MACD' and not macd_added:
             # Ensure MACD and its components are calculated only once
             macd, macd_signal, macd_histogram = calculate_macd(data, 'Close', indicator['short_window'], indicator['long_window'], indicator['signal_window'])
@@ -99,6 +104,14 @@ def add_technical_indicators(data, indicators, drop_original=False):
             calculate_stochastic_oscillator(data, indicator['window'])
         elif indicator['type'] == 'OBV':
             calculate_obv(data)
+        if 'ATR' not in data.columns:
+            data = calculate_atr(data, window=14)
+        if 'OBV' not in data.columns:
+            data = calculate_obv(data)
+
+    
+    if any(indicator['type'] == 'Custom_Rule' for indicator in indicators):
+        data = add_custom_rule_features(data)
     
     if drop_original:
         data.drop(columns=['Open', 'High', 'Low', 'Adj Close', 'Volume'], inplace=True, errors='ignore')
@@ -115,10 +128,46 @@ def define_target_variable(data, target_column, shift_period, is_regression=Fals
         # For classification, predict whether the next day's 'Close' price will be higher (1) or not (0)
         data[target_column] = (data['Close'].shift(-shift_period) > data['Close']).astype(int)
 
-    # Drop rows with NaN values that result from shifting
+
     data.dropna(subset=[target_column], inplace=True)
     return data
 
 
+def add_custom_rule_features(data):
+    # If RSI is greater than 70 and the short-term SMA is above the long-term SMA
+    data['Bullish_Momentum'] = ((data['RSI_14'] > 70) & (data['SMA_10'] > data['SMA_30'])).astype(int)
+    # If RSI is below 30, indicating potential overselling
+    data['Bearish_Momentum'] = (data['RSI_14'] < 30).astype(int)
+    # If the short-term SMA crosses below the long-term SMA
+    data['Bearish_Crossover'] = ((data['SMA_10'] < data['SMA_30']) & (data['SMA_10'].shift(1) > data['SMA_30'].shift(1))).astype(int)
+    # When the ATR is above the rolling mean ATR multiplied by a certain factor, it may signal increasing market volatility
+    data['High_Volatility'] = (data['ATR'] > data['ATR'].rolling(window=14).mean() * 1.1).astype(int)
+    # A sharp increase in OBV could signal strong buying pressure
+    data['Volume_Pressure'] = (data['OBV'] > data['OBV'].shift(1) * 1.1).astype(int)
 
+    return data
+
+
+
+def ensure_prerequisites(data, indicators):
+    # Define required indicators for custom rules
+    required_indicators = [
+        {'type': 'RSI', 'name': 'RSI_14', 'window': 14},
+        {'type': 'SMA', 'name': 'SMA_10', 'window': 10},
+        {'type': 'SMA', 'name': 'SMA_30', 'window': 30},
+    ]
+    
+    # Debug: Print current indicators to identify any potential issues
+    print("Current indicators before ensuring prerequisites:", indicators)
+
+    # Add each required indicator if it's not already in the indicators list
+    for req_indicator in required_indicators:
+        # Check if the required indicator is already in the list
+        if not any(ind.get('name') == req_indicator['name'] for ind in indicators if 'name' in ind):
+            indicators.append(req_indicator)
+
+    # Debug: Print updated indicators
+    print("Indicators after ensuring prerequisites:", indicators)
+
+    return indicators
 

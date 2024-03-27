@@ -70,3 +70,10 @@ def visualize_feature_importances(features, feature_importances):
 
     plt.show()
 
+def plot_target_distribution(target_data):
+    plt.figure(figsize=(10, 5))
+    sns.countplot(x=target_data)
+    plt.title('Distribution of Target Classes')
+    plt.xlabel('Class')
+    plt.ylabel('Frequency')
+    plt.show()
