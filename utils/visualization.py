@@ -5,6 +5,7 @@ from sklearn.tree import plot_tree
 from sklearn.metrics import confusion_matrix
 import seaborn as sns
 import pandas as pd 
+import seaborn as sns
 
 def visualize_decision_trees(random_forest_model, feature_names, max_trees=3):
     num_trees = min(max_trees, len(random_forest_model.estimators_))
@@ -72,8 +73,15 @@ def visualize_feature_importances(features, feature_importances):
 
 def plot_target_distribution(target_data):
     plt.figure(figsize=(10, 5))
-    sns.countplot(x=target_data)
+    # Create countplot
+    ax = sns.countplot(x=target_data, palette=['red', 'blue'])
     plt.title('Distribution of Target Classes')
     plt.xlabel('Class')
     plt.ylabel('Frequency')
+    
+    # Adding the text labels on bars
+    for p in ax.patches:
+        ax.text(p.get_x() + p.get_width() / 2., p.get_height(), '%d' % int(p.get_height()),
+                fontsize=12, color='black', ha='center', va='bottom')
+    
     plt.show()
