@@ -4,6 +4,7 @@ import os
 script_dir = os.path.dirname(os.path.abspath(__file__))
 utils_dir = os.path.join(script_dir, 'utils')
 sys.path.append(utils_dir)
+
 models_dir = os.path.join(script_dir, 'best_models')
 if not os.path.exists(models_dir):
     os.makedirs(models_dir)
@@ -22,18 +23,30 @@ from utils.dynamic_cv_strategy import dynamic_cv_strategy
 from sklearn.metrics import mean_squared_error, mean_absolute_error
 import matplotlib.pyplot as plt
 from itertools import chain, combinations
+from sklearn.metrics import precision_score, recall_score, f1_score
 
 def preprocess_data(features):
-    imputer = SimpleImputer(strategy='mean') 
-    return imputer.fit_transform(features)
+    imputer = SimpleImputer(strategy='mean')
+    features_imputed = imputer.fit_transform(features)
+    return pd.DataFrame(features_imputed, columns=features.columns)
 
 def all_subsets(ss):
     return chain(*map(lambda x: combinations(ss, x), range(1, len(ss)+1)))
 
+def capture_best_features_combinations(best_combinations):
+                    columns = ['Combination', 'Accuracy', 'Prediction']
+                    best_features_df = pd.DataFrame.from_records(best_combinations, columns=columns)
+                    return best_features_df
+
 def main():
-    stock_symbol = 'TSLA'
-    start_date = '2023-03-20'
-    end_date = '2024-03-27'
+    # stock_symbol = 'TSLA'
+    # start_date = '2023-03-20'
+    # end_date = '2024-03-27'
+    # interval='1d'、
+    stock_symbol = input("Enter the stock symbol (e.g., TSLA): ")
+    start_date = input("Enter the start date (YYYY-MM-DD): ")
+    end_date = input("Enter the end date (YYYY-MM-DD): ")
+    interval = input("Enter the interval (1d, 1wk, 1mo): ")
 
     print("Fetching data...")
     data = fetch_data(stock_symbol, start_date, end_date, interval='1d')
@@ -119,14 +132,14 @@ def main():
     
 
     param_grid = {
-        # 'n_estimators': [100, 200, 500, 1000],
-        # 'max_depth': [None, 2, 4, 5, 10, 20],
-        # 'min_samples_split': [2, 5, 10],
-        # 'min_samples_leaf': [1, 2, 4]
-        'n_estimators': [1000],
-        'max_depth': [2],
+        'n_estimators': [100, 200, 500, 1000],
+        'max_depth': [None, 2, 4, 5, 10, 20],
         'min_samples_split': [2, 5, 10],
         'min_samples_leaf': [1, 2, 4]
+        # 'n_estimators': [100],
+        # 'max_depth': [2,3],
+        # 'min_samples_split': [2, 5],
+        # 'min_samples_leaf': [1,2]
     }
     classification = True if mode == 'classification' else False
 
@@ -140,8 +153,6 @@ def main():
     print("Best Parameters:", grid_search.best_params_)
     best_model = grid_search.best_estimator_
 
-    # Assuming best_model is your trained model
-    # And assuming 'features' is your DataFrame of feature data
     feature_importances = best_model.feature_importances_
 
     # Call the visualization function with the DataFrame and the importances
@@ -160,21 +171,67 @@ def main():
                 best_combination = None
                 best_model = None
 
+                # Loop through all combinations
+                # Initialize an empty list to store the performance of all combinations
+                imputer = SimpleImputer(strategy='mean')
+
+                # Initialize an empty list to store the performance of all combinations
+                all_combination_performance = []
+                print("Evaluating combinations. This may take a while...")
+                # Loop through all combinations
                 for combination in all_combinations:
                     # Select only the current combination of features
-                    X_train_subset = X_train[:, features.columns.isin(combination)]
-                    X_test_subset = X_test[:, features.columns.isin(combination)]
+                    features_subset = features[list(combination)]
+                    print(f"Evaluating combination: {' '.join(combination)}")
+                    # Preprocess the data to fill NaN values
+                    features_subset_imputed = imputer.fit_transform(features_subset)
+                    
+                    X_train_subset, X_test_subset, y_train_subset, y_test_subset = train_test_split(
+                        features_subset_imputed, target, test_size=0.1, random_state=42
+                    )
 
-                    model = RandomForestClassifier(random_state=42)
-                    model.fit(X_train_subset, y_train)
+                    # Train the model
+                    model = RandomForestClassifier()
+                    # model = RandomForestClassifier(n_estimators=200, max_depth=None, min_samples_leaf=1, min_samples_split=2, random_state=42)
+                    model.fit(X_train_subset, y_train_subset)
 
                     # Evaluate the model
-                    accuracy = model.score(X_test_subset, y_test)
+                    accuracy = model.score(X_test_subset, y_test_subset)
+                    predictions = model.predict(X_test_subset)
+                    precision = precision_score(y_test_subset, predictions, average='macro')
+                    recall = recall_score(y_test_subset, predictions, average='macro')
+                    f1 = f1_score(y_test_subset, predictions, average='macro')
+                    last_features = original_data.iloc[-1:][list(combination)].ffill().bfill().values
+                    next_day_prediction = model.predict(last_features)[0]
+
+                    # Store the combination, accuracy, and prediction
+                    
+                    combination_performance = {
+                        'Combination': ' '.join(combination),
+                        'Accuracy': accuracy,
+                        'Precision': precision,
+                        'Recall': recall,
+                        'F1 Score': f1,
+                        'Next_Day_Prediction': next_day_prediction
+                    }
+
+                    # Update the best model if the current one is better
                     if accuracy > best_accuracy:
                         best_accuracy = accuracy
                         best_combination = combination
                         best_model = model
-                
+
+                    all_combination_performance.append(combination_performance)
+
+                # Convert the list of dictionaries to a DataFrame
+                all_combination_performance_df = pd.DataFrame(all_combination_performance)
+
+                # Save the DataFrame to a CSV file
+                csv_file_path = os.path.join(models_dir, 'all_combination_performance.csv')
+                all_combination_performance_df.to_csv(csv_file_path, index=False)
+                print(f"All combinations performance saved to {csv_file_path}")
+
+
                 # Save the best model
                 model_filename = os.path.join(
                 models_dir,
@@ -182,6 +239,7 @@ def main():
                 )
 
                 joblib.dump(best_model, model_filename)
+                
                 print(f"Best combination of features: {best_combination}")
                 print(f"Best accuracy: {best_accuracy}")
 
@@ -194,11 +252,31 @@ def main():
 
                 print(f"Model saved as {model_filename}")
                 plot_target_distribution(data['target_class'])
-                visualize_classification_results(y_test, predictions)
-                visualize_decision_trees(best_model, features.columns, max_trees=1)
 
+                # Make predictions with the best model
+                # Before making predictions, ensure features are correctly selected and ordered
+                features_for_prediction = [feature for feature in list(best_combination) if feature in X_test.columns]
 
+                # Preprocess the features for prediction to ensure they match training data format
+                X_test_best_preprocessed = preprocess_data(X_test[features_for_prediction])
 
+                # Make predictions with the best model
+                best_predictions = best_model.predict(X_test_best_preprocessed)
+
+                # Calculate and print metrics
+                print(f"Best Model Accuracy: {accuracy_score(y_test, best_predictions)}")
+                print(f"Best Model Precision: {precision_score(y_test, best_predictions, average='macro')}")
+                print(f"Best Model Recall: {recall_score(y_test, best_predictions, average='macro')}")
+                print(f"Best Model F1 Score: {f1_score(y_test, best_predictions, average='macro')}")
+
+                # Visualize the classification results for the best model
+                visualize_classification_results(y_test, best_predictions)
+                # Ensure your visualization functions are compatible with the specifics of your dataset and model
+
+                # Visualize the decision trees for the best model, if applicable
+                visualize_decision_trees(best_model, list(best_combination), max_trees=1)
+                # Adjust the call based on your visualization function's requirements
+                
     elif mode == 'regression':
         # Calculate mean squared error, mean absolute error, and root mean squared error
         predictions = best_model.predict(X_test)

@@ -23,10 +23,12 @@ from utils.dynamic_cv_strategy import dynamic_cv_strategy
 from sklearn.metrics import mean_squared_error, mean_absolute_error
 import matplotlib.pyplot as plt
 from itertools import chain, combinations
+from sklearn.metrics import precision_score, recall_score, f1_score
 
 def preprocess_data(features):
-    imputer = SimpleImputer(strategy='mean') 
-    return imputer.fit_transform(features)
+    imputer = SimpleImputer(strategy='mean')
+    features_imputed = imputer.fit_transform(features)
+    return pd.DataFrame(features_imputed, columns=features.columns)
 
 def all_subsets(ss):
     return chain(*map(lambda x: combinations(ss, x), range(1, len(ss)+1)))
@@ -191,6 +193,9 @@ def main():
                     # Evaluate the model
                     accuracy = model.score(X_test_subset, y_test_subset)
                     predictions = model.predict(X_test_subset)
+                    precision = precision_score(y_test_subset, predictions, average='macro')
+                    recall = recall_score(y_test_subset, predictions, average='macro')
+                    f1 = f1_score(y_test_subset, predictions, average='macro')
                     last_features = original_data.iloc[-1:][list(combination)].ffill().bfill().values
                     next_day_prediction = model.predict(last_features)[0]
 
@@ -199,6 +204,9 @@ def main():
                     combination_performance = {
                         'Combination': ' '.join(combination),
                         'Accuracy': accuracy,
+                        'Precision': precision,
+                        'Recall': recall,
+                        'F1 Score': f1,
                         'Next_Day_Prediction': next_day_prediction
                     }
 
@@ -226,6 +234,7 @@ def main():
                 )
 
                 joblib.dump(best_model, model_filename)
+                
                 print(f"Best combination of features: {best_combination}")
                 print(f"Best accuracy: {best_accuracy}")
 
@@ -238,11 +247,31 @@ def main():
 
                 print(f"Model saved as {model_filename}")
                 plot_target_distribution(data['target_class'])
-                visualize_classification_results(y_test, predictions)
-                visualize_decision_trees(best_model, features.columns, max_trees=1)
 
+                # Make predictions with the best model
+                # Before making predictions, ensure features are correctly selected and ordered
+                features_for_prediction = [feature for feature in list(best_combination) if feature in X_test.columns]
 
+                # Preprocess the features for prediction to ensure they match training data format
+                X_test_best_preprocessed = preprocess_data(X_test[features_for_prediction])
 
+                # Make predictions with the best model
+                best_predictions = best_model.predict(X_test_best_preprocessed)
+
+                # Calculate and print metrics
+                print(f"Best Model Accuracy: {accuracy_score(y_test, best_predictions)}")
+                print(f"Best Model Precision: {precision_score(y_test, best_predictions, average='macro')}")
+                print(f"Best Model Recall: {recall_score(y_test, best_predictions, average='macro')}")
+                print(f"Best Model F1 Score: {f1_score(y_test, best_predictions, average='macro')}")
+
+                # Visualize the classification results for the best model
+                visualize_classification_results(y_test, best_predictions)
+                # Ensure your visualization functions are compatible with the specifics of your dataset and model
+
+                # Visualize the decision trees for the best model, if applicable
+                visualize_decision_trees(best_model, list(best_combination), max_trees=1)
+                # Adjust the call based on your visualization function's requirements
+                
     elif mode == 'regression':
         # Calculate mean squared error, mean absolute error, and root mean squared error
         predictions = best_model.predict(X_test)
