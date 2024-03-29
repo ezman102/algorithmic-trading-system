@@ -1,6 +1,7 @@
 #main.py
 import sys
 import os
+import warnings
 script_dir = os.path.dirname(os.path.abspath(__file__))
 utils_dir = os.path.join(script_dir, 'utils')
 sys.path.append(utils_dir)
@@ -25,6 +26,12 @@ import matplotlib.pyplot as plt
 from itertools import chain, combinations
 from sklearn.metrics import precision_score, recall_score, f1_score
 
+warnings.filterwarnings("ignore", category=UserWarning, module="sklearn")
+
+def generate_report(report_path, report_contents):
+    with open(report_path, 'w') as f:
+        f.write(report_contents)
+
 def preprocess_data(features):
     imputer = SimpleImputer(strategy='mean')
     features_imputed = imputer.fit_transform(features)
@@ -38,15 +45,28 @@ def capture_best_features_combinations(best_combinations):
                     best_features_df = pd.DataFrame.from_records(best_combinations, columns=columns)
                     return best_features_df
 
+def create_output_folder(stock_symbol, start_date, end_date):
+    folder_name = f"{stock_symbol}_{start_date}_to_{end_date}"
+    output_dir = os.path.join(models_dir, folder_name)
+    if not os.path.exists(output_dir):
+        os.makedirs(output_dir)
+    return output_dir
+
 def main():
-    # stock_symbol = 'TSLA'
-    # start_date = '2023-03-20'
-    # end_date = '2024-03-27'
-    # interval='1d'、
-    stock_symbol = input("Enter the stock symbol (e.g., TSLA): ")
-    start_date = input("Enter the start date (YYYY-MM-DD): ")
-    end_date = input("Enter the end date (YYYY-MM-DD): ")
-    interval = input("Enter the interval (1d, 1wk, 1mo): ")
+    stock_symbol = 'TSLA'
+    start_date = '2020-01-01'
+    end_date = '2020-12-31'
+    interval='1d'
+    # stock_symbol = input("Enter the stock symbol (e.g., TSLA): ")
+    # start_date = input("Enter the start date (YYYY-MM-DD): ")
+    # end_date = input("Enter the end date (YYYY-MM-DD): ")
+    # interval = input("Enter the interval (1d, 1wk, 1mo): ")
+    report_contents = ""
+    output_folder = create_output_folder(stock_symbol, start_date, end_date)
+
+    stock_models_dir = os.path.join(models_dir, stock_symbol)
+    if not os.path.exists(stock_models_dir):
+        os.makedirs(stock_models_dir)
 
     print("Fetching data...")
     data = fetch_data(stock_symbol, start_date, end_date, interval='1d')
@@ -123,44 +143,36 @@ def main():
     
     data.drop(columns=['Close'], inplace=True, errors='ignore')
 
-    features = data.drop([target_column], axis=1)
-    target = data[target_column]
-
-    preprocessed_features = preprocess_data(features)
-
-    X_train, X_test, y_train, y_test = train_test_split(preprocessed_features, target, test_size=0.1, random_state=42)
-    
-
     param_grid = {
         'n_estimators': [100, 200, 500, 1000],
-        'max_depth': [None, 2, 4, 5, 10, 20],
+        'max_depth': [2, 4, 5, 10],
         'min_samples_split': [2, 5, 10],
         'min_samples_leaf': [1, 2, 4]
         # 'n_estimators': [100],
-        # 'max_depth': [2,3],
-        # 'min_samples_split': [2, 5],
+        # 'max_depth': [None,2,3],
+        # 'min_samples_split': [2, 4],
         # 'min_samples_leaf': [1,2]
     }
+
+    features = data.drop([target_column], axis=1)
+    target = data[target_column]
+    preprocessed_features = preprocess_data(features)
+    X_train, X_test, y_train, y_test = train_test_split(preprocessed_features, target, test_size=0.1, random_state=42)
+    
     classification = True if mode == 'classification' else False
 
-    # Use the dynamic_cv_strategy function to get an appropriate cross-validation strategy
+    # # Use the dynamic_cv_strategy function to get an appropriate cross-validation strategy
     cv_strategy = dynamic_cv_strategy(target=y_train, classification=classification, n_splits=5)
 
-    # Now, use cv_strategy in GridSearchCV
     grid_search = GridSearchCV(model, param_grid, cv=cv_strategy, n_jobs=-1, verbose=2)
     grid_search.fit(X_train, y_train)
 
     print("Best Parameters:", grid_search.best_params_)
     best_model = grid_search.best_estimator_
 
-    feature_importances = best_model.feature_importances_
-
-    # Call the visualization function with the DataFrame and the importances
-    visualize_feature_importances(features, feature_importances)
-
     predictions = best_model.predict(X_test)
+    visualize_feature_importances(features.columns, best_model.feature_importances_, stock_symbol, start_date, end_date, prefix=mode, output_folder=output_folder)
     latest_data = original_data.iloc[-1:][features.columns].ffill().bfill().values
-
 
     if mode == 'classification':
                 # Create all possible combinations of features
@@ -171,8 +183,6 @@ def main():
                 best_combination = None
                 best_model = None
 
-                # Loop through all combinations
-                # Initialize an empty list to store the performance of all combinations
                 imputer = SimpleImputer(strategy='mean')
 
                 # Initialize an empty list to store the performance of all combinations
@@ -231,17 +241,15 @@ def main():
                 all_combination_performance_df.to_csv(csv_file_path, index=False)
                 print(f"All combinations performance saved to {csv_file_path}")
 
-
                 # Save the best model
                 model_filename = os.path.join(
-                models_dir,
-                f"{stock_symbol}_from_{start_date}_to_{end_date}_accuracy_{best_accuracy:.4f}.joblib"
+                    stock_models_dir,
+                    f"{stock_symbol}_classification_{start_date}_to_{end_date}_accuracy_{best_accuracy:.4f}.joblib"
                 )
-
+                # Save the regression model to the specified path
                 joblib.dump(best_model, model_filename)
-                
+
                 print(f"Best combination of features: {best_combination}")
-                print(f"Best accuracy: {best_accuracy}")
 
                 latest_features = original_data.iloc[-1:][list(best_combination)].ffill().bfill().values
 
@@ -249,12 +257,8 @@ def main():
 
                 # Output the prediction for the next day
                 print(f"Predicted value for the next day: {next_day_prediction[0]}")
+                plot_target_distribution(data[target_column], stock_symbol, start_date, end_date, output_folder=output_folder)
 
-                print(f"Model saved as {model_filename}")
-                plot_target_distribution(data['target_class'])
-
-                # Make predictions with the best model
-                # Before making predictions, ensure features are correctly selected and ordered
                 features_for_prediction = [feature for feature in list(best_combination) if feature in X_test.columns]
 
                 # Preprocess the features for prediction to ensure they match training data format
@@ -268,15 +272,19 @@ def main():
                 print(f"Best Model Precision: {precision_score(y_test, best_predictions, average='macro')}")
                 print(f"Best Model Recall: {recall_score(y_test, best_predictions, average='macro')}")
                 print(f"Best Model F1 Score: {f1_score(y_test, best_predictions, average='macro')}")
+                features_used_for_training = all_features
 
-                # Visualize the classification results for the best model
-                visualize_classification_results(y_test, best_predictions)
-                # Ensure your visualization functions are compatible with the specifics of your dataset and model
+                visualize_classification_results(y_test, best_predictions, stock_symbol, start_date, end_date,output_folder=output_folder)
 
-                # Visualize the decision trees for the best model, if applicable
-                visualize_decision_trees(best_model, list(best_combination), max_trees=1)
-                # Adjust the call based on your visualization function's requirements
-                
+                visualize_decision_trees(best_model, features.columns, stock_symbol, start_date, end_date, max_trees=1,prefix=mode, output_folder=output_folder)
+                print(f"Model saved as {model_filename}")
+                report_contents += f"Best Combination of Features: {best_combination}\n"
+                report_contents += f"Predicted value for the next day: {next_day_prediction[0]}\n"
+                report_contents += f"Best Model Accuracy: {accuracy_score(y_test, best_predictions)}\n"
+                report_contents += f"Best Model Precision: {precision_score(y_test, best_predictions, average='macro')}\n"
+                report_contents += f"Best Model Recall: {recall_score(y_test, best_predictions, average='macro')}\n"
+                report_contents += f"Best Model F1 Score: {f1_score(y_test, best_predictions, average='macro')}\n"
+
     elif mode == 'regression':
         # Calculate mean squared error, mean absolute error, and root mean squared error
         predictions = best_model.predict(X_test)
@@ -306,7 +314,7 @@ def main():
 
         # Define the model filename with stock symbol, date range, and RMSE
         model_filename = os.path.join(
-            models_dir,
+            stock_models_dir,
             f"{stock_symbol}_regression_{start_date}_to_{end_date}_RMSE_{rmse:.4f}.joblib"
         )
 
@@ -314,9 +322,20 @@ def main():
         joblib.dump(best_model, model_filename)
         print(f"Model saved as {model_filename}")
 
-        # Visualize the regression results and decision trees
-        visualize_regression_results(y_test.index, y_test, predictions)
-        visualize_decision_trees(best_model, features.columns, max_trees=1)
+        visualize_regression_results(X_test.index, y_test, predictions, stock_symbol, start_date, end_date, output_folder=output_folder)
+        visualize_decision_trees(best_model, features.columns,stock_symbol, start_date, end_date, max_trees=1, prefix=mode, output_folder=output_folder)
+        best_features = features.columns
+        best_combination = ' '.join(best_features)
+        report_contents += "Best Combination of Features: {}\n".format(best_combination)
+        report_contents += f"Best Parameters: {grid_search.best_params_}\n"
+        report_contents += f"Regression MSE: {mse}\n"
+        report_contents += f"Regression MAE: {mae}\n"
+        report_contents += f"Regression RMSE: {rmse}\n"
+        report_contents += f"Predicted value for the next day: {next_day_prediction[0]}\n"
+
+    report_path = os.path.join(output_folder, f"{stock_symbol}_{start_date}_to_{end_date}_{mode}_report.txt")
+    generate_report(report_path, report_contents)
+    print(f"Report saved to {report_path}")
 
 if __name__ == "__main__":
     main()

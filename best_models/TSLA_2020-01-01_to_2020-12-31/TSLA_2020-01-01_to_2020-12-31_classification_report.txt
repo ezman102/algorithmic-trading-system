@@ -1,0 +1,6 @@
+Best Combination of Features: ('OBV', 'Bullish_Momentum')
+Predicted value for the next day: 0
+Best Model Accuracy: 0.7692307692307693
+Best Model Precision: 0.7797619047619048
+Best Model Recall: 0.79375
+Best Model F1 Score: 0.7678571428571428

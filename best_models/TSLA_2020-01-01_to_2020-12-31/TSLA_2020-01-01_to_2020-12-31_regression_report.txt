@@ -1,0 +1,6 @@
+Best Combination of Features: ATR OBV RSI_14 SMA_10 SMA_30 Bullish_Momentum Bearish_Momentum Bearish_Crossover High_Volatility Volume_Pressure
+Best Parameters: {'max_depth': 10, 'min_samples_leaf': 1, 'min_samples_split': 2, 'n_estimators': 100}
+Regression MSE: 29.811609603998047
+Regression MAE: 3.147748643489759
+Regression RMSE: 5.4600008794869295
+Predicted value for the next day: 228.15470397949218
