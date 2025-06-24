@@ -87,26 +87,6 @@ The system generates:
 └── README.md               # This file
 ```
 
-## Example Output
-Classification report excerpt:
-```
-Best Combination of Features: SMA_10 EMA_30 RSI_14
-Predicted value for the next day: 1
-Best Model Accuracy: 0.85
-Best Model Precision: 0.84
-Best Model Recall: 0.83
-Best Model F1 Score: 0.83
-```
-
-Regression report excerpt:
-```
-Best Parameters: {'max_depth': 10, 'min_samples_leaf': 2, ...}
-Regression MSE: 12.56
-Regression MAE: 2.34
-Regression RMSE: 3.54
-Predicted value for the next day: 150.23
-```
-
 ## Dependencies
 - Python 3.7+
 - pandas
