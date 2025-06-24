@@ -1,6 +1,3 @@
-Here's a comprehensive README.md for your GitHub repository:
-
-```markdown
 # Stock Prediction with Random Forest
 
 This project predicts stock prices using Random Forest models with technical indicators. It supports both classification (predicting price direction) and regression (predicting future price) approaches.
@@ -121,18 +118,3 @@ Predicted value for the next day: 150.23
 
 ## Contributing
 Contributions are welcome! Please open an issue or submit a pull request.
-
-## License
-[MIT](https://choosealicense.com/licenses/mit/)
-```
-
-Key features of this README:
-1. Clear installation and usage instructions
-2. Comprehensive feature list
-3. File structure overview
-4. Input/output examples
-5. Dependency information
-6. Visual hierarchy with section headers
-7. License information
-
-The README explains both how to use the project and what technical capabilities it includes, making it suitable for both end-users and developers.
